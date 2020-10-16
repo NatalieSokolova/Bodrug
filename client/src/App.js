@@ -12,6 +12,7 @@ import Pricing from "./components/Pricing";
 import Art from "./components/Art";
 import Faq from "./components/Faq";
 import Contact from "./components/Contact";
+import Home from "./components/Home";
 
 function App() {
   const { state, setState } = useApplicationData();
@@ -28,12 +29,12 @@ function App() {
       <div>
         <Switch>
           <Route path="/about" component={About} />
-          {/* Portfolio component will contail links to portfolio, pricing and FAQs */}
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/pricing" component={Pricing} />
           <Route path="/art" component={Art} />
           <Route path="/faq" component={Faq} />
           <Route path="/contact" component={Contact} />
+          <Route exact path="/" render={(routeProps) => <Home />} />
         </Switch>
       </div>
     </Router>
