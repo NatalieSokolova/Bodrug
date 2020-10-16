@@ -1,63 +1,43 @@
-import React from "react";
-import { Menu } from "antd";
-import {
-  MailOutlined,
-  AppstoreOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
+import React, { Component } from "react";
+import { Menu } from "semantic-ui-react";
 
-const { SubMenu } = Menu;
+export default class MenuExampleText extends Component {
+  state = { activeItem: "closest" };
 
-export default class Nav extends React.Component {
-  state = {
-    current: "mail",
-  };
-
-  handleClick = (e) => {
-    console.log("click ", e);
-    this.setState({ current: e.key });
-  };
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   render() {
-    const { current } = this.state;
+    const { activeItem } = this.state;
+
     return (
-      <Menu
-        onClick={this.handleClick}
-        selectedKeys={[current]}
-        mode="horizontal"
-      >
-        <Menu.Item key="mail" icon={<MailOutlined />}>
-          Navigation One
-        </Menu.Item>
-        <Menu.Item key="app" disabled icon={<AppstoreOutlined />}>
-          Navigation Two
-        </Menu.Item>
-        <SubMenu
-          key="SubMenu"
-          icon={<SettingOutlined />}
-          title="Navigation Three - Submenu"
-        >
-          <Menu.ItemGroup title="Item 1">
-            <Menu.Item key="setting:1">Option 1</Menu.Item>
-            <Menu.Item key="setting:2">Option 2</Menu.Item>
-          </Menu.ItemGroup>
-          <Menu.ItemGroup title="Item 2">
-            <Menu.Item key="setting:3">Option 3</Menu.Item>
-            <Menu.Item key="setting:4">Option 4</Menu.Item>
-          </Menu.ItemGroup>
-        </SubMenu>
-        <Menu.Item key="alipay">
-          <a
-            href="https://ant.design"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Navigation Four - Link
-          </a>
-        </Menu.Item>
+      <Menu text>
+        {/* <Menu.Item header>Sort By</Menu.Item> */}
+        <Menu.Item
+          name="HOME"
+          active={activeItem === "home"}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          name="PHOTOS"
+          active={activeItem === "photos"}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          name="ART"
+          active={activeItem === "art"}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          name="FAQ"
+          active={activeItem === "faq"}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+          name="CONTACT"
+          active={activeItem === "contact"}
+          onClick={this.handleItemClick}
+        />
       </Menu>
     );
   }
 }
-
-// ReactDOM.render(<App />, mountNode);
