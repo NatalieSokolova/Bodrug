@@ -7,8 +7,9 @@ import "semantic-ui-css/semantic.min.css";
 
 import Nav from "./components/Nav";
 import About from "./components/About";
-import Photo from "./components/Photo";
-import Gallery from "./components/Gallery";
+import Portfolio from "./components/Portfolio";
+import Pricing from "./components/Pricing";
+import Art from "./components/Art";
 import Faq from "./components/Faq";
 import Contact from "./components/Contact";
 
@@ -24,13 +25,13 @@ function App() {
   return (
     <Router>
       <Nav />
-      <div>NAV goes here</div>
       <div>
         <Switch>
           <Route path="/about" component={About} />
-          {/* Photo component will contail links to portfolio, pricing and FAQs */}
-          <Route path="/photo" component={Photo} />
-          <Route path="/gallery" component={Gallery} />
+          {/* Portfolio component will contail links to portfolio, pricing and FAQs */}
+          <Route path="/portfolio" component={Portfolio} />
+          <Route path="/pricing" component={Pricing} />
+          <Route path="/art" component={Art} />
           <Route path="/faq" component={Faq} />
           <Route path="/contact" component={Contact} />
         </Switch>
