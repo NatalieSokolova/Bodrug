@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 module.exports = (db) => {
-  /* GET paintings listing. */
+  /* GET faqs listing. */
   router.get("/", (req, res) => {
     const query = {
-      text: "SELECT * FROM paintings;",
+      text: "SELECT * FROM faqs;",
     };
 
     db.query(query)
@@ -16,21 +16,21 @@ module.exports = (db) => {
   // FOR ADMIN PAGE
   router.post("/", (req, res) => {
     // extract the data from req.body
-    const { description, url, year, materials, price } = req.body;
+    const { question, answer } = req.body;
 
-    console.log({ description }, { url }, { year }, { materials }, { price });
+    console.log({ question }, { answer });
 
     // create an insert query in the db
     const query = {
-      text: `INSERT INTO paintings (description, url, year, materials, price) VALUES ($1, $2, $3, $4, $5) RETURNING *;`,
-      values: [description, url, year, materials, price],
+      text: `INSERT INTO faqs (question, answer) VALUES ($1, $2) RETURNING *;`,
+      values: [question, answer],
     };
 
     db.query(query)
       .then((result) => res.json(result[0]))
       .catch((err) => console.log(err));
 
-    // return the newly created painting back
+    // return the newly created faq back
   });
 
   return router;
