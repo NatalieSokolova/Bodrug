@@ -6,3 +6,24 @@ CREATE TABLE users (
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL
 );
+
+CREATE TABLE photos (
+  id SERIAL PRIMARY KEY NOT NULL,
+  description VARCHAR(255) NOT NULL,
+  url VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE paintings (
+  id SERIAL PRIMARY KEY NOT NULL,
+  description VARCHAR(255) NOT NULL,
+  url VARCHAR(255) NOT NULL,
+  year INTEGER,
+  materials VARCHAR(255) NOT NULL,
+  price INTEGER
+);
+
+CREATE TABLE faqs (
+  id SERIAL PRIMARY KEY NOT NULL,
+  question VARCHAR(255) NOT NULL,
+  answer VARCHAR(255) NOT NULL
+);
