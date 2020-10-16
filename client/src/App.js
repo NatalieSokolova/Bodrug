@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import useApplicationData from "./hooks/useApplicationData";
 import "./App.css";
 
+import Nav from "./components/Nav";
 import About from "./components/About";
 import Photo from "./components/Photo";
 import Gallery from "./components/Gallery";
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <Router>
+      <Nav />
       <div>NAV goes here</div>
       <div>
         <Switch>
