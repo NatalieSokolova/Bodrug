@@ -6,7 +6,7 @@ const logger = require("morgan");
 const db = require("./db");
 
 const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
+// const usersRouter = require("./routes/users");
 const photosRouter = require("./routes/photos");
 const paintingsRouter = require("./routes/paintings");
 const faqsRouter = require("./routes/faqs");
@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter(db));
-app.use("/users", usersRouter(db));
+// app.use("/users", usersRouter(db));
 app.use("/photos", photosRouter(db));
 app.use("/paintings", paintingsRouter(db));
 app.use("/faqs", faqsRouter(db));
