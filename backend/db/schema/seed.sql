@@ -1,6 +1,6 @@
-INSERT INTO users (name, email, password) VALUES ('Super Mario', 'mario@nintendo.com', 'test');
-INSERT INTO users (name, email, password) VALUES ('Luigi', 'luigi@nintendo.com', 'test');
-INSERT INTO users (name, email, password) VALUES ('Peach', 'peach@nintendo.com', 'test');
+-- INSERT INTO users (name, email, password) VALUES ('Super Mario', 'mario@nintendo.com', 'test');
+-- INSERT INTO users (name, email, password) VALUES ('Luigi', 'luigi@nintendo.com', 'test');
+-- INSERT INTO users (name, email, password) VALUES ('Peach', 'peach@nintendo.com', 'test');
 
 INSERT INTO photos (description, url) VALUES ('Baby dIY blog slow-carb activated charcoal iPhone kickstarter church-key locavore normcore poke banjo palo santo subway tile. Bushwick tousled asymmetrical green juice. Iceland seitan paleo, viral tofu hammock humblebrag banjo tbh. Live-edge tbh meh hashtag kickstarter.', '../assets/photos/brooke-cagle-kElEigko7PU-unsplash.jpg');
 INSERT INTO photos (description, url) VALUES ('Baby dIY blog slow-carb activated charcoal iPhone kickstarter church-key locavore normcore poke banjo palo santo subway tile. Bushwick tousled asymmetrical green juice. Iceland seitan paleo, viral tofu hammock humblebrag banjo tbh. Live-edge tbh meh hashtag kickstarter.', '../assets/photos/engin-akyurt-Bgz6WeuuAgs-unsplash.jpg');
