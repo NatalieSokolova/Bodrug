@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import history from "browser-history";
 import useApplicationData from "./hooks/useApplicationData";
 import "./App.css";
+import "semantic-ui-css/semantic.min.css";
 
 import Nav from "./components/Nav";
 import About from "./components/About";
