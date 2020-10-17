@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import history from "browser-history";
-import useApplicationData from "./hooks/useApplicationData";
+// import useApplicationData from "./hooks/useApplicationData";
 import "./App.css";
 import "semantic-ui-css/semantic.min.css";
 
@@ -15,7 +15,7 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 
 function App() {
-  const { state, setState } = useApplicationData();
+  // const { state, setState } = useApplicationData();
 
   // const userList = state.users.map((user) => (
   //   <li>
