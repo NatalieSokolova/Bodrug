@@ -19,7 +19,7 @@ export default function Faq({}) {
 
   return (
     <span>
-      <h1>THESE ARE FAQs</h1>
+      <h1>THESE ARE FAQs:</h1>
       <div>{faqList}</div>
     </span>
   );
