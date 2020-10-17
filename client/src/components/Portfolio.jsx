@@ -1,27 +1,31 @@
 import React, { useState, useEffect } from "react";
 import usePhotoData from "../hooks/usePhotoData";
+import "./Portfolio.css";
 
 export default function Portfolio({}) {
   const { state, setState } = usePhotoData();
   let url;
 
   const photoList = state.photos.map((photo) => (
-    <li key={photo.id}>
-      <div>
+    // <li key={photo.id}>
+    <div key={photo.id} className="photoContainer">
+      <span>
         <img
+          className="photo"
           src={require(`../assets/photos${photo.url}`)}
           alt="Photo By Yuliia Bodrug"
         />
-      </div>
+      </span>
       <div>{photo.description}</div>
-    </li>
+      <br />
+    </div>
+    // </li>
   ));
 
   return (
-    <div>
-      <h1>THIS IS A TEST</h1>
+    <span>
       <h1>Photo Portfolio</h1>
       <div>{photoList}</div>
-    </div>
+    </span>
   );
 }
