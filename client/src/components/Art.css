@@ -1,0 +1,12 @@
+.paintingContainer {
+  width: 80vw;
+  height: auto;
+  margin: 5em auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.painting {
+  width: 80vw;
+  height: auto;
+}

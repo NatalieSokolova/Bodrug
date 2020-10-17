@@ -7,7 +7,6 @@ export default function Portfolio({}) {
   let url;
 
   const photoList = state.photos.map((photo) => (
-    // <li key={photo.id}>
     <div key={photo.id} className="photoContainer">
       <span>
         <img
@@ -19,7 +18,6 @@ export default function Portfolio({}) {
       <div>{photo.description}</div>
       <br />
     </div>
-    // </li>
   ));
 
   return (
