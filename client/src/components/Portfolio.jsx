@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import usePhotoData from "../hooks/usePhotoData";
 
-export default function Phortfolio({}) {
+export default function Portfolio({}) {
   const { state, setState } = usePhotoData();
 
   const photoList = state.photos.map((photo) => (
-    <li>
+    <li key={photo.id}>
       <div>
-        <img src={`../assets/photos/${photo.url}`} />
+        <img src={`../assets/photos${photo.url}`} />
       </div>
       <div>{photo.description}</div>
     </li>
