@@ -34,7 +34,7 @@ function App() {
           <Route path="/art" component={Art} />
           <Route path="/faq" component={Faq} />
           <Route path="/contact" component={Contact} />
-          <Route exact path="/" render={(routeProps) => <Home />} />
+          <Route exact path="/" component={Home} />
         </Switch>
       </div>
     </Router>
