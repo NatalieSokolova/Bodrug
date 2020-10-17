@@ -2,7 +2,7 @@
 // const router = express.Router();
 
 // module.exports = (db) => {
-//   /* GET users listing. */
+//   /* GET  listing. */
 //   router.get('/', (req, res) => {
 
 //     const query = {
