@@ -7,6 +7,6 @@
 }
 
 .painting {
-  width: 80vw;
-  height: auto;
+  max-width: 80vw;
+  max-height: 70vh;
 }
