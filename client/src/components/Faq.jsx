@@ -1,12 +1,26 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import useFaqData from "../hooks/useFaqData";
+// import "./Faq.css";
 
 export default function Faq({}) {
-  return (
-    <div>
-      <h1>These are FAQs</h1>
-      <h2>Question</h2>
-      <p>Answer</p>
+  const { state, setState } = useFaqData();
+  let url;
+
+  const faqList = state.faqs.map((faq) => (
+    <div key={faq.id} className="faqContainer">
+      <div>
+        <b>{faq.question}</b>
+      </div>
+      <br />
+      <div>{faq.answer}</div>
+      <br />
     </div>
+  ));
+
+  return (
+    <span>
+      <h1>THESE ARE FAQs</h1>
+      <div>{faqList}</div>
+    </span>
   );
 }
