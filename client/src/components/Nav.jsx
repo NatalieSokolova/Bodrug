@@ -1,47 +1,53 @@
-import React, { Component } from "react";
-import { Menu, Dropdown } from "semantic-ui-react";
+import React from "react";
+import { Menu } from "antd";
 
-export default class MenuExampleText extends Component {
-  state = { activeItem: "closest" };
+const { SubMenu } = Menu;
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+export default class Nav extends React.Component {
+  state = {
+    current: "mail",
+  };
+
+  handleClick = (e) => {
+    console.log("click ", e);
+    this.setState({ current: e.key });
+  };
 
   render() {
-    const { activeItem } = this.state;
-
+    const { current } = this.state;
     return (
-      <Menu text>
-        {/* <Menu.Item header>Sort By</Menu.Item> */}
-        <Menu.Item
-          name="HOME"
-          active={activeItem === "home"}
-          onClick={this.handleItemClick}
-          href="/"
-        />
-        <Dropdown item text="PHOTOS">
-          <Dropdown.Menu>
-            <Dropdown.Item href="/portfolio">portfolio</Dropdown.Item>
-            <Dropdown.Item href="/pricing">pricing</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-        <Menu.Item
-          name="ART"
-          active={activeItem === "art"}
-          onClick={this.handleItemClick}
-          href="/art"
-        />
-        <Menu.Item
-          name="FAQ"
-          active={activeItem === "faq"}
-          onClick={this.handleItemClick}
-          href="/faq"
-        />
-        <Menu.Item
-          name="CONTACT"
-          active={activeItem === "contact"}
-          onClick={this.handleItemClick}
-          href="/contact"
-        />
+      <Menu
+        onClick={this.handleClick}
+        selectedKeys={[current]}
+        mode="horizontal"
+      >
+        <Menu.Item>
+          <a href="/" rel="noopener noreferrer">
+            HOME
+          </a>
+        </Menu.Item>
+        <Menu.Item>
+          <a href="/about" rel="noopener noreferrer">
+            ABOUT
+          </a>
+        </Menu.Item>
+        <SubMenu key="SubMenu" title="PHOTOS">
+          <Menu.Item key="setting:1">
+            <a href="/portfolio" rel="noopener noreferrer">
+              portfolio
+            </a>
+          </Menu.Item>
+          <Menu.Item key="setting:2">
+            <a href="/pricing" rel="noopener noreferrer">
+              pricing
+            </a>
+          </Menu.Item>
+        </SubMenu>
+        <Menu.Item>
+          <a href="/contact" rel="noopener noreferrer">
+            CONTACT
+          </a>
+        </Menu.Item>
       </Menu>
     );
   }
