@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import usePaintingData from "../hooks/usePaintingData";
-import "./Art.css";
+import "./Painting.css";
 
 export default function Painting({}) {
   const { state, setState } = usePaintingData();
