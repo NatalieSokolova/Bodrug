@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import usePhotoData from "../hooks/usePhotoData";
-import "./Portfolio.css";
+import "./Photo.css";
 
-export default function Portfolio({}) {
+export default function Photo({}) {
   const { state, setState } = usePhotoData();
   let url;
 

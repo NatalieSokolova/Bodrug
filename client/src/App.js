@@ -7,9 +7,9 @@ import "semantic-ui-css/semantic.min.css";
 
 import Nav from "./components/Nav";
 import About from "./components/About";
-import Portfolio from "./components/Portfolio";
+import Photo from "./components/Photo";
 import Pricing from "./components/Pricing";
-import Art from "./components/Art";
+import Painting from "./components/Painting";
 import Faq from "./components/Faq";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
@@ -29,9 +29,9 @@ function App() {
       <div>
         <Switch>
           <Route path="/about" component={About} />
-          <Route path="/portfolio" component={Portfolio} />
+          <Route path="/photo" component={Photo} />
           <Route path="/pricing" component={Pricing} />
-          <Route path="/art" component={Art} />
+          <Route path="/painting" component={Painting} />
           <Route path="/faq" component={Faq} />
           <Route path="/contact" component={Contact} />
           <Route exact path="/" component={Home} />

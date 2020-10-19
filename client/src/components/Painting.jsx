@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import usePaintingData from "../hooks/usePaintingData";
 import "./Art.css";
 
-export default function Art({}) {
+export default function Painting({}) {
   const { state, setState } = usePaintingData();
   let url;
 
