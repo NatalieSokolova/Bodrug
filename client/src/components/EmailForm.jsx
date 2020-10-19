@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form, Input, InputNumber, Button } from "antd";
+import "./EmailForm.css";
 
 const layout = {
   labelCol: {
@@ -31,6 +32,7 @@ const EmailForm = () => {
       name="nest-messages"
       onFinish={onFinish}
       validateMessages={validateMessages}
+      className="emailForm"
     >
       <Form.Item
         name={["name"]}
