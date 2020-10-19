@@ -46,6 +46,7 @@ class Message extends Component {
         name="nest-messages"
         onFinish={onFinish}
         validateMessages={validateMessages}
+        onSubmit={(e) => this.formSubmit(e)}
       >
         <Form.Item
           name={["name"]}
@@ -55,6 +56,7 @@ class Message extends Component {
               required: true,
             },
           ]}
+          onChange={(e) => this.setState({ name: e.target.value })}
         >
           <Input />
         </Form.Item>
@@ -67,6 +69,7 @@ class Message extends Component {
               required: true,
             },
           ]}
+          onChange={(e) => this.setState({ email: e.target.value })}
         >
           <Input />
         </Form.Item>
@@ -78,12 +81,13 @@ class Message extends Component {
               required: true,
             },
           ]}
+          onChange={(e) => this.setState({ message: e.target.value })}
         >
           <Input.TextArea />
         </Form.Item>
         <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
           <Button type="primary" htmlType="submit">
-            Submit
+            {this.state.buttonText}
           </Button>
         </Form.Item>
       </Form>
