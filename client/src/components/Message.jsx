@@ -102,6 +102,49 @@ class Message extends Component {
       message: "",
     });
   };
+
+  render() {
+    return (
+      <form
+        id={this.props.id}
+        className={this.props.className}
+        name={this.props.name}
+        method={this.props.method}
+        action={this.props.action}
+      >
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            className="form-control"
+            placeholder="Enter Your Name"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            className="form-control"
+            placeholder="Enter Your Email"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="message">Message</label>
+          <input
+            type="text"
+            name="message"
+            className="form-control"
+            placeholder="Enter Your Message"
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      </form>
+    );
+  }
 }
 
 export default Message;
