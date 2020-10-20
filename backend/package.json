@@ -8,6 +8,7 @@
     "reset": "psql -U labber -d bodrugdb < ./db/schema/create.sql && psql -U labber -d bodrugdb < ./db/schema/seed.sql"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
