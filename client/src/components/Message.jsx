@@ -26,7 +26,7 @@ class Message extends Component {
     };
   }
 
-  handleInputChange(event) {
+  handleInputChange = (event) => {
     event.preventDefault();
     const target = event.target;
     const name = target.name;
@@ -34,9 +34,9 @@ class Message extends Component {
     this.setState({ [name]: value });
 
     console.log(this.state);
-  }
+  };
 
-  validateMail() {
+  validateMail = () => {
     let errors = {};
     let formIsValid = true;
 
@@ -61,7 +61,21 @@ class Message extends Component {
     }
 
     return formIsValid;
-  }
+  };
+
+  sendEmail = (event) => {
+    event.preventDefault();
+
+    if (!this.validateMail()) {
+      return;
+    }
+
+    const templateParams = {
+      from_name: `${this.state.name} (${this.state.email})`,
+      to_name: "Yuliia Bodrug",
+      message_html: this.state.message,
+    };
+  };
 }
 
 export default Message;
