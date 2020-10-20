@@ -1,7 +1,11 @@
 import React from "react";
+import { useAlert } from "react-alert";
+import { positions, transitions, types } from "react-alert";
 import emailjs from "emailjs-com";
 
 export default function Message() {
+  const alert = useAlert();
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -15,10 +19,15 @@ export default function Message() {
       .then(
         (result) => {
           console.log(result.text);
-          // result.send("Success!");
+          alert.show("Thank you! We'll get in touch with you shortly", {
+            type: "success",
+          });
         },
         (error) => {
           console.log(error.text);
+          alert.show("Sorry, your email was not sent. Please try again", {
+            type: "error",
+          });
         }
       );
   };
