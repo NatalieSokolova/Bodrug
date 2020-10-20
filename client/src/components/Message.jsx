@@ -75,6 +75,32 @@ class Message extends Component {
       to_name: "Yuliia Bodrug",
       message_html: this.state.message,
     };
+
+    emailjs
+      .send(
+        "service_mwelobp",
+        "template_oyae051",
+        templateParams,
+        "user_mOdU1UDxNSuDbnFQZ9Qh6"
+      )
+      .then(
+        (result) => {
+          toastr.success(
+            "Your message was sent successfully! We'll get back to you soon"
+          );
+          console.log("YAY!", result.status, result.text);
+        },
+        (error) => {
+          toastr.error(error);
+          console.log("TROUBLE! ", error);
+        }
+      );
+
+    this.setState({
+      name: "",
+      email: "",
+      message: "",
+    });
   };
 }
 
