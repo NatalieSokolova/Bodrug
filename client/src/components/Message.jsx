@@ -35,6 +35,33 @@ class Message extends Component {
 
     console.log(this.state);
   }
+
+  validateMail() {
+    let errors = {};
+    let formIsValid = true;
+
+    if (!this.state.name || this.state.name.length < 1) {
+      errors.name = "Please, enter your name";
+      formIsValid = false;
+    }
+
+    const pattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    if (!pattern.test(this.state.email)) {
+      errors.email = "Please, enter a valid email";
+      formIsValid = false;
+    }
+
+    this.setState({
+      errors: errors,
+    });
+
+    if (!this.state.message || this.state.message.length < 5) {
+      errors.message = "Your message needs to be longer, than 5 characters!";
+      formIsValid = false;
+    }
+
+    return formIsValid;
+  }
 }
 
 export default Message;
