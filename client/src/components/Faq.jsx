@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import useFaqData from "../hooks/useFaqData";
 // import "./Faq.css";
 
