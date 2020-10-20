@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import usePhotoData from "../hooks/usePhotoData";
 import "./Photo.css";
 
 export default function Photo({}) {
   const { state, setState } = usePhotoData();
-  let url;
+  // let url;
 
   const photoList = state.photos.map((photo) => (
     <div key={photo.id} className="photoContainer">
