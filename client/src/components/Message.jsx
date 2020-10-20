@@ -15,6 +15,7 @@ export default function Message() {
       .then(
         (result) => {
           console.log(result.text);
+          // result.send("Success!");
         },
         (error) => {
           console.log(error.text);
