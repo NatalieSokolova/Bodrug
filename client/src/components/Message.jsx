@@ -1,76 +1,37 @@
-export default class extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "",
-      email: "",
-      feedback: "",
-    };
-  }
-  handleInputChange(event) {
-    event.preventDefault();
-    const target = event.target;
-    const name = target.name;
-    const value = target.value;
-    this.setState({ [name]: value });
+import React from "react";
+import emailjs from "emailjs-com";
+
+export default function Message() {
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_mwelobp",
+        "template_oyae051",
+        e.target,
+        "user_mOdU1UDxNSuDbnFQZ9Qh6"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   }
 
-  render() {
-    return (
-      <div>
-        <form
-          className="ui form"
-          id={this.props.id}
-          name={this.props.name}
-          method={this.props.method}
-          action={this.props.action}
-        >
-          <textarea
-            id="name"
-            name="name"
-            onChange={this.handleInputChange.bind(this)}
-            placeholder="your name"
-            required
-            value={this.state.name}
-            style={{ width: "100%" }}
-            rows={1}
-          />
-          <br />
-          <textarea
-            id="email"
-            name="email"
-            onChange={this.handleInputChange.bind(this)}
-            placeholder="your email address"
-            required
-            value={this.state.email}
-            error={this.state.errors.email}
-            style={{ width: "100%" }}
-            rows={1}
-          />
-          <br />
-          <textarea
-            id="feedback"
-            name="feedback"
-            onChange={this.handleInputChange.bind(this)}
-            placeholder="what would you like to chat about?"
-            required
-            value={this.state.feedback}
-            style={{ width: "100%", height: "250px" }}
-          />
-          <br />
-          <input
-            type="button"
-            value="Send"
-            className="ui button"
-            style={{
-              fontFamily: "Amatic SC",
-              fontSize: "20px",
-              color: "blue",
-            }}
-            onClick={this.sendMessage.bind(this)}
-          />
-        </form>
-      </div>
-    );
-  }
+  return (
+    <form className="contact-form" onSubmit={sendEmail}>
+      <input type="hidden" name="contact_number" />
+      <label>Name</label>
+      <input type="text" name="user_name" />
+      <label>Email</label>
+      <input type="email" name="user_email" />
+      <label>Message</label>
+      <textarea name="message" />
+      <input type="submit" value="Send" />
+    </form>
+  );
 }
