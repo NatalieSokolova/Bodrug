@@ -15,10 +15,10 @@ const options = {
 };
 
 ReactDOM.render(
-  <AlertProvider template={AlertTemplate} {...options}>
-    <BrowserRouter>
+  <BrowserRouter>
+    <AlertProvider template={AlertTemplate} {...options}>
       <App />
-    </BrowserRouter>
-  </AlertProvider>,
+    </AlertProvider>
+  </BrowserRouter>,
   document.getElementById("root")
 );
