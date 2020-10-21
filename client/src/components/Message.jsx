@@ -17,12 +17,12 @@ function Message(props) {
     },
   });
 
-  const handleInputChange = (event) => {
+  const handleInputChange = async (event) => {
     const target = event.target;
     const name = target.name;
     const value = target.value;
 
-    setValues({
+    await setValues({
       ...values,
       [name]: value,
     });
