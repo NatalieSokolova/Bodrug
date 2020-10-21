@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
 import * as emailjs from "emailjs-com";
 import "./Message.css";
 
 function Message(props) {
+  const { register, handleSubmit, watch, errors } = useForm();
+
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -67,7 +70,7 @@ function Message(props) {
   };
 
   const sendEmail = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     console.log("submitting");
 
     if (!validateMail()) {
@@ -110,6 +113,7 @@ function Message(props) {
         message: "",
       },
     });
+
     console.log("VALUES: ", values);
   };
 
@@ -120,6 +124,7 @@ function Message(props) {
       name={props.name}
       method={props.method}
       action={props.action}
+      onSubmit={handleSubmit(sendEmail)}
     >
       <div className="form-group">
         <label htmlFor="name">Name</label>
@@ -128,10 +133,11 @@ function Message(props) {
           name="name"
           className="form-control"
           placeholder="Enter Your Name"
-          required="required"
+          ref={register({ required: true })}
           onChange={handleInputChange}
           value={values.name}
         />
+        {errors.name && <span id="error">Please, enter your name</span>}
       </div>
       <div className="form-group">
         <label htmlFor="email">Email</label>
@@ -140,10 +146,11 @@ function Message(props) {
           name="email"
           className="form-control"
           placeholder="Enter Your Email"
-          required="required"
+          ref={register({ required: true })}
           onChange={handleInputChange}
           value={values.email}
         />
+        {errors.email && <span id="error">Please, enter your email</span>}
       </div>
       <div className="form-group">
         <label htmlFor="message">Message</label>
@@ -152,17 +159,19 @@ function Message(props) {
           name="message"
           className="form-control"
           placeholder="Enter Your Message"
-          required="required"
+          ref={register({ required: true })}
           onChange={handleInputChange}
           value={values.message}
         />
+        {errors.message && (
+          <span id="error">Sorry, you cannot submit an empty message</span>
+        )}
       </div>
       <button
         type="submit"
         name="submit"
         className="btn btn-primary"
         required="required"
-        onClick={sendEmail}
       >
         Submit
       </button>
