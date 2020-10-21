@@ -15,7 +15,6 @@ function Message(props) {
   });
 
   const handleInputChange = (event) => {
-    event.preventDefault();
     const target = event.target;
     const name = target.name;
     const value = target.value;
@@ -30,7 +29,6 @@ function Message(props) {
   };
 
   const validateMail = () => {
-    // let errors = {};
     let formIsValid = true;
 
     if (!values.name || values.name.length < 1) {
@@ -60,8 +58,6 @@ function Message(props) {
       formIsValid = false;
     }
 
-    // setValues(values.errors);
-
     setValues({
       ...values,
       errors: values.errors,
@@ -72,6 +68,7 @@ function Message(props) {
 
   const sendEmail = (event) => {
     event.preventDefault();
+    console.log("submitting");
 
     if (!validateMail()) {
       return alert("Sorry - the form is invalid");
@@ -107,7 +104,13 @@ function Message(props) {
       name: "",
       email: "",
       message: "",
+      errors: {
+        name: "",
+        email: "",
+        message: "",
+      },
     });
+    console.log("VALUES: ", values);
   };
 
   return (
@@ -117,7 +120,6 @@ function Message(props) {
       name={props.name}
       method={props.method}
       action={props.action}
-      // onSubmit={sendEmail}
     >
       <div className="form-group">
         <label htmlFor="name">Name</label>
@@ -129,7 +131,6 @@ function Message(props) {
           required="required"
           onChange={handleInputChange}
           value={values.name}
-          error={values.errors.name}
         />
       </div>
       <div className="form-group">
@@ -142,7 +143,6 @@ function Message(props) {
           required="required"
           onChange={handleInputChange}
           value={values.email}
-          error={values.errors.email}
         />
       </div>
       <div className="form-group">
@@ -155,11 +155,10 @@ function Message(props) {
           required="required"
           onChange={handleInputChange}
           value={values.message}
-          error={values.errors.message}
         />
       </div>
       <button
-        type="button"
+        type="submit"
         name="submit"
         className="btn btn-primary"
         required="required"
