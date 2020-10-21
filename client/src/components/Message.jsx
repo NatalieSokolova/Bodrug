@@ -1,10 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as emailjs from "emailjs-com";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 import "./Message.css";
 
 function Message(props) {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
+
+  // toast.configure();
+  // const notify = () =>
+  //   toast.dark("🦄 Wow so easy!", {
+  //     position: "top-right",
+  //     autoClose: false,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     transition: "zoom",
+  //   });
 
   const [values, setValues] = useState({
     name: "",
@@ -95,10 +110,12 @@ function Message(props) {
           alert(
             "Your message was sent successfully! We'll get back to you soon"
           );
+
           console.log("YAY!", result.status, result.text);
         },
         (error) => {
           alert("Sorry, your email was not sent. Please, try again");
+
           console.log("TROUBLE! ", error);
         }
       );
