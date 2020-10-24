@@ -20,7 +20,10 @@ export default class Nav extends React.Component {
         onClick={this.handleClick}
         selectedKeys={[current]}
         mode="horizontal"
-        style={{ margin: "auto" }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
       >
         <Menu.Item>
           {/* <a href="/" rel="noopener noreferrer">
@@ -30,7 +33,10 @@ export default class Nav extends React.Component {
             <img
               src={require("../assets/logo-border.png")}
               alt="by Yuliia Bodrug"
-              style={{ height: "2.5em", width: "auto" }}
+              style={{
+                height: "2.5em",
+                width: "auto",
+              }}
             />
           </a>
         </Menu.Item>
