@@ -4,28 +4,37 @@ import "./Home.css";
 export default function Home({}) {
   return (
     <div class="home-pics">
-      <span>
+      <div class="img-container">
         <img
           class="home-img"
           src={require("../assets/photos/2-min.jpg")}
           alt="by Yuliia Bodrug"
         />
-      </span>
+        <div class="home-text-box">
+          <div class="home-text">Photos</div>
+        </div>
+      </div>
 
-      <span class="home-logo">
+      <div class="home-logo" class="img-container">
         <img
           class="home-logo-box"
           src={require("../assets/logo-border.png")}
           alt="Logo"
         />
-      </span>
-      <span>
+        <div class="home-text-box">
+          <div class="home-text">Mission</div>
+        </div>
+      </div>
+      <div class="img-container">
         <img
           class="home-img"
           src={require("../assets/paintings/the-new-york-public-library-R5oumqz_lhY-unsplash.jpg")}
           alt="by Yuliia Bodrug"
         />
-      </span>
+        <div class="home-text-box">
+          <div class="home-text">Paintings</div>
+        </div>
+      </div>
     </div>
   );
 }
