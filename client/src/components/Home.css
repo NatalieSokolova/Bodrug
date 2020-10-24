@@ -5,6 +5,18 @@
 
 .home-img {
   height: 95.5vh;
-  width: 33.4vw;
+  width: 40vw;
   object-fit: cover;
+}
+
+span.home-logo {
+  width: 20vw;
+  /* margin-top: 30vh; */
+  font-size: 8em;
+}
+
+.home-logo-box {
+  width: 15vw;
+  display: block;
+  margin: 27.5vh auto;
 }
