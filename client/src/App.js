@@ -32,7 +32,7 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/photos" component={Photo} />
           <Route path="/pricing" component={Pricing} />
-          <Route path="/paintings" component={Painting} />
+          <Route path="/art" component={Painting} />
           <Route path="/faq" component={Faq} />
           <Route path="/contact" component={Contact} />
           <Route exact path="/" component={Home} />
