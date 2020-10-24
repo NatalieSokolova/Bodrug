@@ -32,7 +32,7 @@ export default function Home() {
           src={require("../assets/paintings/the-new-york-public-library-R5oumqz_lhY-unsplash.jpg")}
           alt="by Yuliia Bodrug"
         />
-        <a class="home-text-box" href="./paintings">
+        <a class="home-text-box" href="./art">
           <div class="home-text">Art</div>
         </a>
       </div>
