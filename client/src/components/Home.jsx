@@ -15,7 +15,7 @@ export default function Home({}) {
         </div>
       </div>
 
-      <div class="home-logo" class="img-container">
+      <div class="img-container">
         <img
           class="home-logo-box"
           src={require("../assets/logo-border.png")}

@@ -14,7 +14,7 @@
   object-fit: cover;
   opacity: 1;
   transition: 0.5s ease;
-  backface-visibility: hidden;
+  /* backface-visibility: hidden; */
 }
 
 .home-text-box {
@@ -26,7 +26,6 @@
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
-  /* margin-top: 20vh; */
 }
 
 .home-text {
@@ -38,15 +37,23 @@
 
 .img-container:hover .home-img {
   opacity: 0.3;
+  /* transition: 0.5s ease; */
+}
+
+.img-container:hover .home-logo-box {
+  opacity: 0;
+  transition: 0.5s ease;
 }
 
 .img-container:hover .home-text-box {
   opacity: 1;
+  z-index: 1;
+  transition: 2s ease;
 }
 
-div.home-logo {
+/* div.home-logo {
   width: 25vw;
-}
+} */
 
 .home-logo-box {
   width: 15vw;
