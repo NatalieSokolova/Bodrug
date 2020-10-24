@@ -3,22 +3,25 @@ import "./Home.css";
 
 export default function Home({}) {
   return (
-    <div>
-      <span id="photo1-home">
+    <div class="home-pics">
+      <span>
         <img
+          class="home-img"
           src={require("../assets/photos/2-min.jpg")}
           alt="by Yuliia Bodrug"
         />
       </span>
-      <span id="painting-home">
+      <span>
         <img
-          src={require("../assets/paintings/sergio-souza-gOzD9CZTwXw-unsplash.jpg")}
+          class="home-img"
+          src={require("../assets/photos/1-min.jpg")}
           alt="by Yuliia Bodrug"
         />
       </span>
-      <span id="photo2-home">
+      <span>
         <img
-          src={require("../assets/photos/15-min.jpg")}
+          class="home-img"
+          src={require("../assets/paintings/the-new-york-public-library-R5oumqz_lhY-unsplash.jpg")}
           alt="by Yuliia Bodrug"
         />
       </span>

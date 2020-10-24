@@ -1,0 +1,10 @@
+.home-pics {
+  display: flex;
+  flex-direction: row;
+}
+
+.home-img {
+  height: 95.5vh;
+  width: 33.4vw;
+  object-fit: cover;
+}
