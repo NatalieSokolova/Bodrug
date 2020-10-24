@@ -51,12 +51,12 @@
   transition: 2s ease;
 }
 
-/* div.home-logo {
-  width: 25vw;
-} */
-
 .home-logo-box {
   width: 15vw;
   display: block;
   margin: 27.5vh auto;
+}
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 3s;
 }

@@ -33,7 +33,7 @@ export default class Nav extends React.Component {
         </Menu.Item>
         <SubMenu key="SubMenu" title="PHOTOS">
           <Menu.Item key="setting:1">
-            <a href="/photo" rel="noopener noreferrer">
+            <a href="/photos" rel="noopener noreferrer">
               portfolio
             </a>
           </Menu.Item>
@@ -44,7 +44,7 @@ export default class Nav extends React.Component {
           </Menu.Item>
         </SubMenu>
         <Menu.Item>
-          <a href="/painting" rel="noopener noreferrer">
+          <a href="/paintings" rel="noopener noreferrer">
             ART
           </a>
         </Menu.Item>

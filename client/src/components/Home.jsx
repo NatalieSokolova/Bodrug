@@ -1,18 +1,19 @@
 import React from "react";
 import "./Home.css";
 
-export default function Home({}) {
+export default function Home() {
   return (
-    <div class="home-pics">
+    <div class="home-pics animate__animated animate__fadeIn">
       <div class="img-container">
         <img
-          class="home-img"
+          class="home-img "
           src={require("../assets/photos/2-min.jpg")}
           alt="by Yuliia Bodrug"
         />
-        <div class="home-text-box">
+
+        <a class="home-text-box" href="./photos">
           <div class="home-text">Photos</div>
-        </div>
+        </a>
       </div>
 
       <div class="img-container">
@@ -21,9 +22,9 @@ export default function Home({}) {
           src={require("../assets/logo-border.png")}
           alt="Logo"
         />
-        <div class="home-text-box">
+        <a class="home-text-box" href="./about">
           <div class="home-text">Mission</div>
-        </div>
+        </a>
       </div>
       <div class="img-container">
         <img
@@ -31,9 +32,9 @@ export default function Home({}) {
           src={require("../assets/paintings/the-new-york-public-library-R5oumqz_lhY-unsplash.jpg")}
           alt="by Yuliia Bodrug"
         />
-        <div class="home-text-box">
-          <div class="home-text">Paintings</div>
-        </div>
+        <a class="home-text-box" href="./paintings">
+          <div class="home-text">Art</div>
+        </a>
       </div>
     </div>
   );
