@@ -11,11 +11,12 @@ export default function Home({}) {
           alt="by Yuliia Bodrug"
         />
       </span>
-      <span>
+
+      <span class="home-logo">
         <img
-          class="home-img"
-          src={require("../assets/photos/1-min.jpg")}
-          alt="by Yuliia Bodrug"
+          class="home-logo-box"
+          src={require("../assets/logo-border.png")}
+          alt="Logo"
         />
       </span>
       <span>
