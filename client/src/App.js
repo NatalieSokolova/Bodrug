@@ -30,9 +30,9 @@ function App() {
       <div>
         <Switch>
           <Route path="/about" component={About} />
-          <Route path="/photo" component={Photo} />
+          <Route path="/photos" component={Photo} />
           <Route path="/pricing" component={Pricing} />
-          <Route path="/painting" component={Painting} />
+          <Route path="/paintings" component={Painting} />
           <Route path="/faq" component={Faq} />
           <Route path="/contact" component={Contact} />
           <Route exact path="/" component={Home} />
