@@ -59,7 +59,10 @@ export default function About({}) {
           </p>
         </Card>
 
-        <Card className=" about-card home-pics animate__animated animate__fadeIn my-mission">
+        <Card
+          id="mission"
+          className=" about-card home-pics animate__animated animate__fadeIn my-mission"
+        >
           <span class="about-header">My Mission</span>
           <p class="about-text">
             I'm baby blog distillery try-hard ethical cold-pressed shabby chic
