@@ -1,5 +1,6 @@
 import React from "react";
 import { Menu } from "antd";
+import "./Nav.css";
 
 const { SubMenu } = Menu;
 
@@ -17,6 +18,7 @@ export default class Nav extends React.Component {
     const { current } = this.state;
     return (
       <Menu
+        className="nav"
         onClick={this.handleClick}
         selectedKeys={[current]}
         mode="horizontal"
