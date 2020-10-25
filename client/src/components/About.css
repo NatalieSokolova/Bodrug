@@ -49,12 +49,18 @@
 }
 
 .about-card {
-  width: 300;
   border: 2.5px solid black;
   position: absolute;
   height: 45vh;
   width: 45vh;
   z-index: 10;
+  margin: auto;
+  padding: 1em;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .my-story {
