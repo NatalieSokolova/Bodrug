@@ -44,7 +44,7 @@ export default function About({}) {
         </div> */}
 
         <Card className=" about-card home-pics animate__animated animate__fadeIn my-story">
-          <h1 class="about-header">My Story</h1>
+          <span class="about-header">My Story</span>
           <p class="about-text">
             I'm baby blog distillery try-hard ethical cold-pressed shabby chic
             messenger bag meggings taiyaki occupy ennui. Heirloom artisan master
@@ -60,7 +60,7 @@ export default function About({}) {
         </Card>
 
         <Card className=" about-card home-pics animate__animated animate__fadeIn my-mission">
-          <h1 class="about-header">My Mission</h1>
+          <span class="about-header">My Mission</span>
           <p class="about-text">
             I'm baby blog distillery try-hard ethical cold-pressed shabby chic
             messenger bag meggings taiyaki occupy ennui. Heirloom artisan master
@@ -73,7 +73,7 @@ export default function About({}) {
         </Card>
 
         <Card className=" about-card home-pics animate__animated animate__fadeIn my-vision">
-          <h1 class="about-header">My Vision</h1>
+          <span class="about-header">My Vision</span>
           <p class="about-text">
             I'm baby blog distillery try-hard ethical cold-pressed shabby chic
             messenger bag meggings taiyaki occupy ennui. Heirloom artisan master
