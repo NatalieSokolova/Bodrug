@@ -43,19 +43,7 @@ export default function About({}) {
           />
         </div> */}
 
-        <Card
-          class="about-card"
-          style={{
-            width: 300,
-            border: "2.5px solid black",
-            position: "absolute",
-            height: "45vh",
-            width: "45vh",
-            marginTop: "20vh",
-            marginLeft: "70vw",
-            zIndex: "10",
-          }}
-        >
+        <Card className=" about-card home-pics animate__animated animate__fadeIn my-story">
           <h1 class="about-header">My Story</h1>
           <p class="about-text">
             I'm baby blog distillery try-hard ethical cold-pressed shabby chic
@@ -71,19 +59,7 @@ export default function About({}) {
           </p>
         </Card>
 
-        <Card
-          class="about-card"
-          style={{
-            width: 300,
-            border: "2.5px solid black",
-            position: "absolute",
-            height: "45vh",
-            width: "45vh",
-            marginTop: "90vh",
-            marginLeft: "35vw",
-            zIndex: "10",
-          }}
-        >
+        <Card className=" about-card home-pics animate__animated animate__fadeIn my-mission">
           <h1 class="about-header">My Mission</h1>
           <p class="about-text">
             I'm baby blog distillery try-hard ethical cold-pressed shabby chic
@@ -96,19 +72,7 @@ export default function About({}) {
           </p>
         </Card>
 
-        <Card
-          class="about-card"
-          style={{
-            width: 300,
-            border: "2.5px solid black",
-            position: "absolute",
-            height: "45vh",
-            width: "45vh",
-            marginTop: "200vh",
-            marginLeft: "55vw",
-            zIndex: "10",
-          }}
-        >
+        <Card className=" about-card home-pics animate__animated animate__fadeIn my-vision">
           <h1 class="about-header">My Vision</h1>
           <p class="about-text">
             I'm baby blog distillery try-hard ethical cold-pressed shabby chic

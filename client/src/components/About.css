@@ -47,3 +47,31 @@
   grid-column: 6 / 12;
   grid-row: 6 / 12;
 }
+
+.about-card {
+  width: 300;
+  border: 2.5px solid black;
+  position: absolute;
+  height: 45vh;
+  width: 45vh;
+  z-index: 10;
+}
+
+.my-story {
+  margin-top: 20vh;
+  margin-left: 70vw;
+}
+
+.my-mission {
+  margin-top: 90vh;
+  margin-left: 35vw;
+}
+
+.my-vision {
+  margin-top: 200vh;
+  margin-left: 55vw;
+}
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 3s;
+}
