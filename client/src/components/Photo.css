@@ -7,6 +7,11 @@ img.img-fluid.mb-4 {
 }
 
 div.row {
-  margin-top: 2.5em;
+  margin: 1em;
+  padding: 0 10px !important;
+}
+
+div.col-lg-4 {
+  margin-top: 5em;
   padding: 0 10px !important;
 }
