@@ -1,87 +1,148 @@
-// import React from "react";
-// import usePhotoData from "../hooks/usePhotoData";
-// import "./Photo.css";
-
 import React from "react";
-import Carousel, { Modal, ModalGateway } from "react-images";
+import "./Photo.css";
 
-const images = [
-  { source: "../assets/photos/1-min.jpg" },
-  { source: "../assets/photos/2-min.jpg" },
-  { source: "../assets/photos/3-min.jpg" },
-  { source: "../assets/photos/4-min.jpg" },
-  { source: "../assets/photos/5-min.jpg" },
-  { source: "../assets/photos/6-min.jpg" },
-];
+export default function Photo() {
+  return (
+    <div className="row">
+      <div className="col-lg-4 col-md-12 mb-4">
+        <img
+          src={require("../assets/photos/1-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+        />
 
-class Photo extends React.Component {
-  state = { modalIsOpen: false };
-  toggleModal = () => {
-    this.setState((state) => ({ modalIsOpen: !state.modalIsOpen }));
-  };
-  render() {
-    const { modalIsOpen } = this.state;
+        <img
+          src={require("../assets/photos/2-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.3s"
+        />
 
-    return (
-      <ModalGateway>
-        {modalIsOpen ? (
-          <Modal onClose={this.toggleModal}>
-            <Carousel views={images} />
-          </Modal>
-        ) : null}
-      </ModalGateway>
-    );
-  }
-}
+        <img
+          src={require("../assets/photos/3-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.1s"
+        />
 
-export default Photo;
+        <img
+          src={require("../assets/photos/4-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.4s"
+        />
 
-// export default function Photo() {
-// const { state, setState } = usePhotoData();
+        <img
+          src={require("../assets/photos/5-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.2s"
+        />
 
-// const photoList = state.photos.map((photo) => (
-//   <div key={photo.id} classNameName="photoContainer">
-//     <span>
-//       <img
-//         classNameName="photo"
-//         src={require(`../assets/photos${photo.url}`)}
-//         alt="Photo By Yuliia Bodrug"
-//       />
-//     </span>
-//     <div id="description">{photo.description}</div>
-//     <br />
-//   </div>
-// ));
+        <img
+          src={require("../assets/photos/6-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.5s"
+        />
+      </div>
 
-// return (
-//   <span>
-//     <h1>Photo Portfolio</h1>
-//     <div>{photoList}</div>
-//   </span>
-// );
-// }
+      <div className="col-lg-4 col-md-6 mb-4">
+        <img
+          src={require("../assets/photos/7-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.5s"
+        />
+        <img
+          src={require("../assets/photos/8-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+        />
+        <img
+          src={require("../assets/photos/9-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.3s"
+        />
 
-{
-  /* // const images = [
-//   { src: "../assets/photos/1-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-//   { src: "../assets/photos/2-min.jpg" },
-// ]; */
+        <img
+          src={require("../assets/photos/10-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.1s"
+        />
+
+        <img
+          src={require("../assets/photos/11-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.4s"
+        />
+
+        <img
+          src={require("../assets/photos/12-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.2s"
+        />
+
+        <img
+          src={require("../assets/photos/13-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.5s"
+        />
+        <img
+          src={require("../assets/photos/14-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.5s"
+        />
+      </div>
+
+      <div className="col-lg-4 col-md-6 mb-4">
+        <img
+          src={require("../assets/photos/15-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+        />
+
+        <img
+          src={require("../assets/photos/16-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.3s"
+        />
+
+        <img
+          src={require("../assets/photos/17-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.1s"
+        />
+
+        <img
+          src={require("../assets/photos/18-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.4s"
+        />
+
+        <img
+          src={require("../assets/photos/19-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.2s"
+        />
+
+        <img
+          src={require("../assets/photos/20-min.jpg")}
+          className="img-fluid mb-4"
+          alt=""
+          data-wow-delay="0.5s"
+        />
+      </div>
+    </div>
+  );
 }
