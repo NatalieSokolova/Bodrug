@@ -6,4 +6,20 @@
 
 /* li.ant-menu-item.ant-menu-item-only-child.nav-item > a:hover {
   color: black;
+}
+
+.ant-menu-submenu-title:hover {
+  color: black;
+}
+
+.nav-item:hover {
+  border-bottom: 2px solid transparent !important;
+}
+
+.submenu:hover {
+  border-bottom: 2px solid transparent !important;
+}
+
+.submenu > li:hover {
+  border-bottom: 2px solid transparent !important;
 } */
