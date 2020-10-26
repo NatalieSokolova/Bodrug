@@ -73,6 +73,15 @@
   margin-left: 35vw;
 }
 
+#mission::before {
+  display: block;
+  content: " ";
+  margin-top: -285px;
+  height: 285px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .my-vision {
   margin-top: 200vh;
   margin-left: 55vw;
