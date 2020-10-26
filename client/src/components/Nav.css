@@ -1,12 +1,6 @@
-/* .nav {
-  position: fixed;
-  z-index: 15;
-  width: 100%;
-} */
-
 .navbar {
   width: 100%;
-  padding: 10px;
+  /* padding: 10px; */
   position: fixed;
   top: 0;
   transition: top 0.6s;

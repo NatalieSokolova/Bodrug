@@ -12,9 +12,29 @@ export default class Nav extends React.Component {
     visible: true,
   };
 
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
   handleClick = (e) => {
     console.log("click ", e);
     this.setState({ current: e.key });
+  };
+
+  handleScroll = () => {
+    const { prevScrollpos } = this.state;
+
+    const currentScrollPos = window.pageYOffset;
+    const visible = prevScrollpos > currentScrollPos;
+
+    this.setState({
+      prevScrollpos: currentScrollPos,
+      visible,
+    });
   };
 
   render() {
