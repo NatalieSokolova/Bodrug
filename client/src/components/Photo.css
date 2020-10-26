@@ -1,12 +1,15 @@
 .photoContainer {
   width: 80vw;
   height: auto;
-  margin: 5em auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .photo {
-  width: 80vw;
+  max-width: 30vw;
   height: auto;
+}
+
+#description {
+  display: none;
 }
