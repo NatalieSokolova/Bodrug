@@ -1,0 +1,23 @@
+export const photos = [
+  { src: "../assets/photos/1-min.jpg", width: 4, height: 3 },
+  { src: "../assets/photos/2-min.jpg", width: 1, height: 1 },
+  { src: "../assets/photos/2-min.jpg", width: 3, height: 4 },
+  { src: "../assets/photos/2-min.jpg", width: 3, height: 4 },
+  { src: "../assets/photos/2-min.jpg", width: 3, height: 4 },
+  { src: "../assets/photos/2-min.jpg", width: 4, height: 3 },
+  { src: "../assets/photos/2-min.jpg", width: 3, height: 4 },
+  { src: "../assets/photos/2-min.jpg", width: 4, height: 3 },
+  { src: "../assets/photos/2-min.jpg", width: 4, height: 3 },
+];
+
+//   { src: "../assets/photos/2-min.jpg" },
+//   { src: "../assets/photos/2-min.jpg" },
+//   { src: "../assets/photos/2-min.jpg" },
+//   { src: "../assets/photos/2-min.jpg" },
+//   { src: "../assets/photos/2-min.jpg" },
+//   { src: "../assets/photos/2-min.jpg" },
+//   { src: "../assets/photos/2-min.jpg" },
+//   { src: "../assets/photos/2-min.jpg" },
+//   { src: "../assets/photos/2-min.jpg" },
+//   { src: "../assets/photos/2-min.jpg" },
+//   { src: "../assets/photos/2-min.jpg" },
