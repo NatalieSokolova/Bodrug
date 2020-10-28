@@ -1,10 +1,9 @@
 import React from "react";
 import useFaqData from "../hooks/useFaqData";
-// import "./Faq.css";
+import "./Faq.css";
 
 export default function Faq({}) {
   const { state, setState } = useFaqData();
-  let url;
 
   const faqList = state.faqs.map((faq) => (
     <div key={faq.id} className="faqContainer">
@@ -18,9 +17,13 @@ export default function Faq({}) {
   ));
 
   return (
-    <span>
-      <h1>THESE ARE FAQs:</h1>
-      <div>{faqList}</div>
-    </span>
+    <div>
+      <span>
+        <img src={require("../assets/IMG_1705.jpg")} />
+      </span>
+      <span>
+        <div>{faqList}</div>
+      </span>
+    </div>
   );
 }
