@@ -1,4 +1,21 @@
-.photo {
-  margin: 5vh 7.5vh;
+.container {
+  margin-top: 10vh;
+}
+
+img {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: -15vw;
+  width: 45vw;
+}
+
+.faqContainer {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30vw;
+  padding-left: 5vw;
+}
+
+.qa {
   width: 40vw;
 }
