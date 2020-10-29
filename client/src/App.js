@@ -36,7 +36,14 @@ function App() {
       <Layout>
         <Footer className="footer">
           <div>
-            Yuliia Bodrug ©2020 <InstagramOutlined className="insta" />
+            Yuliia Bodrug ©2020{" "}
+            <a
+              href="https://www.instagram.com/bodrug_photo/?hl=en"
+              className="insta"
+              target="_blank"
+            >
+              <InstagramOutlined />
+            </a>
           </div>
         </Footer>
       </Layout>
