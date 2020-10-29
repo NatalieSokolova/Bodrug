@@ -109,3 +109,22 @@
   height: 40vh;
   object-fit: cover;
 }
+
+.column {
+  text-align: center;
+  width: 60vw;
+  margin: 5em 20vw;
+}
+
+.about-header {
+  border-bottom: 2px solid black;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 3.5em;
+  text-align: center;
+}
+
+.about-text {
+  margin-top: 5vh;
+  font-size: 1.5em;
+}
