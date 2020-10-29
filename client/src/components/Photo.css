@@ -1,4 +1,4 @@
-.row {
+/* .row {
   padding: 7.5em;
 }
 
@@ -14,4 +14,12 @@ div.row {
 div.col-lg-4 {
   margin-top: 5em;
   padding: 0 10px !important;
+} */
+
+.photo {
+  max-width: 30vw;
+}
+
+.description {
+  display: none;
 }
