@@ -3,3 +3,22 @@
   height: 40vh;
   object-fit: cover;
 }
+
+.pricing-text {
+  display: flex;
+  flex-direction: row;
+  margin: 5vh;
+}
+
+.pricing-column {
+  padding: 0 5vh 5vh;
+  text-align: center;
+}
+
+.pricing-column > span {
+  border-bottom: 2px solid black;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 2em;
+  text-align: center;
+}
