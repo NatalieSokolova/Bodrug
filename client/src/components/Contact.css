@@ -5,6 +5,11 @@
 }
 
 .contacts {
-  width: 50vw;
+  width: 60vw;
   margin-top: 5vh;
+}
+
+.contact-photo > img {
+  height: 100vh;
+  width: auto;
 }
