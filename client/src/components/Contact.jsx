@@ -15,6 +15,12 @@ export default function Contact({}) {
         <img
           src={require("../assets/about/IMG_1710.jpeg")}
           alt="Yulia Bodrug"
+          id="bottom"
+        />
+        <img
+          src={require("../assets/paintings/tamara-menzi-n-vnWQmmVoY-unsplash.jpg")}
+          alt="Yulia Bodrug"
+          id="top"
         />
       </div>
     </div>
