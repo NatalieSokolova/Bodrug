@@ -4,7 +4,7 @@ img.photo {
   object-fit: cover;
 }
 
-.description {
+.photo-description-card {
   display: none;
 }
 
