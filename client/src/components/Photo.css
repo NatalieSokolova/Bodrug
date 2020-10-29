@@ -16,10 +16,21 @@ div.col-lg-4 {
   padding: 0 10px !important;
 } */
 
-.photo {
-  max-width: 30vw;
+img.photo {
+  /* max-height: 80vh;
+  width: 100%;
+  object-fit: cover; */
+  /* padding: 0.5em; */
+  width: 100%;
 }
 
 .description {
   display: none;
+}
+
+.photoContainer {
+  /* display: inline-block; */
+  float: right;
+  width: 33.33%;
+  padding: 0.5em;
 }
