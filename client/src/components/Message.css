@@ -2,15 +2,24 @@ form {
   border: 2.5px solid black;
   max-width: 75%;
   margin: 0 auto;
+  padding: 2px;
 }
 
 #error {
-  color: #bf1650;
+  /* color: #196751; */
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 200;
+  border-bottom: 1px solid black;
+  letter-spacing: 1px;
 }
 
 #error::before {
-  display: inline;
-  content: "⚠ ";
+  display: none;
+}
+
+div.form-group {
+  text-align: center;
 }
 
 input {
@@ -41,20 +50,24 @@ label {
 
 button[type="submit"],
 input[type="submit"] {
-  background: #ec5990;
+  background: black;
   color: white;
   text-transform: uppercase;
   border: none;
-  margin-top: 40px;
-  padding: 20px;
-  font-size: 16px;
-  font-weight: 100;
-  letter-spacing: 10px;
+  padding: 0.5em;
+  font-size: 1.25em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  border-radius: 0;
+  width: 100%;
+  margin-top: 3em;
 }
 
 button[type="submit"]:hover,
 input[type="submit"]:hover {
-  background: #bf1650;
+  /* background: #196751; */
+  opacity: 0.3;
 }
 
 button[type="submit"]:active,
@@ -62,8 +75,9 @@ input[type="button"]:active,
 input[type="submit"]:active {
   transition: 0.3s all;
   transform: translateY(3px);
-  border: 1px solid transparent;
-  opacity: 0.8;
+  /* color: #196751; */
+
+  /* opacity: 0.8; */
 }
 
 input:disabled {
@@ -85,7 +99,7 @@ input[type="submit"] {
   margin: 0 auto;
 }
 
-button[type="button"] {
+/* button[type="button"] {
   display: block;
   appearance: none;
   background: #333;
@@ -94,19 +108,15 @@ button[type="button"] {
   text-transform: uppercase;
   padding: 10px 20px;
   border-radius: 4px;
-}
+} */
 
-hr {
+/* hr {
   margin-top: 30px;
-}
+} */
 
-button {
+/* button {
   display: block;
   appearance: none;
-  margin-top: 40px;
-  border: 1px solid #333;
-  margin-bottom: 20px;
+  margin-top: 4em;
   text-transform: uppercase;
-  padding: 10px 20px;
-  border-radius: 4px;
-}
+} */
