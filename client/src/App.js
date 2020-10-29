@@ -33,7 +33,7 @@ function App() {
         </Switch>
       </div>
       <Layout>
-        <Footer className="footer">Ant Design ©2018 Created by Ant UED</Footer>
+        <Footer className="footer">Yuliia Bodrug ©2020</Footer>
       </Layout>
     </Router>
   );

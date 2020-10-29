@@ -6,4 +6,6 @@
   bottom: 0;
   z-index: 15;
   background-color: transparent;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: -10px;
 }
