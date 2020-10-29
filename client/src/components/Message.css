@@ -29,10 +29,10 @@ input {
   box-sizing: border-box;
   width: 100%;
   border-radius: 0 !important;
-  /* border: 1px solid white; */
   padding: 12.5px !important;
   margin: 1.5em 5em 0.5em;
   font-size: 1.25em !important;
+  font-family: "Poppins", sans-serif;
 }
 
 .form-control {
