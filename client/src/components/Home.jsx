@@ -22,7 +22,7 @@ export default function Home() {
           src={require("../assets/logo-border.png")}
           alt="Logo"
         />
-        <a class="home-text-box" href="./about#mission">
+        <a class="home-text-box" href="./about#mission-anchor">
           <div class="home-text">Mission</div>
         </a>
       </div>

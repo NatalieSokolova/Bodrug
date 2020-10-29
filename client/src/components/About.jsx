@@ -29,6 +29,7 @@ export default function About({}) {
         <img
           src={require("../assets/paintings/tamara-menzi-n-vnWQmmVoY-unsplash.jpg")}
           alt="Yulia Bodrug"
+          id="mission-anchor"
         />
       </div>
       <div className="column">
