@@ -156,15 +156,12 @@ export default function Portfolio({}) {
       <div>
         {state.photos.map((photo) => (
           <div key={photo.id} className="photoContainer">
-            <span>
-              <img
-                className="photo"
-                src={require(`../assets/photos${photo.url}`)}
-                alt="Photo By Yuliia Bodrug"
-              />
-            </span>
+            <img
+              className="photo"
+              src={require(`../assets/photos${photo.url}`)}
+              alt="Photo By Yuliia Bodrug"
+            />
             <div className="description">{photo.description}</div>
-            <br />
           </div>
         ))}
       </div>
