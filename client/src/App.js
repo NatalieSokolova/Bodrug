@@ -33,9 +33,7 @@ function App() {
         </Switch>
       </div>
       <Layout>
-        <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2018 Created by Ant UED
-        </Footer>
+        <Footer className="footer">Ant Design ©2018 Created by Ant UED</Footer>
       </Layout>
     </Router>
   );
