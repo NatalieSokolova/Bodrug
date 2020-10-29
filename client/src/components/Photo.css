@@ -5,13 +5,22 @@ img.photo {
 }
 
 .photo-description-card {
-  display: none;
+  /* display: none; */
+  position: absolute;
+  z-index: 2;
+  width: 80%;
+  height: 80%;
+  margin: 10%;
+  text-align: center;
 }
 
 .photoContainer {
+  display: flex;
+  justify-content: center;
   float: left;
   width: 33.333%;
   padding: 0.25em;
+  position: relative;
 }
 
 .outsideContainer {
