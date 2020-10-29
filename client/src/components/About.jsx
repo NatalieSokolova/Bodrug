@@ -10,7 +10,7 @@ export default function About({}) {
           alt="Yulia Bodrug"
         />
       </div>
-      <div className="column">
+      <div className="column  animate__animated animate__fadeIn">
         <span class="about-header">My Story</span>
         <p class="about-text">
           I'm baby blog distillery try-hard ethical cold-pressed shabby chic
@@ -32,7 +32,7 @@ export default function About({}) {
           id="mission-anchor"
         />
       </div>
-      <div className="column">
+      <div className="column  animate__animated animate__fadeIn">
         <span class="about-header">My Mission</span>
         <p class="about-text">
           I'm baby blog distillery try-hard ethical cold-pressed shabby chic
@@ -50,7 +50,7 @@ export default function About({}) {
           alt="Yulia Bodrug"
         />
       </div>
-      <div className="column">
+      <div className="column  animate__animated animate__fadeIn">
         <span class="about-header">My Vision</span>
         <p class="about-text">
           I'm baby blog distillery try-hard ethical cold-pressed shabby chic
