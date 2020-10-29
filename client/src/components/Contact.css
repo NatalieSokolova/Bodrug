@@ -1,0 +1,10 @@
+.contact-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contacts {
+  width: 50vw;
+  margin-top: 5vh;
+}
