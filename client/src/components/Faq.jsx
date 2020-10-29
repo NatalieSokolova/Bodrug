@@ -7,14 +7,16 @@ export default function Faq({}) {
 
   return (
     <div className="container">
-      <img src={require("../assets/IMG_1705.jpg")} className="photo" />
+      <h1>Don't See Your Question Below?</h1>
+      <h2>
+        <a href="/contact">please, reach out!</a>
+      </h2>
+      <img src={require("../assets/IMG_1705.jpg")} className="faq-photo" />
       <div className="faqContainer">
         {state.faqs.map((faq) => (
           <div key={faq.id} className="qa">
             <h1 className="question">{faq.question}</h1>
-            <br />
             <p className="answer">{faq.answer}</p>
-            <br />
           </div>
         ))}
       </div>
