@@ -36,7 +36,7 @@ function App() {
       <Layout>
         <Footer className="footer">
           <div>
-            Yuliia Bodrug ©2020{" "}
+            <span>Yuliia Bodrug ©2020 </span>
             <a
               href="https://www.instagram.com/bodrug_photo/?hl=en"
               className="insta"
