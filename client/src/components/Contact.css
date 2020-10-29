@@ -6,7 +6,11 @@
 
 .contacts {
   width: 60vw;
-  margin-top: 5vh;
+  margin-top: 12.5vh;
+}
+
+.contacts > h1 {
+  font-family: "Poppins", sans-serif;
 }
 
 .contact-photo > img {
