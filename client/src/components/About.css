@@ -106,6 +106,6 @@
 
 .photo > img {
   width: 100vw;
-  height: 30vh;
+  height: 40vh;
   object-fit: cover;
 }
