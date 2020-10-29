@@ -1,26 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
 import * as emailjs from "emailjs-com";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
 import "./Message.css";
 
 function Message(props) {
-  const { register, handleSubmit, errors } = useForm();
-
-  // toast.configure();
-  // const notify = () =>
-  //   toast.dark("🦄 Wow so easy!", {
-  //     position: "top-right",
-  //     autoClose: false,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //     transition: "zoom",
-  //   });
-
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -32,12 +14,13 @@ function Message(props) {
     },
   });
 
-  const handleInputChange = async (event) => {
+  const handleInputChange = (event) => {
+    event.preventDefault();
     const target = event.target;
     const name = target.name;
     const value = target.value;
 
-    await setValues({
+    setValues({
       ...values,
       [name]: value,
     });
@@ -70,7 +53,7 @@ function Message(props) {
       errors: values.errors,
     });
 
-    if (!values.message || values.message.length < 5) {
+    if (!values.message || values.message.length < 1) {
       values.errors.message =
         "Your message needs to be longer, than 5 characters!";
       formIsValid = false;
@@ -85,11 +68,11 @@ function Message(props) {
   };
 
   const sendEmail = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     console.log("submitting");
 
     if (!validateMail()) {
-      return alert("Sorry - the form is invalid");
+      return alert("Oops! Something's wrong. Please, check all the fields");
     }
 
     const templateParams = {
@@ -115,7 +98,6 @@ function Message(props) {
         },
         (error) => {
           alert("Sorry, your email was not sent. Please, try again");
-
           console.log("TROUBLE! ", error);
         }
       );
@@ -141,7 +123,6 @@ function Message(props) {
       name={props.name}
       method={props.method}
       action={props.action}
-      onSubmit={handleSubmit(sendEmail)}
     >
       <div className="form-group">
         <label htmlFor="name">Name</label>
@@ -149,12 +130,12 @@ function Message(props) {
           type="text"
           name="name"
           className="form-control"
-          placeholder="Enter Your Name"
-          ref={register({ required: true })}
+          required="required"
           onChange={handleInputChange}
           value={values.name}
+          placeholder="Enter Your Name"
         />
-        {errors.name && <span id="error">Please, enter your name</span>}
+        {values.errors.name && <span id="error">Please, enter your name</span>}
       </div>
       <div className="form-group">
         <label htmlFor="email">Email</label>
@@ -162,12 +143,14 @@ function Message(props) {
           type="email"
           name="email"
           className="form-control"
-          placeholder="Enter Your Email"
-          ref={register({ required: true })}
+          required="required"
           onChange={handleInputChange}
           value={values.email}
+          placeholder="Enter Your Email"
         />
-        {errors.email && <span id="error">Please, enter your email</span>}
+        {values.errors.email && (
+          <span id="error">Please, enter your email</span>
+        )}
       </div>
       <div className="form-group">
         <label htmlFor="message">Message</label>
@@ -175,16 +158,17 @@ function Message(props) {
           type="text"
           name="message"
           className="form-control"
-          placeholder="Enter Your Message"
-          ref={register({ required: true })}
+          required="required"
           onChange={handleInputChange}
           value={values.message}
+          placeholder="Enter Your Message"
         />
-        {errors.message && (
+        {values.errors.message && (
           <span id="error">Sorry, you cannot submit an empty message</span>
         )}
       </div>
       <button
+        onClick={sendEmail}
         type="submit"
         name="submit"
         className="btn btn-primary"

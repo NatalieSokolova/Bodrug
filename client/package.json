@@ -12,6 +12,7 @@
     "antd": "^4.7.0",
     "axios": "^0.19.2",
     "emailjs-com": "^2.6.3",
+    "jquery": "^3.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -23,7 +24,8 @@
     "react-toastify": "^6.0.9",
     "react-transition-group": "^4.4.1",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.0"
+    "semantic-ui-react": "^2.0.0",
+    "toastr": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
