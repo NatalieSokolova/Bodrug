@@ -11,5 +11,6 @@
 
 .contact-photo > img {
   height: 100vh;
-  width: auto;
+  width: 40vw;
+  object-fit: cover;
 }
