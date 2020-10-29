@@ -14,6 +14,7 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 import { Layout } from "antd";
 import "./components/Footer.css";
+import { InstagramOutlined } from "@ant-design/icons";
 
 const { Footer } = Layout;
 
@@ -33,7 +34,11 @@ function App() {
         </Switch>
       </div>
       <Layout>
-        <Footer className="footer">Yuliia Bodrug ©2020</Footer>
+        <Footer className="footer">
+          <div>
+            Yuliia Bodrug ©2020 <InstagramOutlined className="insta" />
+          </div>
+        </Footer>
       </Layout>
     </Router>
   );
