@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Spin } from "antd";
 import * as emailjs from "emailjs-com";
 import "./Message.css";
 
@@ -72,7 +73,7 @@ function Message(props) {
     console.log("submitting");
 
     if (!validateMail()) {
-      return alert("Oops! Something's wrong. Please, check all the fields");
+      return;
     }
 
     const templateParams = {
@@ -143,13 +144,13 @@ function Message(props) {
           type="email"
           name="email"
           className="form-control"
-          required="required"
+          required
           onChange={handleInputChange}
           value={values.email}
           placeholder="Enter Your Email"
         />
         {values.errors.email && (
-          <span id="error">Please, enter your email</span>
+          <span id="error">Please, enter a valid email</span>
         )}
       </div>
       <div className="form-group">
