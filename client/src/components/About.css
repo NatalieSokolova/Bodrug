@@ -108,6 +108,7 @@
   width: 100vw;
   height: 40vh;
   object-fit: cover;
+  transition: 0.5s ease;
 }
 
 .column {
@@ -127,4 +128,8 @@
 .about-text {
   margin-top: 5vh;
   font-size: 1.5em;
+}
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 5s;
 }
