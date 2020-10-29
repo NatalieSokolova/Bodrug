@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import usePhotoData from "../hooks/usePhotoData";
+import { Card } from "antd";
 import "./Photo.css";
 
-export default function Portfolio({}) {
+export default function Portfolio() {
   const { state, setState } = usePhotoData();
   return (
     <div className="outsideContainer">
@@ -13,7 +14,9 @@ export default function Portfolio({}) {
             src={require(`../assets/photos${photo.url}`)}
             alt="Photo By Yuliia Bodrug"
           />
-          <div className="description">{photo.description}</div>
+          <Card className="photo-description-card">
+            <div>{photo.description}</div>
+          </Card>
         </div>
       ))}
     </div>
