@@ -22,3 +22,33 @@
 //     </div>
 //   );
 // }
+
+import React, { useState, useEffect } from "react";
+import usePhotoData from "../hooks/usePhotoData";
+import { Card } from "antd";
+import { SRLWrapper } from "simple-react-lightbox";
+
+export default function Portfolio() {
+  const { state, setState } = usePhotoData();
+
+  return (
+    <div className="MyComponent">
+      <SRLWrapper>
+        {!state.photos ? (
+          <span>Loading...</span>
+        ) : (
+          <div className="row">
+            {state.photos.map((photo) => (
+              <div key={photo.id}>
+                <img
+                  src={require(`../assets/photos${photo.url}`)}
+                  alt={photo.description}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+      </SRLWrapper>
+    </div>
+  );
+}
