@@ -135,7 +135,7 @@ const Photo = () => {
 
   return (
     <div>
-      <Lightbox images={images} />
+      <Lightbox images={images} showImageModifiers={false} />
     </div>
   );
 };
