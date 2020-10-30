@@ -11,12 +11,16 @@ img.photo {
   width: 80%;
   height: 80%;
   overflow: scroll;
-  /* text-align: center; */
 }
 
 .photoContainer:hover .photo-description-card {
   display: inline-block;
-  z-index: 200;
+  z-index: 2;
+}
+
+.photoContainer:hover img {
+  opacity: 0.5;
+  transition: 1s ease;
 }
 
 ::-webkit-scrollbar {
