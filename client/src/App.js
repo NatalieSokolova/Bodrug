@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import "semantic-ui-css/semantic.min.css";
-import { ToastContainer, toast } from "react-toastify";
+import SimpleReactLightbox from "simple-react-lightbox";
 
 import Nav from "./components/Nav";
 import About from "./components/About";
@@ -20,34 +20,36 @@ const { Footer } = Layout;
 
 function App() {
   return (
-    <Router>
-      <Nav />
-      <div>
-        <Switch>
-          <Route path="/about" component={About} />
-          <Route path="/photos" component={Photo} />
-          <Route path="/pricing" component={Pricing} />
-          <Route path="/art" component={Painting} />
-          <Route path="/faq" component={Faq} />
-          <Route path="/contact" component={Contact} />
-          <Route exact path="/" component={Home} />
-        </Switch>
-      </div>
-      <Layout>
-        <Footer className="footer">
-          <div>
-            <span>Yuliia Bodrug ©2020 </span>
-            <a
-              href="https://www.instagram.com/bodrug_photo/?hl=en"
-              className="insta"
-              target="_blank"
-            >
-              <InstagramOutlined />
-            </a>
-          </div>
-        </Footer>
-      </Layout>
-    </Router>
+    <SimpleReactLightbox>
+      <Router>
+        <Nav />
+        <div>
+          <Switch>
+            <Route path="/about" component={About} />
+            <Route path="/photos" component={Photo} />
+            <Route path="/pricing" component={Pricing} />
+            <Route path="/art" component={Painting} />
+            <Route path="/faq" component={Faq} />
+            <Route path="/contact" component={Contact} />
+            <Route exact path="/" component={Home} />
+          </Switch>
+        </div>
+        <Layout>
+          <Footer className="footer">
+            <div>
+              <span>Yuliia Bodrug ©2020 </span>
+              <a
+                href="https://www.instagram.com/bodrug_photo/?hl=en"
+                className="insta"
+                target="_blank"
+              >
+                <InstagramOutlined />
+              </a>
+            </div>
+          </Footer>
+        </Layout>
+      </Router>
+    </SimpleReactLightbox>
   );
 }
 
