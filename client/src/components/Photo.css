@@ -5,18 +5,40 @@ img.photo {
 }
 
 .photo-description-card {
-  /* display: none; */
+  display: none;
   position: absolute;
   z-index: 2;
   width: 80%;
   height: 80%;
-  margin: 10%;
-  text-align: center;
+  overflow: scroll;
+  /* text-align: center; */
+}
+
+.photoContainer:hover .photo-description-card {
+  display: inline-block;
+  z-index: 200;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.photo-description-card > div {
+  padding: 2.5em;
+  border: 2px solid black;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: "Playfair Display", serif;
+  font-weight: 200;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
 }
 
 .photoContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
   float: left;
   width: 33.333%;
   padding: 0.25em;
