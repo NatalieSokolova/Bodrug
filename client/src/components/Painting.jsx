@@ -13,27 +13,30 @@ export default function Painting({}) {
 
   return (
     <div className="outsideContainer">
-      {state.paintings.map((painting) => (
-        <div key={painting.id} className="paintingContainer">
-          <img
-            className="painting"
-            src={require(`../assets/paintings${painting.url}`)}
-            alt="painting By Yuliia Bodrug"
-          />
-          <div className="painting-description-card">
-            <div>
-              {painting.description}
-              <div className="painting-info">
-                MATERIALS: {painting.materials}
-                <br />
-                YEAR: {painting.year}
-                <br />
-                CAD {painting.price}
-              </div>
+      <a href="#">
+        <SRLWrapper options={options}>
+          {!state.paintings ? (
+            <span>Loading...</span>
+          ) : (
+            <div className="row">
+              {state.paintings.map((painting) => (
+                <div key={painting.id} className="paintingContainer">
+                  <img
+                    src={require(`../assets/paintings${painting.url}`)}
+                    alt={[
+                      painting.description,
+                      `YEAR: ${painting.year}`,
+                      `MATERIALS: ${painting.materials}`,
+                      `CAD${painting.price}`,
+                    ]}
+                    className="painting"
+                  />
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
-      ))}
+          )}
+        </SRLWrapper>
+      </a>
     </div>
   );
 }
