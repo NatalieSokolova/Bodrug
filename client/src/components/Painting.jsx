@@ -29,6 +29,12 @@ export default function Painting({}) {
                       `MATERIALS: ${painting.materials}`,
                       `CAD${painting.price}`,
                     ]}
+                    alt={[
+                      painting.description,
+                      `YEAR: ${painting.year}`,
+                      `MATERIALS: ${painting.materials}`,
+                      `CAD${painting.price}`,
+                    ]}
                     className="painting"
                   />
                 </div>
