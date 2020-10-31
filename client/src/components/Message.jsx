@@ -66,6 +66,19 @@ function Message(props) {
     return formIsValid;
   };
 
+  const resetForm = () => {
+    setValues({
+      name: "",
+      email: "",
+      message: "",
+      errors: {
+        name: "",
+        email: "",
+        message: "",
+      },
+    });
+  };
+
   const sendEmail = (event) => {
     event.preventDefault();
     console.log("submitting");
@@ -101,16 +114,7 @@ function Message(props) {
         }
       );
 
-    setValues({
-      name: "",
-      email: "",
-      message: "",
-      errors: {
-        name: "",
-        email: "",
-        message: "",
-      },
-    });
+    resetForm();
 
     console.log("VALUES: ", values);
   };
