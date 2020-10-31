@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Spin } from "antd";
+import React, { useState } from "react";
 import * as emailjs from "emailjs-com";
 import "./Message.css";
 
