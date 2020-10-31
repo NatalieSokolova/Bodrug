@@ -55,8 +55,7 @@ function Message(props) {
     });
 
     if (!values.message || values.message.length < 1) {
-      values.errors.message =
-        "Your message needs to be longer, than 5 characters!";
+      values.errors.message = "Please, enter your message";
       formIsValid = false;
     }
 
