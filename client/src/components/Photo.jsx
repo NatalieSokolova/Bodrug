@@ -5,11 +5,16 @@ import "./Photo.css";
 
 export default function Portfolio() {
   const { state, setState } = usePhotoData();
+  const options = {
+    buttons: {
+      showDownloadButton: false,
+    },
+  };
 
   return (
     <div className="outsideContainer">
       <a href="#">
-        <SRLWrapper>
+        <SRLWrapper options={options}>
           {!state.photos ? (
             <span>Loading...</span>
           ) : (
