@@ -61,6 +61,10 @@ export default class Nav extends React.Component {
                 height: "2.5em",
                 width: "auto",
               }}
+              onContextMenu={(e) => {
+                alert("Sorry, all the images are copyright");
+                e.preventDefault();
+              }}
             />
           </a>
         </Menu.Item>

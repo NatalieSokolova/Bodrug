@@ -14,7 +14,10 @@ export default function Faq({}) {
       <img
         src={require("../assets/IMG_1705.jpg")}
         className="faq-photo"
-        onContextMenu={(e) => e.preventDefault()}
+        onContextMenu={(e) => {
+          alert("Sorry, all the images are copyright");
+          e.preventDefault();
+        }}
       />
       <div className="faqContainer">
         {state.faqs.map((faq) => (

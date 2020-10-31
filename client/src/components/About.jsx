@@ -8,7 +8,10 @@ export default function About({}) {
         <img
           src={require("../assets/paintings/europeana-YIfFVwDcgu8-unsplash.jpg")}
           alt="Yulia Bodrug"
-          onContextMenu={(e) => e.preventDefault()}
+          onContextMenu={(e) => {
+            alert("Sorry, all the images are copyright");
+            e.preventDefault();
+          }}
         />
       </div>
       <div className="column  animate__animated animate__fadeIn">
@@ -31,7 +34,10 @@ export default function About({}) {
           src={require("../assets/paintings/tamara-menzi-n-vnWQmmVoY-unsplash.jpg")}
           alt="Yulia Bodrug"
           id="mission-anchor"
-          onContextMenu={(e) => e.preventDefault()}
+          onContextMenu={(e) => {
+            alert("Sorry, all the images are copyright");
+            e.preventDefault();
+          }}
         />
       </div>
       <div className="column  animate__animated animate__fadeIn">
@@ -50,7 +56,10 @@ export default function About({}) {
         <img
           src={require("../assets/paintings/the-new-york-public-library-R5oumqz_lhY-unsplash.jpg")}
           alt="Yulia Bodrug"
-          onContextMenu={(e) => e.preventDefault()}
+          onContextMenu={(e) => {
+            alert("Sorry, all the images are copyright");
+            e.preventDefault();
+          }}
         />
       </div>
       <div className="column  animate__animated animate__fadeIn">
@@ -67,7 +76,10 @@ export default function About({}) {
         <img
           src={require("../assets/paintings/europeana-qi9jveT9X6A-unsplash.jpg")}
           alt="Yulia Bodrug"
-          onContextMenu={(e) => e.preventDefault()}
+          onContextMenu={(e) => {
+            alert("Sorry, all the images are copyright");
+            e.preventDefault();
+          }}
         />
       </div>
     </div>

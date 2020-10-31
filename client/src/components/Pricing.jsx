@@ -7,7 +7,10 @@ export default function Pricing({}) {
       <img
         src={require("../assets/top.jpg")}
         className="banner"
-        onContextMenu={(e) => e.preventDefault()}
+        onContextMenu={(e) => {
+          alert("Sorry, all the images are copyright");
+          e.preventDefault();
+        }}
       />
       <div className="pricing-text">
         <div className="pricing-column">

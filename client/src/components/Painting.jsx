@@ -36,7 +36,10 @@ export default function Painting({}) {
                       `CAD${painting.price}`,
                     ]}
                     className="painting"
-                    onContextMenu={(e) => e.preventDefault()}
+                    onContextMenu={(e) => {
+                      alert("Sorry, all the images are copyright");
+                      e.preventDefault();
+                    }}
                   />
                 </div>
               ))}
