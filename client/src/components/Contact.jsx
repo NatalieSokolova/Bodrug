@@ -16,13 +16,19 @@ export default function Contact({}) {
           src={require("../assets/about/IMG_1710.jpeg")}
           alt="Yulia Bodrug"
           id="bottom"
-          onContextMenu={(e) => e.preventDefault()}
+          onContextMenu={(e) => {
+            alert("Sorry, all the images are copyright");
+            e.preventDefault();
+          }}
         />
         <img
           src={require("../assets/paintings/tamara-menzi-n-vnWQmmVoY-unsplash.jpg")}
           alt="Yulia Bodrug"
           id="top"
-          onContextMenu={(e) => e.preventDefault()}
+          onContextMenu={(e) => {
+            alert("Sorry, all the images are copyright");
+            e.preventDefault();
+          }}
         />
       </div>
     </div>

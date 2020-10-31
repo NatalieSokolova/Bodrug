@@ -13,6 +13,10 @@ export default function Art({}) {
           className="art"
           src={require(`../assets/art${art.url}`)}
           alt="art By Yuliia Bodrug"
+          onContextMenu={(e) => {
+            alert("Sorry, all the images are copyright");
+            e.preventDefault();
+          }}
         />
       </span>
       <div>CAD {art.price}</div>
