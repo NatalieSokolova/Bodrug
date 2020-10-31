@@ -11,7 +11,11 @@ export default function Faq({}) {
       <h2>
         <a href="/contact">please, reach out!</a>
       </h2>
-      <img src={require("../assets/IMG_1705.jpg")} className="faq-photo" />
+      <img
+        src={require("../assets/IMG_1705.jpg")}
+        className="faq-photo"
+        onContextMenu={(e) => e.preventDefault()}
+      />
       <div className="faqContainer">
         {state.faqs.map((faq) => (
           <div key={faq.id} className="qa">

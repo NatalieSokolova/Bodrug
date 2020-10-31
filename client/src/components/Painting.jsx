@@ -36,6 +36,7 @@ export default function Painting({}) {
                       `CAD${painting.price}`,
                     ]}
                     className="painting"
+                    onContextMenu={(e) => e.preventDefault()}
                   />
                 </div>
               ))}
