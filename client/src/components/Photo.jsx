@@ -25,6 +25,7 @@ export default function Portfolio() {
                     src={require(`../assets/photos${photo.url}`)}
                     alt={photo.description}
                     className="photo"
+                    onContextMenu={(e) => e.preventDefault()}
                   />
                 </div>
               ))}

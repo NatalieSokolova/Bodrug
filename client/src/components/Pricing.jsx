@@ -4,7 +4,11 @@ import "./Pricing.css";
 export default function Pricing({}) {
   return (
     <div>
-      <img src={require("../assets/top.jpg")} className="banner" />
+      <img
+        src={require("../assets/top.jpg")}
+        className="banner"
+        onContextMenu={(e) => e.preventDefault()}
+      />
       <div className="pricing-text">
         <div className="pricing-column">
           <span>Dummy Text</span>
