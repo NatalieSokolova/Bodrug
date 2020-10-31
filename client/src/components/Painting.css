@@ -14,55 +14,6 @@ img.painting {
   margin: 4em 0.5em;
 }
 
-.painting-description-card {
-  display: none;
-  position: absolute;
-  z-index: 2;
-  width: 80%;
-  height: 80%;
-  overflow: scroll;
-  background-color: white;
-  line-height: normal;
-}
-
-.paintingContainer:hover .painting-description-card {
-  display: inline-block;
-  z-index: 2;
-}
-
-.paintingContainer:hover img {
-  opacity: 0.5;
-  transition: 1s ease;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
-.painting-description-card > div {
-  padding: 3.5em;
-  border: 2px solid black;
-  box-sizing: border-box;
-  height: 100%;
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-size: 1.25em;
-  display: flex;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.paintingContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  float: left;
-  width: 33.333%;
-  padding: 0.25em;
-  position: relative;
-}
-
 .painting-info {
   padding-top: 1em;
 }
