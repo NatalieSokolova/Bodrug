@@ -1,9 +1,15 @@
 import React from "react";
 import usePaintingData from "../hooks/usePaintingData";
+import { SRLWrapper } from "simple-react-lightbox";
 import "./Painting.css";
 
 export default function Painting({}) {
   const { state, setState } = usePaintingData();
+  const options = {
+    buttons: {
+      showDownloadButton: false,
+    },
+  };
 
   return (
     <div className="outsideContainer">
