@@ -1,8 +1,11 @@
 import React from "react";
 import Message from "./Message";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Contact.css";
 
 export default function Contact({}) {
+  const notify = () => toast("Wow so easy !");
   return (
     <div className="contact-content">
       <div className="contacts">
@@ -17,7 +20,8 @@ export default function Contact({}) {
           alt="Yulia Bodrug"
           id="bottom"
           onContextMenu={(e) => {
-            alert("Sorry, all the images are copyright");
+            // alert("Sorry, all the images are copyright");
+            notify();
             e.preventDefault();
           }}
         />
@@ -26,7 +30,9 @@ export default function Contact({}) {
           alt="Yulia Bodrug"
           id="top"
           onContextMenu={(e) => {
-            alert("Sorry, all the images are copyright");
+            // alert("Sorry, all the images are copyright");
+            toast("Wow so easy !");
+
             e.preventDefault();
           }}
         />
