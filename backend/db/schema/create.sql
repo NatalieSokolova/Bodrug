@@ -11,9 +11,8 @@ CREATE TABLE photos (
   id SERIAL PRIMARY KEY NOT NULL,
   description VARCHAR(5000) NOT NULL,
   url VARCHAR(255) NOT NULL,
-  CONSTRAINT fk_collection
-      FOREIGN KEY(collection_id) 
-	  REFERENCES collections(collection_id)
+  collection_id INTEGER NOT NULL REFERENCES collections(id) ON DELETE CASCADE
+
 );
 
 DROP TABLE IF EXISTS paintings CASCADE;
