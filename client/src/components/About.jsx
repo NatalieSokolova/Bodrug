@@ -1,7 +1,11 @@
 import React from "react";
+import { toast } from "react-toastify";
+import { copyrightError } from "../partials";
 import "./About.css";
 
-export default function About({}) {
+export default function About() {
+  toast.configure();
+
   return (
     <div class="about">
       <div class="photo">
@@ -9,7 +13,7 @@ export default function About({}) {
           src={require("../assets/paintings/europeana-YIfFVwDcgu8-unsplash.jpg")}
           alt="Yulia Bodrug"
           onContextMenu={(e) => {
-            alert("Sorry, all the images are copyright");
+            copyrightError();
             e.preventDefault();
           }}
         />
@@ -35,7 +39,7 @@ export default function About({}) {
           alt="Yulia Bodrug"
           id="mission-anchor"
           onContextMenu={(e) => {
-            alert("Sorry, all the images are copyright");
+            copyrightError();
             e.preventDefault();
           }}
         />
@@ -57,7 +61,7 @@ export default function About({}) {
           src={require("../assets/paintings/the-new-york-public-library-R5oumqz_lhY-unsplash.jpg")}
           alt="Yulia Bodrug"
           onContextMenu={(e) => {
-            alert("Sorry, all the images are copyright");
+            copyrightError();
             e.preventDefault();
           }}
         />
@@ -77,7 +81,7 @@ export default function About({}) {
           src={require("../assets/paintings/europeana-qi9jveT9X6A-unsplash.jpg")}
           alt="Yulia Bodrug"
           onContextMenu={(e) => {
-            alert("Sorry, all the images are copyright");
+            copyrightError();
             e.preventDefault();
           }}
         />
