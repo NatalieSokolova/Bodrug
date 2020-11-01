@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import * as emailjs from "emailjs-com";
 import { ToastContainer, toast } from "react-toastify";
+import { notifyError, notifySuccess } from "../partials";
+
 import "react-toastify/dist/ReactToastify.css";
 import "./Message.css";
 
 function Message(props) {
   toast.configure();
-  const notify = (message) => toast(message);
 
   const [values, setValues] = useState({
     name: "",
@@ -107,13 +108,13 @@ function Message(props) {
       )
       .then(
         (result) => {
-          notify(
+          notifySuccess(
             "Your message was sent successfully! We'll get back to you soon"
           );
           console.log("YAY!", result.status, result.text);
         },
         (error) => {
-          notify("Sorry, your email was not sent. Please, try again");
+          notifyError("Sorry, your email was not sent. Please, try again");
           console.log("TROUBLE! ", error);
         }
       );
