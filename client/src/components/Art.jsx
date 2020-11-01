@@ -1,10 +1,13 @@
 import React from "react";
 import useArtData from "../hooks/useArtData";
+import { toast } from "react-toastify";
+import { copyrightError } from "../partials";
 import "./Art.css";
 
-export default function Art({}) {
+export default function Art() {
+  toast.configure();
+
   const { state, setState } = useArtData();
-  let url;
 
   const artList = state.arts.map((art) => (
     <div key={art.id} className="artContainer">
@@ -14,7 +17,7 @@ export default function Art({}) {
           src={require(`../assets/art${art.url}`)}
           alt="art By Yuliia Bodrug"
           onContextMenu={(e) => {
-            alert("Sorry, all the images are copyright");
+            copyrightError();
             e.preventDefault();
           }}
         />

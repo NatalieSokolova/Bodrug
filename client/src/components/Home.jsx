@@ -1,7 +1,11 @@
 import React from "react";
+import { toast } from "react-toastify";
+import { copyrightError } from "../partials";
 import "./Home.css";
 
 export default function Home() {
+  toast.configure();
+
   return (
     <div class="home-pics animate__animated animate__fadeIn">
       <div class="img-container">
@@ -10,7 +14,7 @@ export default function Home() {
           src={require("../assets/photos/2-min.jpg")}
           alt="by Yuliia Bodrug"
           onContextMenu={(e) => {
-            alert("Sorry, all the images are copyright");
+            copyrightError();
             e.preventDefault();
           }}
         />
@@ -26,7 +30,7 @@ export default function Home() {
           src={require("../assets/logo-border.png")}
           alt="Logo"
           onContextMenu={(e) => {
-            alert("Sorry, all the images are copyright");
+            copyrightError();
             e.preventDefault();
           }}
         />
@@ -40,7 +44,7 @@ export default function Home() {
           src={require("../assets/paintings/the-new-york-public-library-R5oumqz_lhY-unsplash.jpg")}
           alt="by Yuliia Bodrug"
           onContextMenu={(e) => {
-            alert("Sorry, all the images are copyright");
+            copyrightError();
             e.preventDefault();
           }}
         />

@@ -1,8 +1,11 @@
 import React from "react";
 import useFaqData from "../hooks/useFaqData";
+import { toast } from "react-toastify";
+import { copyrightError } from "../partials";
 import "./Faq.css";
 
-export default function Faq({}) {
+export default function Faq() {
+  toast.configure();
   const { state, setState } = useFaqData();
 
   return (
@@ -15,7 +18,7 @@ export default function Faq({}) {
         src={require("../assets/IMG_1705.jpg")}
         className="faq-photo"
         onContextMenu={(e) => {
-          alert("Sorry, all the images are copyright");
+          copyrightError();
           e.preventDefault();
         }}
       />

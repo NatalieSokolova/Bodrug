@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import * as emailjs from "emailjs-com";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../partials";
 
 import "react-toastify/dist/ReactToastify.css";
