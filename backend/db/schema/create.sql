@@ -1,18 +1,19 @@
--- DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS collections CASCADE;
 
--- CREATE TABLE users (
---   id SERIAL PRIMARY KEY NOT NULL,
---   name VARCHAR(255) NOT NULL,
---   email VARCHAR(255) NOT NULL,
---   password VARCHAR(255) NOT NULL
--- );
+CREATE TABLE collections (
+  id SERIAL PRIMARY KEY NOT NULL,
+  description VARCHAR(5000) NOT NULL
+);
 
 DROP TABLE IF EXISTS photos CASCADE;
 
 CREATE TABLE photos (
   id SERIAL PRIMARY KEY NOT NULL,
   description VARCHAR(5000) NOT NULL,
-  url VARCHAR(255) NOT NULL
+  url VARCHAR(255) NOT NULL,
+  CONSTRAINT fk_collection
+      FOREIGN KEY(collection_id) 
+	  REFERENCES collections(collection_id)
 );
 
 DROP TABLE IF EXISTS paintings CASCADE;
@@ -33,4 +34,3 @@ CREATE TABLE faqs (
   question VARCHAR(5000) NOT NULL,
   answer VARCHAR(5000) NOT NULL
 );
-
