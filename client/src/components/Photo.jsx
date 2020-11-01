@@ -9,6 +9,8 @@ export default function Portfolio() {
   toast.configure();
 
   const { state, setState } = usePhotoData();
+  console.log("STATE: ", state);
+
   const options = {
     buttons: {
       showDownloadButton: false,
