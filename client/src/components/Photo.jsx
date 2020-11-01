@@ -1,9 +1,13 @@
 import React from "react";
 import usePhotoData from "../hooks/usePhotoData";
 import { SRLWrapper } from "simple-react-lightbox";
+import { toast } from "react-toastify";
+import { copyrightError } from "../partials";
 import "./Photo.css";
 
 export default function Portfolio() {
+  toast.configure();
+
   const { state, setState } = usePhotoData();
   const options = {
     buttons: {
@@ -26,7 +30,7 @@ export default function Portfolio() {
                     alt={photo.description}
                     className="photo"
                     onContextMenu={(e) => {
-                      alert("Sorry, all the images are copyright");
+                      copyrightError();
                       e.preventDefault();
                     }}
                   />

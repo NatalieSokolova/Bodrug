@@ -1,14 +1,18 @@
 import React from "react";
+import { toast } from "react-toastify";
+import { copyrightError } from "../partials";
 import "./Pricing.css";
 
-export default function Pricing({}) {
+export default function Pricing() {
+  toast.configure();
+
   return (
     <div>
       <img
         src={require("../assets/top.jpg")}
         className="banner"
         onContextMenu={(e) => {
-          alert("Sorry, all the images are copyright");
+          copyrightError();
           e.preventDefault();
         }}
       />

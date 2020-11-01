@@ -1,9 +1,13 @@
 import React from "react";
 import usePaintingData from "../hooks/usePaintingData";
 import { SRLWrapper } from "simple-react-lightbox";
+import { toast } from "react-toastify";
+import { copyrightError } from "../partials";
 import "./Painting.css";
 
-export default function Painting({}) {
+export default function Painting() {
+  toast.configure();
+
   const { state, setState } = usePaintingData();
   const options = {
     buttons: {
@@ -37,7 +41,7 @@ export default function Painting({}) {
                     ]}
                     className="painting"
                     onContextMenu={(e) => {
-                      alert("Sorry, all the images are copyright");
+                      copyrightError();
                       e.preventDefault();
                     }}
                   />
