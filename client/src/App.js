@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import "semantic-ui-css/semantic.min.css";
 import SimpleReactLightbox from "simple-react-lightbox";
 
 import Nav from "./components/Nav";
