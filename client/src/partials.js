@@ -15,3 +15,7 @@ export const notifySuccess = (message) =>
   toast.success(message, {
     hideProgressBar: true,
   });
+
+export const copyrightError = () => {
+  notifyError("Sorry, all the images are copyright");
+};
