@@ -9,9 +9,15 @@ export default function Collection() {
 
   const { state, setState } = useCollectionData();
   console.log("STATE: ", state);
-  const collectionList = state.collections.map((collection) => (
-    <div key={collection.id}>{collection.description}</div>
-  ));
+  // const collectionList = state.collections.map((collection) => (
+  //   <div key={collection.id}>{collection.description}</div>
+  // ));
 
-  return <div>{collectionList}</div>;
+  return (
+    <div>
+      {state.collections.map((collection) => (
+        <div key={collection.id}>{collection.description}</div>
+      ))}
+    </div>
+  );
 }
