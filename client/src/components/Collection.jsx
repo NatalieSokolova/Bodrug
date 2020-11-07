@@ -7,7 +7,7 @@ import { copyrightError } from "../partials";
 export default function Collection() {
   toast.configure();
 
-  const { state, setState } = useCollectionData();
+  const { state } = useCollectionData();
   console.log("STATE: ", state);
   // const collectionList = state.collections.map((collection) => (
   //   <div key={collection.id}>{collection.description}</div>

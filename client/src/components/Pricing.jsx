@@ -10,6 +10,7 @@ export default function Pricing() {
     <div>
       <img
         src={require("../assets/top.jpg")}
+        alt="by Iuliia Bodrug"
         className="banner"
         onContextMenu={(e) => {
           copyrightError();

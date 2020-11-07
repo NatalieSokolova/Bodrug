@@ -8,8 +8,7 @@ import "./Photo.css";
 export default function Portfolio() {
   toast.configure();
 
-  const { state, setState } = usePhotoData();
-  console.log("STATE: ", state);
+  const { state } = usePhotoData();
 
   const options = {
     buttons: {
@@ -19,29 +18,27 @@ export default function Portfolio() {
 
   return (
     <div className="outsideContainer">
-      <a href="#">
-        <SRLWrapper options={options}>
-          {!state.photos ? (
-            <span>Loading...</span>
-          ) : (
-            <div className="row">
-              {state.photos.map((photo) => (
-                <div key={photo.id} className="photoContainer">
-                  <img
-                    src={require(`../assets/photos${photo.url}`)}
-                    alt={photo.description}
-                    className="photo"
-                    onContextMenu={(e) => {
-                      copyrightError();
-                      e.preventDefault();
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
-          )}
-        </SRLWrapper>
-      </a>
+      <SRLWrapper options={options}>
+        {!state.photos ? (
+          <span>Loading...</span>
+        ) : (
+          <div className="row">
+            {state.photos.map((photo) => (
+              <div key={photo.id} className="photoContainer">
+                <img
+                  src={require(`../assets/photos${photo.url}`)}
+                  alt={photo.description}
+                  className="photo"
+                  onContextMenu={(e) => {
+                    copyrightError();
+                    e.preventDefault();
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+      </SRLWrapper>
     </div>
   );
 }

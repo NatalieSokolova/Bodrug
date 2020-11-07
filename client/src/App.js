@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
@@ -46,6 +46,7 @@ function App() {
                 href="https://www.instagram.com/bodrug_photo/?hl=en"
                 className="insta"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <InstagramOutlined />
               </a>
