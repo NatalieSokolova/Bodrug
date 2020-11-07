@@ -1,21 +1,17 @@
-import React from "react";
-// import useCollectionPhotoData from "../hooks/useCollectionPhotoData";
-
+import React, { useState } from "react";
 import SelectedCollection from "./SelectedCollection";
 
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
 import "./Collection.css";
 
+const idList = [1, 2, 3, 4];
+
 export default function Collection() {
   toast.configure();
 
-  // const { state } = useCollectionPhotoData();
-  // console.log("Photos STATE: ", state.collectionPhotos);
-
-  // const collectionList = state.collections.map((collection) => (
-  //   <div key={collection.id}>{collection.description}</div>
-  // ));
+  const [showPhotos, setShowPhotos] = useState(false);
+  const [id, setId] = useState(null);
 
   return (
     <div className="collection">
@@ -27,8 +23,13 @@ export default function Collection() {
             copyrightError();
             e.preventDefault();
           }}
+          onClick={() => {
+            setShowPhotos(!showPhotos);
+            setId(idList[0]);
+          }}
           className="collection-tile"
         />
+        {showPhotos ? <SelectedCollection id={id} /> : null}
       </div>
       <div>
         <img
@@ -38,8 +39,13 @@ export default function Collection() {
             copyrightError();
             e.preventDefault();
           }}
+          onClick={() => {
+            setShowPhotos(!showPhotos);
+            setId(idList[1]);
+          }}
           className="collection-tile"
         />
+        {showPhotos ? <SelectedCollection id={id} /> : null}
       </div>
       <div>
         <img
@@ -49,8 +55,13 @@ export default function Collection() {
             copyrightError();
             e.preventDefault();
           }}
+          onClick={() => {
+            setShowPhotos(!showPhotos);
+            setId(idList[2]);
+          }}
           className="collection-tile"
         />
+        {showPhotos ? <SelectedCollection id={id} /> : null}
       </div>
       <div>
         <img
@@ -60,8 +71,13 @@ export default function Collection() {
             copyrightError();
             e.preventDefault();
           }}
+          onClick={() => {
+            setShowPhotos(!showPhotos);
+            setId(idList[3]);
+          }}
           className="collection-tile"
         />
+        {showPhotos ? <SelectedCollection id={id} /> : null}
       </div>
       {/* <SelectedCollection /> */}
     </div>
