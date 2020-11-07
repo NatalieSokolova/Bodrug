@@ -1,5 +1,7 @@
-.collection-description {
+.collection-tile {
   height: 25vh;
-  margin: 2.5vh 5vw;
+  width: 100vw;
+  object-fit: cover;
+  /* margin: 1vh 5vw; */
   border: 2px solid black;
 }
