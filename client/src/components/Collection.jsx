@@ -28,10 +28,12 @@ export default function Collection() {
             }}
             onClick={() => {
               setShowPhotos(!showPhotos);
-              setId(idList[0]);
+              setId(collection.id);
             }}
           />
-          {showPhotos && id ? <SelectedCollection id={id} /> : null}
+          {showPhotos && collection.id === id ? (
+            <SelectedCollection id={id} />
+          ) : null}
 
           <div className="collection-description">{collection.description}</div>
         </div>
