@@ -7,8 +7,8 @@ export default function About() {
   toast.configure();
 
   return (
-    <div class="about">
-      <div class="photo">
+    <div className="about">
+      <div className="photo">
         <img
           src={require("../assets/paintings/europeana-YIfFVwDcgu8-unsplash.jpg")}
           alt="Yulia Bodrug"
@@ -19,8 +19,8 @@ export default function About() {
         />
       </div>
       <div className="column  animate__animated animate__fadeIn">
-        <span class="about-header">My Story</span>
-        <p class="about-text">
+        <span className="about-header">My Story</span>
+        <p className="about-text">
           I'm baby blog distillery try-hard ethical cold-pressed shabby chic
           messenger bag meggings taiyaki occupy ennui. Heirloom artisan master
           cleanse 3 wolf moon scenester prism forage art party chillwave
@@ -33,7 +33,7 @@ export default function About() {
           beer copper mug chambray tote bag.
         </p>
       </div>
-      <div class="photo">
+      <div className="photo">
         <img
           src={require("../assets/paintings/tamara-menzi-n-vnWQmmVoY-unsplash.jpg")}
           alt="Yulia Bodrug"
@@ -45,8 +45,8 @@ export default function About() {
         />
       </div>
       <div className="column  animate__animated animate__fadeIn">
-        <span class="about-header">My Mission</span>
-        <p class="about-text">
+        <span className="about-header">My Mission</span>
+        <p className="about-text">
           I'm baby blog distillery try-hard ethical cold-pressed shabby chic
           messenger bag meggings taiyaki occupy ennui. Heirloom artisan master
           cleanse 3 wolf moon scenester prism forage art party chillwave
@@ -56,7 +56,7 @@ export default function About() {
           trade intelligentsia neutra chillwave.
         </p>
       </div>
-      <div class="photo">
+      <div className="photo">
         <img
           src={require("../assets/paintings/the-new-york-public-library-R5oumqz_lhY-unsplash.jpg")}
           alt="Yulia Bodrug"
@@ -67,8 +67,8 @@ export default function About() {
         />
       </div>
       <div className="column  animate__animated animate__fadeIn">
-        <span class="about-header">My Vision</span>
-        <p class="about-text">
+        <span className="about-header">My Vision</span>
+        <p className="about-text">
           I'm baby blog distillery try-hard ethical cold-pressed shabby chic
           messenger bag meggings taiyaki occupy ennui. Heirloom artisan master
           cleanse 3 wolf moon scenester prism forage art party chillwave
@@ -76,7 +76,7 @@ export default function About() {
           Franzen freegan meditation seitan succulents taxidermy.
         </p>
       </div>
-      <div class="photo">
+      <div className="photo">
         <img
           src={require("../assets/paintings/europeana-qi9jveT9X6A-unsplash.jpg")}
           alt="Yulia Bodrug"

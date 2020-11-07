@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const usePaintingData = () => {
-  const [state, setState] = useState({ paintings: [] });
+const useCollectionData = () => {
+  const [state, setState] = useState({ collections: [] });
 
   useEffect(() => {
     axios({
       method: "GET",
-      url: "/paintings",
+      url: "/collections",
     })
       .then((result) =>
-        setState((prev) => ({ ...prev, paintings: result.data }))
+        setState((prev) => ({ ...prev, collections: result.data }))
       )
       .catch((err) => console.log(err));
   }, []);
@@ -21,4 +21,4 @@ const usePaintingData = () => {
   };
 };
 
-export default usePaintingData;
+export default useCollectionData;

@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
 import "./Contact.css";
 
-export default function Contact({}) {
+export default function Contact() {
   toast.configure();
 
   return (
