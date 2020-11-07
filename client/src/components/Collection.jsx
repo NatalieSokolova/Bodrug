@@ -3,6 +3,7 @@ import useCollectionData from "../hooks/useCollectionData";
 
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
+import "./Collection.css";
 
 export default function Collection() {
   toast.configure();
@@ -14,9 +15,11 @@ export default function Collection() {
   // ));
 
   return (
-    <div>
+    <div className="collection">
       {state.collections.map((collection) => (
-        <div key={collection.id}>{collection.description}</div>
+        <div key={collection.id} className="collection-description">
+          {collection.description}
+        </div>
       ))}
     </div>
   );

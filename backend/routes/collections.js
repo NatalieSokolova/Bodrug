@@ -13,6 +13,20 @@ module.exports = (db) => {
       .catch((err) => console.log(err));
   });
 
+  // GET specific collection by id
+
+  router.get("/:id", (req, res) => {
+    const id = req.params.id;
+
+    const query = {
+      text: `SELECT * FROM collections WHERE id=${id};`,
+    };
+
+    db.query(query)
+      .then((result) => res.json(result))
+      .catch((err) => console.log(err));
+  });
+
   // FOR ADMIN PAGE
   router.post("/", (req, res) => {
     // extract the data from req.body
