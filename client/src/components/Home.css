@@ -54,6 +54,7 @@
 
 .home-logo-box {
   width: 15vw;
+  height: auto;
   display: block;
   margin: 27.5vh auto;
 }

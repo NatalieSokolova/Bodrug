@@ -14,18 +14,20 @@
 }
 
 .contact-photo {
-  height: 100vh;
   width: 40vw;
+  height: auto;
   object-fit: cover;
   margin-right: -4em;
 }
 
 #bottom {
   width: 35vw;
+  height: auto;
   position: relative;
 }
 
 #top {
+  height: 70%;
   width: 30vw;
   max-height: 70vh;
   z-index: 10;
