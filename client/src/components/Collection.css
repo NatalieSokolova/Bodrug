@@ -1,7 +1,14 @@
 .collection-tile {
+  /* margin: 1vh 5vw; */
+  border: 2px solid black;
+}
+
+.collection-tile > img {
   height: 25vh;
   width: 100vw;
   object-fit: cover;
-  /* margin: 1vh 5vw; */
-  border: 2px solid black;
+}
+
+.collection-description {
+  display: none;
 }

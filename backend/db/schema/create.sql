@@ -2,7 +2,8 @@ DROP TABLE IF EXISTS collections CASCADE;
 
 CREATE TABLE collections (
   id SERIAL PRIMARY KEY NOT NULL,
-  description VARCHAR(5000) NOT NULL
+  description VARCHAR(5000) NOT NULL,
+  coverurl VARCHAR(255) NOT NULL
 );
 
 DROP TABLE IF EXISTS photos CASCADE;

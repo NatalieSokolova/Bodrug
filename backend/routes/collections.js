@@ -50,8 +50,8 @@ module.exports = (db) => {
 
     // create an insert query in the db
     const query = {
-      text: `INSERT INTO collections (description) VALUES ($1) RETURNING *;`,
-      values: [description],
+      text: `INSERT INTO collections (description, coverurl) VALUES ($1, $2) RETURNING *;`,
+      values: [description, coverurl],
     };
 
     db.query(query)

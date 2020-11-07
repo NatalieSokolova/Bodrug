@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SelectedCollection from "./SelectedCollection";
+import useCollectionData from "../hooks/useCollectionData";
 
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
@@ -12,10 +13,31 @@ export default function Collection() {
 
   const [showPhotos, setShowPhotos] = useState(false);
   const [id, setId] = useState(null);
+  const { state } = useCollectionData();
 
   return (
-    <div className="collection">
-      <div>
+    <div>
+      {state.collections.map((collection) => (
+        <div className="collection-tile" key={collection.id}>
+          <img
+            src={require(`../assets/photos${collection.coverurl}`)}
+            alt={collection.description}
+            onContextMenu={(e) => {
+              copyrightError();
+              e.preventDefault();
+            }}
+            onClick={() => {
+              setShowPhotos(!showPhotos);
+              setId(idList[0]);
+            }}
+          />
+          {showPhotos && id ? <SelectedCollection id={id} /> : null}
+
+          <div className="collection-description">{collection.description}</div>
+        </div>
+      ))}
+
+      {/* <div>
         <img
           src={require("../assets/photos/6-min.jpg")}
           alt="collection cover"
@@ -29,7 +51,7 @@ export default function Collection() {
           }}
           className="collection-tile"
         />
-        {showPhotos ? <SelectedCollection id={id} /> : null}
+        {showPhotos && id ? <SelectedCollection id={id} /> : null}
       </div>
       <div>
         <img
@@ -78,8 +100,7 @@ export default function Collection() {
           className="collection-tile"
         />
         {showPhotos ? <SelectedCollection id={id} /> : null}
-      </div>
-      {/* <SelectedCollection /> */}
+      </div> */}
     </div>
   );
 }
