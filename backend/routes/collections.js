@@ -27,6 +27,20 @@ module.exports = (db) => {
       .catch((err) => console.log(err));
   });
 
+  // GET photos by collection id
+
+  router.get("/:id/photos", (req, res) => {
+    const id = req.params.id;
+
+    const query = {
+      text: `SELECT photos.id, photos.description, photos.url, photos.collection_id FROM photos JOIN collections ON collections.id=photos.collection_id WHERE collections.id=${id};`,
+    };
+
+    db.query(query)
+      .then((result) => res.json(result))
+      .catch((err) => console.log(err));
+  });
+
   // FOR ADMIN PAGE
   router.post("/", (req, res) => {
     // extract the data from req.body
