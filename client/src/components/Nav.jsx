@@ -72,10 +72,15 @@ export default class Nav extends React.Component {
         <SubMenu key="SubMenu" title="PHOTOS" className="nav-item">
           <Menu.Item key="setting:1" className="nav-item">
             <a href="/photos" rel="noopener noreferrer">
-              portfolio
+              all photos
             </a>
           </Menu.Item>
           <Menu.Item key="setting:2" className="nav-item">
+            <a href="/collections" rel="noopener noreferrer">
+              collections
+            </a>
+          </Menu.Item>
+          <Menu.Item key="setting:3" className="nav-item">
             <a href="/pricing" rel="noopener noreferrer">
               pricing
             </a>
