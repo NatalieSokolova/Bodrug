@@ -6,7 +6,7 @@ import "./Faq.css";
 
 export default function Faq() {
   toast.configure();
-  const { state, setState } = useFaqData();
+  const { state } = useFaqData();
 
   return (
     <div className="container">
@@ -16,6 +16,7 @@ export default function Faq() {
       </h2>
       <img
         src={require("../assets/IMG_1705.jpg")}
+        alt="by Iuliia Bodrug"
         className="faq-photo"
         onContextMenu={(e) => {
           copyrightError();

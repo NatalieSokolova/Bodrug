@@ -8,7 +8,7 @@ import "./Painting.css";
 export default function Painting() {
   toast.configure();
 
-  const { state, setState } = usePaintingData();
+  const { state } = usePaintingData();
   const options = {
     buttons: {
       showDownloadButton: false,
@@ -17,40 +17,32 @@ export default function Painting() {
 
   return (
     <div className="outsideContainer">
-      <a href="#">
-        <SRLWrapper options={options}>
-          {!state.paintings ? (
-            <span>Loading...</span>
-          ) : (
-            <div className="row">
-              {state.paintings.map((painting) => (
-                <div key={painting.id} className="paintingContainer">
-                  <img
-                    src={require(`../assets/paintings${painting.url}`)}
-                    alt={[
-                      painting.description,
-                      `YEAR: ${painting.year}`,
-                      `MATERIALS: ${painting.materials}`,
-                      `CAD${painting.price}`,
-                    ]}
-                    alt={[
-                      painting.description,
-                      `YEAR: ${painting.year}`,
-                      `MATERIALS: ${painting.materials}`,
-                      `CAD${painting.price}`,
-                    ]}
-                    className="painting"
-                    onContextMenu={(e) => {
-                      copyrightError();
-                      e.preventDefault();
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
-          )}
-        </SRLWrapper>
-      </a>
+      <SRLWrapper options={options}>
+        {!state.paintings ? (
+          <span>Loading...</span>
+        ) : (
+          <div className="row">
+            {state.paintings.map((painting) => (
+              <div key={painting.id} className="paintingContainer">
+                <img
+                  src={require(`../assets/paintings${painting.url}`)}
+                  alt={[
+                    painting.description,
+                    `YEAR: ${painting.year}`,
+                    `MATERIALS: ${painting.materials}`,
+                    `CAD${painting.price}`,
+                  ]}
+                  className="painting"
+                  onContextMenu={(e) => {
+                    copyrightError();
+                    e.preventDefault();
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+      </SRLWrapper>
     </div>
   );
 }
