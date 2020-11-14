@@ -33,7 +33,7 @@ module.exports = (db) => {
     const id = req.params.id;
 
     const query = {
-      text: `SELECT photos.id, photos.description, photos.url, photos.story_id FROM photos JOIN stories ON stories.id=photos.story_id WHERE stories.id=${id};`,
+      text: `SELECT * FROM storiess WHERE id=${id};`,
     };
 
     db.query(query)
@@ -44,13 +44,13 @@ module.exports = (db) => {
   // FOR ADMIN PAGE
   router.post("/", (req, res) => {
     // extract the data from req.body
-    const { description } = req.body;
+    const { name, description, coverurl } = req.body;
 
-    console.log({ description });
+    console.log({ name, description, coverurl });
 
     // create an insert query in the db
     const query = {
-      text: `INSERT INTO stories (name, description, coverurl) VALUES ($1, $2) RETURNING *;`,
+      text: `INSERT INTO stories (name, description, coverurl) VALUES ($1, $2, $3) RETURNING *;`,
       values: [name, description, coverurl],
     };
 
