@@ -4,6 +4,7 @@ img.faq-photo {
   margin-left: -15vw;
   margin-top: 12.5vh;
   width: 45vw;
+  height: auto;
 }
 
 .faqContainer {
