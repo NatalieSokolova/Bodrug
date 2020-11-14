@@ -13,6 +13,7 @@ import Faq from "./components/Faq";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
 import Collection from "./components/Collection";
+import Story from "./components/Story";
 import { Layout } from "antd";
 import "./components/Footer.css";
 import { InstagramOutlined } from "@ant-design/icons";
@@ -28,9 +29,8 @@ function App() {
           <Switch>
             <Route path="/about" component={About} />
             <Route path="/photos" component={Photo} />
-
             <Route path="/collections" component={Collection} />
-
+            <Route path="/stories" component={Story} />
             <Route path="/pricing" component={Pricing} />
             <Route path="/art" component={Painting} />
             <Route path="/faq" component={Faq} />
