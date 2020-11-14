@@ -1,0 +1,14 @@
+.story-tile {
+  /* margin: 1vh 5vw; */
+  border: 2px solid black;
+}
+
+.story-tile > img {
+  height: 25vh;
+  width: 100vw;
+  object-fit: cover;
+}
+
+.story-description {
+  display: none;
+}

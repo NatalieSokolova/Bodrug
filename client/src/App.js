@@ -13,6 +13,7 @@ import Faq from "./components/Faq";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
 import Collection from "./components/Collection";
+import Story from "./components/Story";
 import { Layout } from "antd";
 import "./components/Footer.css";
 import { InstagramOutlined } from "@ant-design/icons";
