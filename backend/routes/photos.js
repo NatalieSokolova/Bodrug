@@ -22,8 +22,8 @@ module.exports = (db) => {
 
     // create an insert query in the db
     const query = {
-      text: `INSERT INTO photos (description, url, collection_id) VALUES ($1, $2, $3) RETURNING *;`,
-      values: [description, url, collection_id],
+      text: `INSERT INTO photos (description, url, collection_id, story_id) VALUES ($1, $2, $3) RETURNING *;`,
+      values: [description, url, collection_id, story_id],
     };
 
     db.query(query)
