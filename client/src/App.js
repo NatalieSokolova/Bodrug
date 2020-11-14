@@ -28,9 +28,8 @@ function App() {
           <Switch>
             <Route path="/about" component={About} />
             <Route path="/photos" component={Photo} />
-
             <Route path="/collections" component={Collection} />
-
+            <Route path="/stories" component={Story} />
             <Route path="/pricing" component={Pricing} />
             <Route path="/art" component={Painting} />
             <Route path="/faq" component={Faq} />

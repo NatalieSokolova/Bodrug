@@ -81,6 +81,11 @@ export default class Nav extends React.Component {
             </a>
           </Menu.Item>
           <Menu.Item key="setting:3" className="nav-item">
+            <a href="/stories" rel="noopener noreferrer">
+              stories
+            </a>
+          </Menu.Item>
+          <Menu.Item key="setting:4" className="nav-item">
             <a href="/pricing" rel="noopener noreferrer">
               pricing
             </a>
