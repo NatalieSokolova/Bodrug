@@ -15,6 +15,7 @@ const photosRouter = require("./routes/photos");
 const paintingsRouter = require("./routes/paintings");
 const faqsRouter = require("./routes/faqs");
 const collectionsRouter = require("./routes/collections");
+const storiesRouter = require("./routes/stories");
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.use("/photos", photosRouter(db));
 app.use("/paintings", paintingsRouter(db));
 app.use("/faqs", faqsRouter(db));
 app.use("/collections", collectionsRouter(db));
+app.use("/stories", storiesRouter(db));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
