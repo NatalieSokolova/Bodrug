@@ -16,13 +16,13 @@ module.exports = (db) => {
   // FOR ADMIN PAGE
   router.post("/", (req, res) => {
     // extract the data from req.body
-    const { description, url } = req.body;
+    const { description, url, collection_id, story_id } = req.body;
 
     console.log({ description }, { url });
 
     // create an insert query in the db
     const query = {
-      text: `INSERT INTO photos (description, url, collection_id, story_id) VALUES ($1, $2, $3) RETURNING *;`,
+      text: `INSERT INTO photos (description, url, collection_id, story_id) VALUES ($1, $2, $3, $4) RETURNING *;`,
       values: [description, url, collection_id, story_id],
     };
 
