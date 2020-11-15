@@ -56,9 +56,19 @@
   width: 15vw;
   height: auto;
   display: block;
-  margin: 27.5vh auto;
+  margin: 30vh auto;
 }
 
 .animate__animated.animate__fadeIn {
   --animate-duration: 3s;
+}
+
+@media only screen and (max-width: 950px) {
+  .home-logo-box {
+    margin: 37vh auto;
+  }
+
+  .home-text {
+    font-size: 3em;
+  }
 }
