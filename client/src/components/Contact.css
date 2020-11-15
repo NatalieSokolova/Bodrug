@@ -21,19 +21,84 @@
 }
 
 #bottom {
-  width: 35vw;
+  width: 30vw;
   height: auto;
   position: relative;
+  top: 2.5vh;
 }
 
 #top {
-  height: 70%;
   width: 30vw;
-  height: auto;
-  max-height: 70vh;
+  height: 65vh;
   z-index: 10;
   position: absolute;
-  top: 27.5vh;
+  top: 30vh;
   right: 12.5vw;
   object-fit: cover;
+}
+
+@media only screen and (max-width: 1300px) {
+  #top {
+    height: 50vh;
+  }
+
+  .contact-photo > img {
+    margin-top: 5vh;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .email-form {
+    z-index: 20;
+    position: absolute;
+    width: 60vw;
+    margin: 5vh 30vw 5vh 10vw;
+    background-color: white;
+  }
+
+  .contact-photo {
+    width: 50vw;
+  }
+
+  #top {
+    display: none;
+  }
+
+  #bottom {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .contact-photo {
+    width: 70vw;
+  }
+
+  .contact-photo > img {
+    margin-top: 7.5vh;
+  }
+
+  #bottom {
+    width: 50vw;
+  }
+
+  .email-form {
+    margin-left: 10vw;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  /* .contact-photo > img {
+    width: 90vw;
+  } */
+
+  #bottom {
+    margin-top: 2.5vh;
+    width: 70vw;
+  }
+
+  .email-form {
+    margin-left: 5vw;
+    width: 80vw;
+  }
 }

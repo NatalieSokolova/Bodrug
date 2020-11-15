@@ -1,6 +1,7 @@
 form {
   border: 2.5px solid black;
-  width: 40vw;
+  width: 35vw;
+  height: auto;
   min-width: 30vw;
   margin: 5vh auto;
   padding: 0.5em;

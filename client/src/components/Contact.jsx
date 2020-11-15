@@ -10,7 +10,6 @@ export default function Contact() {
   return (
     <div className="contact-content">
       <div className="contacts">
-        <h1>Don't hesitate to reach out!</h1>
         <div>
           <Message className="email-form" />
         </div>
