@@ -28,3 +28,35 @@
 .pricing-column > p {
   margin-top: 5vh;
 }
+
+@media only screen and (max-width: 1350px) {
+  .pricing-column {
+    width: 30vw;
+  }
+
+  .pricing-column > span {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .pricing-column > p {
+    margin-top: 2.5vh;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .pricing-text {
+    flex-direction: column;
+    margin: 2.5vh 10vw;
+  }
+
+  .pricing-column {
+    width: 80vw;
+    padding: 0;
+    margin-top: 2.5vh;
+  }
+
+  .banner {
+    height: 32.5vh;
+  }
+}
