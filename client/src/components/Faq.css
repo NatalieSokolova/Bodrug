@@ -1,22 +1,26 @@
+.content {
+  display: flex;
+  justify-content: space-around;
+}
+
 img.faq-photo {
   display: inline-block;
   vertical-align: top;
-  margin-left: -15vw;
-  margin-top: 12.5vh;
-  width: 45vw;
+  margin: 10vh 0;
+  width: 40vw;
   height: auto;
 }
 
 .faqContainer {
   display: inline-block;
   vertical-align: middle;
-  width: 30vw;
-  padding-left: 5vw;
+  width: 100%;
+  padding: 0 0 5vh 5vw;
+  /* margin-left: 12.5vw; */
 }
 
 .qa {
-  width: 40vw;
-  margin-bottom: 5vh;
+  width: 45vw;
 }
 
 .question {
@@ -58,4 +62,16 @@ h2 > a {
 h2 > a:hover {
   color: black;
   border-bottom: 1.75px solid black;
+}
+
+@media only screen and (max-width: 1300px) {
+  div > img {
+    width: 100vw;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  img.faq-photo {
+    width: 60vw;
+  }
 }

@@ -14,22 +14,26 @@ export default function Faq() {
       <h2>
         <a href="/contact">please, reach out!</a>
       </h2>
-      <img
-        src={require("../assets/IMG_1705.jpg")}
-        alt="by Iuliia Bodrug"
-        className="faq-photo"
-        onContextMenu={(e) => {
-          copyrightError();
-          e.preventDefault();
-        }}
-      />
-      <div className="faqContainer">
-        {state.faqs.map((faq) => (
-          <div key={faq.id} className="qa">
-            <h1 className="question">{faq.question}</h1>
-            <p className="answer">{faq.answer}</p>
-          </div>
-        ))}
+      <div className="content">
+        <div>
+          <img
+            src={require("../assets/IMG_1705.jpg")}
+            alt="by Iuliia Bodrug"
+            className="faq-photo"
+            onContextMenu={(e) => {
+              copyrightError();
+              e.preventDefault();
+            }}
+          />
+        </div>
+        <div className="faqContainer">
+          {state.faqs.map((faq) => (
+            <div key={faq.id} className="qa">
+              <h1 className="question">{faq.question}</h1>
+              <p className="answer">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
