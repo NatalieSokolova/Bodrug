@@ -125,66 +125,81 @@ function Message(props) {
   };
 
   return (
-    <form
-      id={props.id}
-      className={props.className}
-      name={props.name}
-      method={props.method}
-      action={props.action}
-    >
-      <div className="form-group">
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          name="name"
-          className="form-control"
-          required="required"
-          onChange={handleInputChange}
-          value={values.name}
-          placeholder="Enter Your Name"
-        />
-        {values.errors.name && <span id="error">Please, enter your name</span>}
-      </div>
-      <div className="form-group">
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          className="form-control"
-          required
-          onChange={handleInputChange}
-          value={values.email}
-          placeholder="Enter Your Email"
-        />
-        {values.errors.email && (
-          <span id="error">Please, enter a valid email</span>
-        )}
-      </div>
-      <div className="form-group">
-        <label htmlFor="message">Message</label>
-        <input
-          type="text"
-          name="message"
-          className="form-control"
-          required="required"
-          onChange={handleInputChange}
-          value={values.message}
-          placeholder="Enter Your Message"
-        />
-        {values.errors.message && (
-          <span id="error">Sorry, you cannot submit an empty message</span>
-        )}
-      </div>
-      <button
-        onClick={sendEmail}
-        type="submit"
-        name="submit"
-        className="btn btn-primary"
-        required="required"
+    <div className="form-container">
+      <h1>
+        Drop me a line on
+        <a
+          href="https://www.instagram.com/bodrug_photo/?hl=en"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i> instagram </i>
+        </a>
+        or fill out the form below and I'll get in touch with you soon
+      </h1>
+      <form
+        id={props.id}
+        className={props.className}
+        name={props.name}
+        method={props.method}
+        action={props.action}
       >
-        Submit
-      </button>
-    </form>
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            className="form-control"
+            required="required"
+            onChange={handleInputChange}
+            value={values.name}
+            placeholder="Enter Your Name"
+          />
+          {values.errors.name && (
+            <span id="error">Please, enter your name</span>
+          )}
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            className="form-control"
+            required
+            onChange={handleInputChange}
+            value={values.email}
+            placeholder="Enter Your Email"
+          />
+          {values.errors.email && (
+            <span id="error">Please, enter a valid email</span>
+          )}
+        </div>
+        <div className="form-group">
+          <label htmlFor="message">Message</label>
+          <input
+            type="text"
+            name="message"
+            className="form-control"
+            required="required"
+            onChange={handleInputChange}
+            value={values.message}
+            placeholder="Enter Your Message"
+          />
+          {values.errors.message && (
+            <span id="error">Sorry, you cannot submit an empty message</span>
+          )}
+        </div>
+        <button
+          onClick={sendEmail}
+          type="submit"
+          name="submit"
+          className="btn btn-primary"
+          required="required"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   );
 }
 
