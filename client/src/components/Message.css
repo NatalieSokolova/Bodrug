@@ -1,12 +1,11 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  /* align-content: center; */
   width: 50vw;
   margin: auto;
 }
 
-a {
+h1 > a {
   color: black;
   font-weight: 600;
 }

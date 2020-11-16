@@ -9,25 +9,14 @@ export default function Contact() {
 
   return (
     <div className="contact-content">
-      <div className="contacts">
-        <div>
-          <Message className="email-form" />
-        </div>
+      <div>
+        <Message className="email-form" />
       </div>
       <div className="contact-photo">
         <img
           src={require("../assets/about/IMG_1710.jpeg")}
           alt="Yulia Bodrug"
           id="bottom"
-          onContextMenu={(e) => {
-            copyrightError();
-            e.preventDefault();
-          }}
-        />
-        <img
-          src={require("../assets/paintings/tamara-menzi-n-vnWQmmVoY-unsplash.jpg")}
-          alt="Yulia Bodrug"
-          id="top"
           onContextMenu={(e) => {
             copyrightError();
             e.preventDefault();
