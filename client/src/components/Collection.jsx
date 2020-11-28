@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
 import "./Collection.css";
 
-const idList = [1, 2, 3, 4];
+// const idList = [1, 2, 3, 4];
 
 export default function Collection() {
   toast.configure();
@@ -19,6 +19,15 @@ export default function Collection() {
     <div>
       {state.collections.map((collection) => (
         <div className="collection-tile" key={collection.id}>
+          <h1
+            class="collection-name"
+            onClick={() => {
+              setShowPhotos(!showPhotos);
+              setId(collection.id);
+            }}
+          >
+            {collection.name}
+          </h1>
           <img
             src={require(`../assets/photos${collection.coverurl}`)}
             alt={collection.description}
