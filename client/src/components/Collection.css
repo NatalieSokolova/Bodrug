@@ -1,14 +1,36 @@
 .collection-tile {
   /* margin: 1vh 5vw; */
-  border: 2px solid black;
+  border-bottom: 15px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .collection-tile > img {
-  height: 25vh;
+  height: 45vh;
   width: 100vw;
   object-fit: cover;
+  position: relative;
+}
+
+.collection-tile > img:hover {
+  cursor: pointer;
 }
 
 .collection-description {
   display: none;
+}
+
+.collection-name {
+  position: absolute;
+  z-index: 20;
+  font-family: "Playfair Display", serif;
+  font-size: 10vh;
+  font-weight: 400;
+  font-style: italic;
+  color: white;
+}
+
+.collection-name:hover {
+  cursor: pointer;
 }
