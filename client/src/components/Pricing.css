@@ -2,6 +2,7 @@
   width: 100vw;
   height: 42.5vh;
   object-fit: cover;
+  transition: 0.5s ease;
 }
 
 .pricing-text {
