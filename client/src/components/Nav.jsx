@@ -106,6 +106,11 @@ export default class Nav extends React.Component {
             CONTACT
           </a>
         </Menu.Item>
+        <Menu.Item className="nav-item">
+          <a href="/blog" rel="noopener noreferrer">
+            BLOG
+          </a>
+        </Menu.Item>
       </Menu>
     );
   }
