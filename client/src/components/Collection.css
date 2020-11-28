@@ -1,9 +1,9 @@
 .collection-tile {
   /* margin: 1vh 5vw; */
   border-bottom: 15px solid white;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .collection-tile > img {
@@ -29,6 +29,7 @@
   font-weight: 400;
   font-style: italic;
   color: white;
+  margin: 10% 2.5%;
 }
 
 .collection-name:hover {

@@ -31,8 +31,8 @@ export default function SelectedCollection(props) {
     <div className="collection">
       {renderedPhotoList.map((renderedPhoto) => (
         <div key={renderedPhoto.id}>
-          <p>DESCRIPTION</p>
-          {renderedPhoto.description}
+          {/* <p>DESCRIPTION</p>
+          {renderedPhoto.description} */}
           <div>
             <img
               src={require(`../assets/photos${renderedPhoto.url}`)}
@@ -41,6 +41,7 @@ export default function SelectedCollection(props) {
                 copyrightError();
                 e.preventDefault();
               }}
+              className="sel-collection-img"
             />
           </div>
         </div>

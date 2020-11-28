@@ -20,7 +20,7 @@ export default function Collection() {
       {state.collections.map((collection) => (
         <div className="collection-tile" key={collection.id}>
           <h1
-            class="collection-name"
+            className="collection-name"
             onClick={() => {
               setShowPhotos(!showPhotos);
               setId(collection.id);
@@ -36,7 +36,7 @@ export default function Collection() {
               e.preventDefault();
             }}
             onClick={() => {
-              setShowPhotos(!showPhotos);
+              setShowPhotos(true);
               setId(collection.id);
             }}
           />
