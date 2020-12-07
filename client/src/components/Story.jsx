@@ -27,7 +27,7 @@ export default function Story() {
               e.preventDefault();
             }}
             onClick={() => {
-              setShowPhotos(true);
+              setShowPhotos(!showPhotos);
               setId(story.id);
             }}
           />
