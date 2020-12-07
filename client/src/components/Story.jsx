@@ -27,13 +27,15 @@ export default function Story() {
               e.preventDefault();
             }}
             onClick={() => {
-              setShowPhotos(!showPhotos);
+              setShowPhotos(true);
               setId(story.id);
             }}
           />
           {showPhotos && story.id === id ? <SelectedStory id={id} /> : null}
 
-          <div className="story-description">{story.description}</div>
+          <div className="story-description">
+            <p>{story.description}</p>
+          </div>
         </div>
       ))}
     </div>
