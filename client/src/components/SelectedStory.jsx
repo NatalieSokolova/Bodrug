@@ -12,8 +12,6 @@ export default function SelectedStory(props) {
     photoList: [],
   });
 
-  console.log("PROPS: ", props);
-
   const getPhotosByStoryId = useEffect(() => {
     axios({
       method: "GET",
@@ -31,10 +29,11 @@ export default function SelectedStory(props) {
     <div className="story">
       {renderedPhotoList.map((renderedPhoto) => (
         <div key={renderedPhoto.id}>
-          <p>DESCRIPTION</p>
-          {renderedPhoto.description}
+          <p className="photo-description">{renderedPhoto.description}</p>
+
           <div>
             <img
+              className="story-img"
               src={require(`../assets/photos${renderedPhoto.url}`)}
               alt={renderedPhoto.description}
               onContextMenu={(e) => {
