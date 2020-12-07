@@ -1,6 +1,10 @@
-img {
-  height: 15vh;
-  width: 15vh;
+.story-img {
+  width: 100%;
+  padding-top: 5vh;
   object-fit: cover;
   transition: 0.5s ease;
+}
+
+.photo-description {
+  display: none;
 }
