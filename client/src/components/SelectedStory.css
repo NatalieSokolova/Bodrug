@@ -1,6 +1,4 @@
-.story-img {
-  width: 100%;
-  padding-top: 5vh;
+div > .story-img {
   object-fit: cover;
   transition: 0.5s ease;
 }
