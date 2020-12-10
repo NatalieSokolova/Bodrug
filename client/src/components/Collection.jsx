@@ -36,7 +36,7 @@ export default function Collection() {
               e.preventDefault();
             }}
             onClick={() => {
-              setShowPhotos(true);
+              setShowPhotos(!showPhotos);
               setId(collection.id);
             }}
           />

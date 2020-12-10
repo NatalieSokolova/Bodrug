@@ -13,7 +13,7 @@ export default function Story() {
   const { state } = useStoryData();
 
   return (
-    <div>
+    <div className="story-container">
       {state.stories.map((story) => (
         <div className="story" key={story.id}>
           <img

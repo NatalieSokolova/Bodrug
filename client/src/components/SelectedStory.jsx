@@ -13,7 +13,6 @@ export default function SelectedStory(props) {
   });
 
   const contentStyle = {
-    // width: "40vw",
     height: "100%",
     width: "80vw",
     color: "#fff",

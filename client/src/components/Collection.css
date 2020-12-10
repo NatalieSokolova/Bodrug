@@ -1,13 +1,9 @@
 .collection-tile {
-  /* margin: 1vh 5vw; */
-  border-bottom: 15px solid white;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  border-bottom: 7.5px solid white;
 }
 
 .collection-tile > img {
-  height: 45vh;
+  height: 50vh;
   width: 100vw;
   object-fit: cover;
   position: relative;
@@ -26,11 +22,9 @@
   position: absolute;
   z-index: 20;
   font-family: "Playfair Display", serif;
-  font-size: 10vh;
-  font-weight: 400;
-  font-style: italic;
+  font-size: 7.5vh;
   color: white;
-  margin: 10% 2.5%;
+  margin: 35vh 5vw;
 }
 
 .collection-name:hover {
