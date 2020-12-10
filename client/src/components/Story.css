@@ -1,17 +1,18 @@
 .story-tile {
   display: flex;
   flex-direction: column;
-  margin: 5vh;
+  justify-content: center;
+  margin: 5vw;
   cursor: pointer;
 }
 
 .story-tile > img {
-  width: 80vw;
+  width: 90vw;
   height: auto;
   transition: 0.5s ease;
 }
 
-.story-description {
+/* .story-description {
   background-color: white;
   border: 2px solid black;
   z-index: 2;
@@ -37,4 +38,4 @@
   display: table-cell;
   vertical-align: middle;
   overflow: scroll;
-}
+} */
