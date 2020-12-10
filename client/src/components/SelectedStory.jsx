@@ -45,7 +45,7 @@ export default function SelectedStory(props) {
   return (
     <Carousel effect="fade" dotPosition={dotPosition}>
       {renderedPhotoList.map((renderedPhoto) => (
-        <div key={renderedPhoto.id}>
+        <div className="selected" key={renderedPhoto.id}>
           <p className="photo-description">{renderedPhoto.description}</p>
 
           <img
