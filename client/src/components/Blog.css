@@ -11,7 +11,7 @@
 
 .old-post > img {
   width: 42.5vw;
-  height: 30vw;
+  height: 27.5vw;
   object-fit: cover;
 }
 
@@ -24,4 +24,40 @@
   display: grid;
   grid-template-columns: auto auto;
   margin: 6vh 2.5vw;
+}
+
+.new-post-title,
+.old-post-title {
+  font-family: "Playfair Display", serif;
+}
+
+.new-post-title {
+  font-size: 5vh;
+}
+
+.old-post-title {
+  font-size: 2vh;
+  padding-top: 0;
+}
+
+.post-date {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  padding: 1vh 3vw;
+  align-items: center;
+}
+
+.vl {
+  border-left: 2px solid black;
+  height: 4vh;
+  margin: 0 0.5vw;
+}
+
+.post-date {
+  font-size: 1.4vh;
 }
