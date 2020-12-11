@@ -15,17 +15,20 @@ export default function Story() {
   return (
     <div className="story-container">
       {state.stories.map((story) => (
-        <div className="story" key={story.id}>
+        <div
+          className="story"
+          key={story.id}
+          onClick={() => {
+            setShowPhotos(!showPhotos);
+            setId(story.id);
+          }}
+        >
           <img
             src={require(`../assets/photos${story.coverurl}`)}
             alt={story.description}
             onContextMenu={(e) => {
               copyrightError();
               e.preventDefault();
-            }}
-            onClick={() => {
-              setShowPhotos(!showPhotos);
-              setId(story.id);
             }}
           />
           <div className="story-description">{story.description}</div>
