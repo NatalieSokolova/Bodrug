@@ -17,8 +17,10 @@ export default function Blog() {
             e.preventDefault();
           }}
         />
-        <h1 className="new-post-title">New Post Title</h1>
-        <h6 className="post-date">April 6, 2020</h6>
+        <div className="new-title-container">
+          <h1 className="new-post-title">New Post Title</h1>
+          <h6 className="post-date">April 6, 2020</h6>
+        </div>
       </div>
 
       <div className="old-post-list">
@@ -31,8 +33,11 @@ export default function Blog() {
               e.preventDefault();
             }}
           />
-          <h1 className="old-post-title">Old Post Title</h1>
-          <h6 className="post-date">April 6, 2021</h6>
+          <div className="title-container">
+            <h1 className="old-post-title">Old Post Title</h1>
+            <div class="vl"></div>
+            <h6 className="post-date">April 6, 2021</h6>
+          </div>
         </div>
         <div className="old-post">
           <img
@@ -43,8 +48,11 @@ export default function Blog() {
               e.preventDefault();
             }}
           />
-          <h1 className="old-post-title">Old Post Title</h1>
-          <h6 className="post-date">April 3, 2020</h6>
+          <div className="title-container">
+            <h1 className="old-post-title">Old Post Title</h1>
+            <div class="vl"></div>
+            <h6 className="post-date">April 3, 2020</h6>
+          </div>
         </div>
         <div className="old-post">
           <img
@@ -55,8 +63,11 @@ export default function Blog() {
               e.preventDefault();
             }}
           />
-          <h1 className="old-post-title">Old Post Title</h1>
-          <h6 className="post-date">May 26, 2020</h6>
+          <div className="title-container">
+            <h1 className="old-post-title">Old Post Title</h1>
+            <div class="vl"></div>
+            <h6 className="post-date">May 26, 2020</h6>
+          </div>
         </div>
         <div className="old-post">
           <img
@@ -67,8 +78,11 @@ export default function Blog() {
               e.preventDefault();
             }}
           />
-          <h1 className="old-post-title">Old Post Title</h1>
-          <h6 className="post-date">June 6, 2020</h6>
+          <div className="title-container">
+            <h1 className="old-post-title">Old Post Title</h1>
+            <div class="vl"></div>
+            <h6 className="post-date">June 6, 2020</h6>
+          </div>
         </div>
       </div>
     </div>
