@@ -33,6 +33,7 @@
 
 .new-post-title {
   font-size: 5vh;
+  margin-bottom: 1vh;
 }
 
 .old-post-title {
@@ -60,4 +61,9 @@
 
 .post-date {
   font-size: 1.4vh;
+}
+
+hr {
+  margin: 2.5vh 37.5vw;
+  border-top: 2px solid black;
 }
