@@ -1,13 +1,26 @@
 .new-post > img {
   width: 90vw;
-  height: 30vw;
-  margin: 2.5vw 5vw;
+  height: 35vw;
   object-fit: cover;
 }
 
-.old-posts > img {
-  width: 35vw;
-  height: 35vw;
+.new-post {
+  margin: 7.5vh 5vw 5vh;
+}
+
+.old-post > img {
+  width: 42.5vw;
+  height: 30vw;
   object-fit: cover;
-  margin: 2.5vw 5vw;
+}
+
+.old-post {
+  text-align: center;
+  margin-bottom: 4vh;
+}
+
+.old-post-list {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: 6vh 2.5vw;
 }
