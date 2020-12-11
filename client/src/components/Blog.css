@@ -6,6 +6,7 @@
 
 .new-post {
   margin: 7.5vh 5vw 5vh;
+  text-align: center;
 }
 
 .old-post > img {
