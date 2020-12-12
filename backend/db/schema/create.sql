@@ -52,5 +52,6 @@ CREATE TABLE blogEntries (
   title VARCHAR(5000) NOT NULL,
   article VARCHAR(10000) NOT NULL,
   coverUrl VARCHAR(255) NOT NULL,
-  photoUrls VARCHAR(1000)[]
+  photoUrls VARCHAR(1000)[],
+  dateString VARCHAR(255)
 );
