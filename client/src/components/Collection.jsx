@@ -9,9 +9,9 @@ import "./Collection.css";
 export default function Collection() {
   toast.configure();
 
+  const { state } = useCollectionData();
   const [showPhotos, setShowPhotos] = useState(false);
   const [id, setId] = useState(null);
-  const { state } = useCollectionData();
 
   return (
     <div>
