@@ -6,8 +6,6 @@ import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
 import "./Collection.css";
 
-// const idList = [1, 2, 3, 4];
-
 export default function Collection() {
   toast.configure();
 
