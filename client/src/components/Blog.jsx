@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import useBlogEntryData from "../hooks/useBlogEntryData";
 
 import { copyrightError } from "../partials";
@@ -9,6 +9,7 @@ export default function Blog() {
   toast.configure();
 
   const { state } = useBlogEntryData();
+  const [id, setId] = useState(null);
 
   return (
     <div>
@@ -39,10 +40,13 @@ export default function Blog() {
                   copyrightError();
                   e.preventDefault();
                 }}
+                onClick={() => {
+                  setId(blogEntry.id);
+                }}
               />
               <div className="title-container">
                 <h1 className="old-post-title">{blogEntry.title}</h1>
-                <div class="vl"></div>
+                <div className="vl"></div>
                 <h6 className="post-date">{blogEntry.datestring}</h6>
               </div>
             </div>
