@@ -14,17 +14,20 @@ import { copyrightError } from "../partials";
 import { toast } from "react-toastify";
 import "./Blog.css";
 
-export default function Blog() {
+export default function Blog({ blogId, setBlogId }) {
   toast.configure();
 
   const { state } = useBlogEntryData();
   const [id, setId] = useState(null);
 
+  // console.log("Id: ", id);
+  // console.log("blogId: ", blogId);
+
   return (
     <div>
       {state.blogEntries.slice(0, 1).map((blogEntry) => (
-        <Link to={`/blog/${blogEntry.title}`}>
-          <div className="new-post" key={1}>
+        <Link to={`/blog/${blogEntry.title}`} key={1}>
+          <div className="new-post">
             <img
               src={require(`../assets${blogEntry.coverurl}`)}
               alt="Yulia Bodrug"
@@ -43,8 +46,8 @@ export default function Blog() {
         {state.blogEntries
           .slice(1, state.blogEntries.length)
           .map((blogEntry) => (
-            <Link to={`/blog/${blogEntry.title}`}>
-              <div className="old-post" key={blogEntry.id}>
+            <Link to={`/blog/${blogEntry.title}`} key={blogEntry.id}>
+              <div className="old-post">
                 <img
                   src={require(`../assets${blogEntry.coverurl}`)}
                   alt="Yulia Bodrug"
@@ -54,6 +57,7 @@ export default function Blog() {
                   }}
                   onClick={() => {
                     setId(blogEntry.id);
+                    setBlogId(blogEntry.id);
                   }}
                 />
                 <div className="title-container">

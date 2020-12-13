@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
@@ -22,15 +22,21 @@ import { InstagramOutlined } from "@ant-design/icons";
 
 const { Footer } = Layout;
 
-function App() {
+function App(props) {
+  const [blogId, setBlogId] = useState(null);
+
   return (
     <SimpleReactLightbox>
       <Router>
         <Nav />
         <div>
           <Switch>
-            <Route path="/blog/:id" component={SelectedBlog} />
-            <Route path="/blog" component={Blog} />
+            <Route path="/blog/:id">
+              <SelectedBlog blogId={blogId} setBlogId={setBlogId} />
+            </Route>
+            <Route path="/blog">
+              <Blog blogId={blogId} setBlogId={setBlogId} />
+            </Route>
             <Route path="/about" component={About} />
             <Route path="/photos" component={Photo} />
             <Route path="/collections" component={Collection} />

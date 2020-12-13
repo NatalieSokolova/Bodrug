@@ -12,5 +12,11 @@ import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
 
 export default function SelectedBlog(props) {
-  return <div>THIS IS MY SELECTED BLOG</div>;
+  console.log("PROPS: ", props);
+  return (
+    <div>
+      <div>ID: {props.blogId}</div>
+      THIS IS MY SELECTED BLOG
+    </div>
+  );
 }
