@@ -23,7 +23,7 @@ export default function Blog() {
   return (
     <div>
       {state.blogEntries.slice(0, 1).map((blogEntry) => (
-        <Link to={`/blog/${blogEntry.id}`}>
+        <Link to={`/blog/${blogEntry.title}`}>
           <div className="new-post" key={1}>
             <img
               src={require(`../assets${blogEntry.coverurl}`)}
@@ -43,7 +43,7 @@ export default function Blog() {
         {state.blogEntries
           .slice(1, state.blogEntries.length)
           .map((blogEntry) => (
-            <Link to={`/blog/${blogEntry.id}`}>
+            <Link to={`/blog/${blogEntry.title}`}>
               <div className="old-post" key={blogEntry.id}>
                 <img
                   src={require(`../assets${blogEntry.coverurl}`)}
