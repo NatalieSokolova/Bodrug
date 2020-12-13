@@ -15,6 +15,7 @@ import Home from "./components/Home";
 import Collection from "./components/Collection";
 import Story from "./components/Story";
 import Blog from "./components/Blog";
+import SelectedBlog from "./components/SelectedBlog";
 import { Layout } from "antd";
 import "./components/Footer.css";
 import { InstagramOutlined } from "@ant-design/icons";
@@ -28,6 +29,7 @@ function App() {
         <Nav />
         <div>
           <Switch>
+            <Route path="/blog/:id" component={SelectedBlog} />
             <Route path="/blog" component={Blog} />
             <Route path="/about" component={About} />
             <Route path="/photos" component={Photo} />
