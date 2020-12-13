@@ -8,6 +8,7 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 import useBlogEntryData from "../hooks/useBlogEntryData";
+import SelectedBlog from "./SelectedBlog";
 
 import { copyrightError } from "../partials";
 import { toast } from "react-toastify";
@@ -16,15 +17,13 @@ import "./Blog.css";
 export default function Blog() {
   toast.configure();
 
-  let { path, url } = useRouteMatch();
-
   const { state } = useBlogEntryData();
   const [id, setId] = useState(null);
 
   return (
     <div>
       {state.blogEntries.slice(0, 1).map((blogEntry) => (
-        <Link to={`${url}/${blogEntry.title}`}>
+        <Link to={`/blog/${blogEntry.id}`}>
           <div className="new-post" key={1}>
             <img
               src={require(`../assets${blogEntry.coverurl}`)}
@@ -44,7 +43,7 @@ export default function Blog() {
         {state.blogEntries
           .slice(1, state.blogEntries.length)
           .map((blogEntry) => (
-            <Link to={`${url}/${blogEntry.title}`}>
+            <Link to={`/blog/${blogEntry.id}`}>
               <div className="old-post" key={blogEntry.id}>
                 <img
                   src={require(`../assets${blogEntry.coverurl}`)}
