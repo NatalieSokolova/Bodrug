@@ -1,7 +1,7 @@
 .story-img {
   object-fit: cover;
   transition: 0.5s ease;
-  padding: 5vh 0 0;
+  padding: 2.5vh 0 0;
   cursor: pointer;
 }
 
@@ -11,8 +11,4 @@
 
 .selected {
   margin: 0 5vw;
-}
-
-.slick-dots {
-  padding-top: 7.5vh;
 }
