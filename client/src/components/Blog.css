@@ -73,7 +73,7 @@ hr {
 }
 
 .blog-carousel-img {
-  max-height: 40vh;
+  height: 40vh;
   object-fit: cover;
 }
 
