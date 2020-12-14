@@ -11,6 +11,7 @@ export default function Collection() {
 
   const { state } = useCollectionData();
   const [showPhotos, setShowPhotos] = useState(false);
+  const [showDescription, setShowDescription] = useState(false);
   const [id, setId] = useState(null);
 
   return (
@@ -20,7 +21,8 @@ export default function Collection() {
           <h1
             className="collection-name"
             onClick={() => {
-              setShowPhotos(!showPhotos);
+              setShowPhotos(true);
+              setShowDescription(true);
               setId(collection.id);
             }}
           >
@@ -34,15 +36,21 @@ export default function Collection() {
               e.preventDefault();
             }}
             onClick={() => {
-              setShowPhotos(!showPhotos);
+              setShowPhotos(true);
+              setShowDescription(true);
               setId(collection.id);
             }}
           />
+
+          {showDescription && collection.id === id ? (
+            <div className="collection-description">
+              {collection.description}
+            </div>
+          ) : null}
+
           {showPhotos && collection.id === id ? (
             <SelectedCollection id={id} />
           ) : null}
-
-          <div className="collection-description">{collection.description}</div>
         </div>
       ))}
     </div>
