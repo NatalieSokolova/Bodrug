@@ -15,14 +15,15 @@ export default function Story() {
   return (
     <div className="story-container">
       {state.stories.map((story) => (
-        <div className="story" key={story.id}>
-          <div
-            className="story-description"
-            onClick={() => {
-              setShowPhotos(true);
-              setId(story.id);
-            }}
-          >
+        <div
+          className="story"
+          key={story.id}
+          onClick={() => {
+            setShowPhotos(true);
+            setId(story.id);
+          }}
+        >
+          <div className="story-description">
             <h1 className="story-name">{story.name}</h1>
             {story.description}
           </div>
@@ -34,12 +35,7 @@ export default function Story() {
               copyrightError();
               e.preventDefault();
             }}
-            onClick={() => {
-              setShowPhotos(true);
-              setId(story.id);
-            }}
           />
-
           {showPhotos && story.id === id ? <SelectedStory id={id} /> : null}
         </div>
       ))}
