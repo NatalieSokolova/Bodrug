@@ -32,9 +32,9 @@ export default function SelectedBlog({ blog, setBlog }) {
         <hr />
       </div>
 
-      <div>{blog.article}</div>
-      <div className="blog-carousel">
-        <Carousel autoplay>
+      <div className="blog-article">{blog.article}</div>
+      <div>
+        <Carousel autoplay className="blog-carousel">
           {blog.photourls.map((photourl) => (
             <img
               key={photourl}
