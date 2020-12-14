@@ -2,10 +2,18 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
-import useBlogEntryData from "../hooks/useBlogEntryData";
+import { Carousel } from "antd";
+
+const contentStyle = {
+  maxHeight: "40vh",
+  color: "#fff",
+  lineHeight: "40vh",
+  textAlign: "center",
+};
 
 export default function SelectedBlog({ blog, setBlog }) {
-  const id = blog.id === 0 ? blog.id : blog.id - 1;
+  toast.configure();
+
   console.log("BLOG: ", blog);
 
   return (
@@ -25,18 +33,22 @@ export default function SelectedBlog({ blog, setBlog }) {
       </div>
 
       <div>{blog.article}</div>
-      <div>
-        {blog.photourls.map((photourl) => (
-          <img
-            key={photourl}
-            src={require(`../assets${photourl}`)}
-            alt="Yulia Bodrug"
-            onContextMenu={(e) => {
-              copyrightError();
-              e.preventDefault();
-            }}
-          />
-        ))}
+      <div className="blog-carousel">
+        <Carousel autoplay>
+          {blog.photourls.map((photourl) => (
+            <img
+              key={photourl}
+              style={contentStyle}
+              src={require(`../assets${photourl}`)}
+              alt="Yulia Bodrug"
+              className="blog-carousel-img"
+              onContextMenu={(e) => {
+                copyrightError();
+                e.preventDefault();
+              }}
+            />
+          ))}
+        </Carousel>
       </div>
     </div>
   );

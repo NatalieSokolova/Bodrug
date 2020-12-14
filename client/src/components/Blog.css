@@ -67,3 +67,8 @@ hr {
   margin: 2.5vh 37.5vw;
   border-top: 2px solid black;
 }
+
+.blog-carousel-img {
+  max-height: 40vh;
+  object-fit: cover;
+}
