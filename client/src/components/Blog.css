@@ -13,6 +13,7 @@
   width: 42.5vw;
   height: 27.5vw;
   object-fit: cover;
+  transition: 0.5s ease;
 }
 
 .old-post {
@@ -75,6 +76,7 @@ hr {
 .blog-carousel-img {
   height: 40vh;
   object-fit: cover;
+  transition: 0.5s ease;
 }
 
 .blog-article {

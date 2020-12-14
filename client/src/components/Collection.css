@@ -1,10 +1,16 @@
+.collection-container {
+  margin-top: 7.5vh;
+}
+
 .collection-tile {
   border-bottom: 7.5px solid white;
+  width: 90vw;
+  margin: 2.5vh 5vw 5vh;
 }
 
 .collection-tile > img {
   height: 50vh;
-  width: 100vw;
+  width: 100%;
   object-fit: cover;
   position: relative;
   transition: 0.5s ease;
@@ -29,4 +35,14 @@
 
 .collection-name:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .collection-name {
+    font-size: 5vh;
+  }
+
+  .collection-name {
+    margin: 37.5vh 7.5vw;
+  }
 }

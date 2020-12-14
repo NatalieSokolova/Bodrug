@@ -14,7 +14,7 @@ export default function Collection() {
   const [id, setId] = useState(null);
 
   return (
-    <div>
+    <div className="collection-container">
       {state.collections.map((collection) => (
         <div className="collection-tile" key={collection.id}>
           <h1
