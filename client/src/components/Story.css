@@ -16,14 +16,39 @@
   transition: 0.5s ease;
 }
 
+.story-name {
+  color: white;
+  padding: 0;
+  padding-right: 5vh;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  text-align: start;
+  font-style: italic;
+}
+
 .story-description {
   position: absolute;
   color: white;
   bottom: 0;
-  padding: 2.5vh;
+  padding: 5vh;
+  padding-right: 10vh;
+  padding-top: 2.5vh;
   font-family: "Poppins", sans-serif;
   font-weight: 200;
-  font-style: italic;
-  font-size: 17.5px;
-  border-top: 2.5px solid white;
+  font-size: 1.75vh;
+  border-top: 3px solid white;
+  width: 75%;
+}
+
+@media only screen and (max-width: 900px) {
+  .story-description {
+    font-size: 1.5vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .story-description {
+    font-size: 1vh;
+    padding: 2.5vh;
+  }
 }
