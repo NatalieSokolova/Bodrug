@@ -39,7 +39,7 @@ export default function SelectedCollection(props) {
         {renderedPhotoList.map((renderedPhoto) => (
           <div key={renderedPhoto.id}>
             {/* <p>DESCRIPTION</p>
-          {renderedPhoto.description} */}
+            {renderedPhoto.description} */}
             <div>
               <img
                 src={require(`../assets/photos${renderedPhoto.url}`)}
