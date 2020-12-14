@@ -23,7 +23,7 @@ import { InstagramOutlined } from "@ant-design/icons";
 const { Footer } = Layout;
 
 function App(props) {
-  const [blogId, setBlogId] = useState(null);
+  const [blog, setBlog] = useState(null);
 
   return (
     <SimpleReactLightbox>
@@ -32,10 +32,10 @@ function App(props) {
         <div>
           <Switch>
             <Route path="/blog/:id">
-              <SelectedBlog blogId={blogId} setBlogId={setBlogId} />
+              <SelectedBlog blog={blog} setBlog={setBlog} />
             </Route>
             <Route path="/blog">
-              <Blog blogId={blogId} setBlogId={setBlogId} />
+              <Blog blog={blog} setBlog={setBlog} />
             </Route>
             <Route path="/about" component={About} />
             <Route path="/photos" component={Photo} />

@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-  useRouteMatch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import useBlogEntryData from "../hooks/useBlogEntryData";
 import SelectedBlog from "./SelectedBlog";
 
@@ -14,14 +7,11 @@ import { copyrightError } from "../partials";
 import { toast } from "react-toastify";
 import "./Blog.css";
 
-export default function Blog({ blogId, setBlogId }) {
+export default function Blog({ blog, setBlog }) {
   toast.configure();
 
   const { state } = useBlogEntryData();
   const [id, setId] = useState(null);
-
-  // console.log("Id: ", id);
-  // console.log("blogId: ", blogId);
 
   return (
     <div>
@@ -34,6 +24,10 @@ export default function Blog({ blogId, setBlogId }) {
               onContextMenu={(e) => {
                 copyrightError();
                 e.preventDefault();
+              }}
+              onClick={() => {
+                setId(blogEntry.id);
+                setBlog(blogEntry);
               }}
             />
             <h1 className="new-post-title">{blogEntry.title}</h1>
@@ -57,7 +51,7 @@ export default function Blog({ blogId, setBlogId }) {
                   }}
                   onClick={() => {
                     setId(blogEntry.id);
-                    setBlogId(blogEntry.id);
+                    setBlog(blogEntry);
                   }}
                 />
                 <div className="title-container">
