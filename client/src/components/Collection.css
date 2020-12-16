@@ -39,18 +39,21 @@
   width: 80vw;
   margin: 5vw;
   border: 2px solid white;
+  padding: 16vw 5vw 0;
 }
 
 .collection-name:hover {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 800px) {
+  .collection-name {
+    padding: 12.5vw 5vw 0;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .collection-name {
     font-size: 5vh;
   }
-
-  /* .collection-name {
-    margin: 37.5vh 7.5vw;
-  } */
 }
