@@ -41,14 +41,13 @@ export default function SelectedStory(props) {
   };
 
   return (
-    <div>
+    <div className="selected">
       <SRLWrapper options={options}>
         {renderedPhotoList.map((renderedPhoto) => (
-          <div className="selected" key={renderedPhoto.id}>
+          <div style={contentStyle} key={renderedPhoto.id}>
             <p className="photo-description">{renderedPhoto.description}</p>
 
             <img
-              style={contentStyle}
               className="story-img"
               src={require(`../assets/photos${renderedPhoto.url}`)}
               alt={renderedPhoto.description}

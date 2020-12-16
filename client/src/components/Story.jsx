@@ -20,9 +20,9 @@ export default function Story() {
         effect="fade"
         autoplay={autoplay}
         className="story-container"
-        onClick={() => {
-          setAutoplay(!autoplay);
-        }}
+        // onClick={() => {
+        //   setAutoplay(!autoplay);
+        // }}
       >
         {state.stories.map((story) => (
           <div>
@@ -32,6 +32,7 @@ export default function Story() {
               onClick={() => {
                 setId(story.id);
                 setShowPhotos(!showPhotos);
+                setAutoplay(!autoplay);
               }}
             >
               <div className="story-description">
