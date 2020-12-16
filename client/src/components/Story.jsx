@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import SelectedStory from "./SelectedStory";
 import useStoryData from "../hooks/useStoryData";
 import { toast } from "react-toastify";
-import { Carousel } from "antd";
+// import { Carousel } from "antd";
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext,
+} from "pure-react-carousel";
 import { copyrightError } from "../partials";
 import "./Story.css";
 
@@ -16,15 +23,20 @@ export default function Story() {
 
   return (
     <div>
-      <Carousel
+      {/* <Carousel
         effect="fade"
         autoplay={autoplay}
         className="story-container"
         // onClick={() => {
         //   setAutoplay(!autoplay);
         // }}
+      > */}
+      <CarouselProvider
+        naturalSlideWidth={100}
+        naturalSlideHeight={125}
+        totalSlides={state.stories.length}
       >
-        {state.stories.map((story) => (
+        {state.stories.map((story, index) => (
           <div>
             <div
               className="story"
@@ -52,7 +64,8 @@ export default function Story() {
             {showPhotos && story.id === id ? <SelectedStory id={id} /> : null}
           </div>
         ))}
-      </Carousel>
+      </CarouselProvider>
+      {/* </Carousel> */}
     </div>
   );
 }
