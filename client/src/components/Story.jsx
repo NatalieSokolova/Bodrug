@@ -11,18 +11,26 @@ export default function Story() {
 
   const [showPhotos, setShowPhotos] = useState(false);
   const [id, setId] = useState(null);
+  const [autoplay, setAutoplay] = useState(true);
   const { state } = useStoryData();
 
   return (
     <div>
-      <Carousel effect="fade" autoplay className="story-container">
+      <Carousel
+        effect="fade"
+        autoplay={autoplay}
+        className="story-container"
+        onClick={() => {
+          setAutoplay(!autoplay);
+        }}
+      >
         {state.stories.map((story) => (
           <div
             className="story"
             key={story.id}
             onClick={() => {
-              setShowPhotos(!showPhotos);
               setId(story.id);
+              setShowPhotos(!showPhotos);
             }}
           >
             <div className="story-description">
