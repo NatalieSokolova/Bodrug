@@ -34,7 +34,7 @@ export default function SelectedBlog({ blog, setBlog }) {
 
       <div className="blog-article">{blog.article}</div>
       <div>
-        <Carousel autoplay className="blog-carousel">
+        <Carousel effect="fade" autoplay className="blog-carousel">
           {blog.photourls.map((photourl) => (
             <img
               key={photourl}
