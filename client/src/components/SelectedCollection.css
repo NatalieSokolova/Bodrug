@@ -1,12 +1,13 @@
 .collection {
   display: grid;
   grid-template-columns: auto auto;
-  grid-gap: 2vw;
+  grid-gap: 1vw;
+  margin: 0 9vw;
 }
 
 .sel-collection-img {
-  width: 44vw;
-  height: 44vw;
+  width: 35.5vw;
+  height: 35.5vw;
   object-fit: cover;
   transition: 0.5s ease;
   cursor: pointer;
