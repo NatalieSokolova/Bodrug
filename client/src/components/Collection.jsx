@@ -17,17 +17,16 @@ export default function Collection() {
   return (
     <div className="collection-container">
       {state.collections.map((collection) => (
-        <div className="collection-tile" key={collection.id}>
-          <h1
-            className="collection-name"
-            onClick={() => {
-              setShowPhotos(true);
-              setShowDescription(true);
-              setId(collection.id);
-            }}
-          >
-            {collection.name}
-          </h1>
+        <div
+          className="collection-tile"
+          key={collection.id}
+          onClick={() => {
+            setShowPhotos(true);
+            setShowDescription(true);
+            setId(collection.id);
+          }}
+        >
+          <h1 className="collection-name">{collection.name}</h1>
           <img
             src={require(`../assets/photos${collection.coverurl}`)}
             alt={collection.description}
@@ -35,21 +34,15 @@ export default function Collection() {
               copyrightError();
               e.preventDefault();
             }}
-            onClick={() => {
-              setShowPhotos(true);
-              setShowDescription(true);
-              setId(collection.id);
-            }}
           />
 
           {showDescription && collection.id === id ? (
-            <div className="collection-description">
-              {collection.description}
+            <div>
+              <div className="collection-description">
+                {collection.description}
+              </div>
+              <SelectedCollection id={id} />
             </div>
-          ) : null}
-
-          {showPhotos && collection.id === id ? (
-            <SelectedCollection id={id} />
           ) : null}
         </div>
       ))}
