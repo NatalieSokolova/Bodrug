@@ -1,8 +1,10 @@
 .story-img {
+  width: 70vw;
+  height: auto;
   object-fit: cover;
   transition: 0.5s ease;
-  padding: 2.5vh 0 0;
   cursor: pointer;
+  margin-bottom: 2.5vh;
 }
 
 .photo-description {
@@ -10,5 +12,5 @@
 }
 
 .selected {
-  margin: 0 5vw;
+  margin: 5vh 15vw 7.5vh;
 }
