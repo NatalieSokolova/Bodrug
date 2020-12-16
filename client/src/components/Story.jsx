@@ -25,27 +25,29 @@ export default function Story() {
         }}
       >
         {state.stories.map((story) => (
-          <div
-            className="story"
-            key={story.id}
-            onClick={() => {
-              setId(story.id);
-              setShowPhotos(!showPhotos);
-            }}
-          >
-            <div className="story-description">
-              <h1 className="story-name">{story.name}</h1>
-              {story.description}
-            </div>
-
-            <img
-              src={require(`../assets/photos${story.coverurl}`)}
-              alt={story.description}
-              onContextMenu={(e) => {
-                copyrightError();
-                e.preventDefault();
+          <div>
+            <div
+              className="story"
+              key={story.id}
+              onClick={() => {
+                setId(story.id);
+                setShowPhotos(!showPhotos);
               }}
-            />
+            >
+              <div className="story-description">
+                <h1 className="story-name">{story.name}</h1>
+                {story.description}
+              </div>
+
+              <img
+                src={require(`../assets/photos${story.coverurl}`)}
+                alt={story.description}
+                onContextMenu={(e) => {
+                  copyrightError();
+                  e.preventDefault();
+                }}
+              />
+            </div>
             {showPhotos && story.id === id ? <SelectedStory id={id} /> : null}
           </div>
         ))}
