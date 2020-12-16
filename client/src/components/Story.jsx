@@ -15,7 +15,7 @@ export default function Story() {
 
   return (
     <div>
-      <Carousel autoplay className="story-container">
+      <Carousel effect="fade" autoplay className="story-container">
         {state.stories.map((story) => (
           <div
             className="story"
