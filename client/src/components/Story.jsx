@@ -21,7 +21,7 @@ export default function Story() {
             className="story"
             key={story.id}
             onClick={() => {
-              setShowPhotos(true);
+              setShowPhotos(!showPhotos);
               setId(story.id);
             }}
           >
