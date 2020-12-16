@@ -9,7 +9,7 @@
 }
 
 .collection-tile > img {
-  height: 50vh;
+  height: 50vw;
   width: 100%;
   object-fit: cover;
   position: relative;
@@ -35,7 +35,10 @@
   font-family: "Playfair Display", serif;
   font-size: 7.5vh;
   color: white;
-  margin: 35vh 5vw;
+  height: 40vw;
+  width: 80vw;
+  margin: 5vw;
+  border: 2px solid white;
 }
 
 .collection-name:hover {
@@ -47,7 +50,7 @@
     font-size: 5vh;
   }
 
-  .collection-name {
+  /* .collection-name {
     margin: 37.5vh 7.5vw;
-  }
+  } */
 }
