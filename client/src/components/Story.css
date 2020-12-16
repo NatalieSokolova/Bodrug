@@ -7,14 +7,14 @@
   cursor: pointer;
   position: relative;
   width: 100vw;
-  height: 85vh;
+  /* height: 85vh; */
 }
 
 .story > img {
   object-fit: cover;
   transition: 0.5s ease;
   width: 100%;
-  height: 100%;
+  height: 85vh;
 }
 
 .story-name {
