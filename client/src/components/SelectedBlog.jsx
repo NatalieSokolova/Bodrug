@@ -19,6 +19,11 @@ export default function SelectedBlog({ blog }) {
   const options = {
     buttons: {
       showDownloadButton: false,
+      showFullscreenButton: false,
+      showThumbnailsButton: false,
+    },
+    caption: {
+      showCaption: false,
     },
   };
 

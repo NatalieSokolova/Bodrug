@@ -13,6 +13,11 @@ export default function Portfolio() {
   const options = {
     buttons: {
       showDownloadButton: false,
+      showFullscreenButton: false,
+      showThumbnailsButton: false,
+    },
+    caption: {
+      showCaption: false,
     },
   };
 
