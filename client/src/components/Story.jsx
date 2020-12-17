@@ -18,19 +18,18 @@ export default function Story() {
 
   return (
     <div>
-      <Fragment>
-        <Button onClick={() => slider.current.prev()}>
-          <LeftOutlined />
-        </Button>
-        <Button onClick={() => slider.current.next()}>
-          <RightOutlined />
-        </Button>
+      <Fragment className="story-container">
+        <button className="arrow-btn" onClick={() => slider.current.prev()}>
+          <LeftOutlined style={{ fontSize: "50px" }} />
+        </button>
+        <button className="arrow-btn" onClick={() => slider.current.next()}>
+          <RightOutlined style={{ fontSize: "50px" }} />
+        </button>
 
         <Carousel
           ref={slider}
           effect="fade"
           autoplay={autoplay}
-          className="story-container"
           onClick={() => {
             setAutoplay(!autoplay);
           }}
