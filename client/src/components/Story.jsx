@@ -19,12 +19,20 @@ export default function Story() {
   return (
     <div>
       <Fragment className="story-container">
-        <button className="arrow-btn" onClick={() => slider.current.prev()}>
-          <LeftOutlined style={{ fontSize: "50px" }} />
-        </button>
-        <button className="arrow-btn" onClick={() => slider.current.next()}>
-          <RightOutlined style={{ fontSize: "50px" }} />
-        </button>
+        <div className="arrow-btn-container">
+          <button
+            className="arrow-btn prev"
+            onClick={() => slider.current.prev()}
+          >
+            <LeftOutlined style={{ fontSize: "50px" }} />
+          </button>
+          <button
+            className="arrow-btn next"
+            onClick={() => slider.current.next()}
+          >
+            <RightOutlined style={{ fontSize: "50px" }} />
+          </button>
+        </div>
 
         <Carousel
           ref={slider}

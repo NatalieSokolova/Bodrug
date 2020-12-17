@@ -42,6 +42,7 @@
 .arrow-btn {
   border: none;
   background: none;
+  color: white;
 }
 
 .arrow-btn:focus {
@@ -58,6 +59,13 @@
 
 .story-container {
   position: relative;
+}
+
+.arrow-btn-container {
+  position: absolute;
+  z-index: 3;
+  margin-top: 77.5vh;
+  margin-left: 90vw;
 }
 
 @media only screen and (max-width: 900px) {
