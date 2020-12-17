@@ -1,20 +1,26 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
 import { Carousel } from "antd";
+import { SRLWrapper } from "simple-react-lightbox";
 
 const contentStyle = {
   maxHeight: "40vh",
+  width: "100%",
   color: "#fff",
   lineHeight: "40vh",
   textAlign: "center",
+  cursor: "pointer",
 };
 
-export default function SelectedBlog({ blog, setBlog }) {
+export default function SelectedBlog({ blog }) {
   toast.configure();
 
-  console.log("BLOG: ", blog);
+  const options = {
+    buttons: {
+      showDownloadButton: false,
+    },
+  };
 
   return (
     <div>
@@ -36,17 +42,19 @@ export default function SelectedBlog({ blog, setBlog }) {
       <div>
         <Carousel effect="fade" autoplay className="blog-carousel">
           {blog.photourls.map((photourl) => (
-            <img
-              key={photourl}
-              style={contentStyle}
-              src={require(`../assets${photourl}`)}
-              alt="Yulia Bodrug"
-              className="blog-carousel-img"
-              onContextMenu={(e) => {
-                copyrightError();
-                e.preventDefault();
-              }}
-            />
+            <SRLWrapper options={options}>
+              <img
+                key={photourl}
+                style={contentStyle}
+                src={require(`../assets${photourl}`)}
+                alt="Yulia Bodrug"
+                className="blog-carousel-img"
+                onContextMenu={(e) => {
+                  copyrightError();
+                  e.preventDefault();
+                }}
+              />
+            </SRLWrapper>
           ))}
         </Carousel>
       </div>
