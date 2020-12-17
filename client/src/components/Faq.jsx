@@ -16,7 +16,7 @@ export default function Faq() {
       </h2>
       <div className="content">
         <img
-          src={require("../assets/IMG_1705.jpg")}
+          src={require("../assets/IMG_1705-min.jpg")}
           alt="by Iuliia Bodrug"
           className="faq-photo"
           onContextMenu={(e) => {

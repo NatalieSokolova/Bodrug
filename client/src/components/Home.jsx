@@ -41,7 +41,7 @@ export default function Home() {
       <div className="img-container">
         <img
           className="home-img"
-          src={require("../assets/paintings/the-new-york-public-library-R5oumqz_lhY-unsplash.jpg")}
+          src={require("../assets/paintings/the-new-york-public-library-R5oumqz_lhY-unsplash-min.jpg")}
           alt="by Yuliia Bodrug"
           onContextMenu={(e) => {
             copyrightError();
