@@ -71,6 +71,7 @@
 @media only screen and (max-width: 900px) {
   .story-description {
     font-size: 1.5vh;
+    font-weight: 300;
   }
 
   .story {
@@ -80,7 +81,7 @@
 
 @media only screen and (max-width: 600px) {
   .story-description {
-    font-size: 1vh;
+    font-size: 1.5vh;
     padding: 2.5vh;
   }
 }
