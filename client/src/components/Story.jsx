@@ -1,21 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useRef, Fragment } from "react";
 import SelectedStory from "./SelectedStory";
 import useStoryData from "../hooks/useStoryData";
 import { toast } from "react-toastify";
-// import { Carousel } from "antd";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-} from "pure-react-carousel";
+import { Carousel, Button } from "antd";
 import { copyrightError } from "../partials";
 import "./Story.css";
 
 export default function Story() {
   toast.configure();
 
+  const slider = useRef(null);
   const [showPhotos, setShowPhotos] = useState(false);
   const [id, setId] = useState(null);
   const [autoplay, setAutoplay] = useState(true);
@@ -23,49 +17,49 @@ export default function Story() {
 
   return (
     <div>
-      {/* <Carousel
-        effect="fade"
-        autoplay={autoplay}
-        className="story-container"
-        // onClick={() => {
-        //   setAutoplay(!autoplay);
-        // }}
-      > */}
-      <CarouselProvider
-        naturalSlideWidth={100}
-        naturalSlideHeight={125}
-        totalSlides={state.stories.length}
-      >
-        {state.stories.map((story, index) => (
-          <div>
-            <div
-              className="story"
-              key={story.id}
-              onClick={() => {
-                setId(story.id);
-                setShowPhotos(!showPhotos);
-                setAutoplay(!autoplay);
-              }}
-            >
-              <div className="story-description">
-                <h1 className="story-name">{story.name}</h1>
-                {story.description}
-              </div>
+      <Fragment>
+        <Button onClick={() => slider.current.prev()}>prev</Button>
+        <Button onClick={() => slider.current.next()}>next</Button>
 
-              <img
-                src={require(`../assets/photos${story.coverurl}`)}
-                alt={story.description}
-                onContextMenu={(e) => {
-                  copyrightError();
-                  e.preventDefault();
+        <Carousel
+          ref={slider}
+          effect="fade"
+          autoplay={autoplay}
+          className="story-container"
+          onClick={() => {
+            setAutoplay(!autoplay);
+          }}
+        >
+          {state.stories.map((story) => (
+            <div>
+              <div
+                className="story"
+                key={story.id}
+                onClick={() => {
+                  setId(story.id);
+                  setShowPhotos(!showPhotos);
+                  setAutoplay(!autoplay);
                 }}
-              />
+              >
+                <div className="story-description">
+                  <h1 className="story-name">{story.name}</h1>
+                  {story.description}
+                </div>
+
+                <img
+                  src={require(`../assets/photos${story.coverurl}`)}
+                  alt={story.description}
+                  onContextMenu={(e) => {
+                    copyrightError();
+                    e.preventDefault();
+                  }}
+                />
+              </div>
+              {showPhotos && story.id === id ? <SelectedStory id={id} /> : null}
             </div>
-            {showPhotos && story.id === id ? <SelectedStory id={id} /> : null}
-          </div>
-        ))}
-      </CarouselProvider>
-      {/* </Carousel> */}
+          ))}
+        </Carousel>
+      </Fragment>
     </div>
   );
 }
