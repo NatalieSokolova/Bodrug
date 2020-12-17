@@ -36,7 +36,7 @@ export default function Collection() {
             }}
           />
 
-          {showDescription && collection.id === id ? (
+          {showDescription && showPhotos && collection.id === id ? (
             <div>
               <div className="collection-description">
                 {collection.description}
