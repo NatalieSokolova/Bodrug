@@ -3,6 +3,7 @@ import SelectedStory from "./SelectedStory";
 import useStoryData from "../hooks/useStoryData";
 import { toast } from "react-toastify";
 import { Carousel, Button } from "antd";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { copyrightError } from "../partials";
 import "./Story.css";
 
@@ -18,8 +19,12 @@ export default function Story() {
   return (
     <div>
       <Fragment>
-        <Button onClick={() => slider.current.prev()}>prev</Button>
-        <Button onClick={() => slider.current.next()}>next</Button>
+        <Button onClick={() => slider.current.prev()}>
+          <LeftOutlined />
+        </Button>
+        <Button onClick={() => slider.current.next()}>
+          <RightOutlined />
+        </Button>
 
         <Carousel
           ref={slider}
