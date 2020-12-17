@@ -10,7 +10,7 @@ export default function About() {
     <div className="about">
       <div className="photo">
         <img
-          src={require("../assets/paintings/europeana-YIfFVwDcgu8-unsplash.jpg")}
+          src={require("../assets/paintings/europeana-YIfFVwDcgu8-unsplash-min.jpg")}
           alt="Yulia Bodrug"
           onContextMenu={(e) => {
             copyrightError();
@@ -35,7 +35,7 @@ export default function About() {
       </div>
       <div className="photo">
         <img
-          src={require("../assets/paintings/tamara-menzi-n-vnWQmmVoY-unsplash.jpg")}
+          src={require("../assets/paintings/tamara-menzi-n-vnWQmmVoY-unsplash-min.jpg")}
           alt="Yulia Bodrug"
           id="mission-anchor"
           onContextMenu={(e) => {
@@ -58,7 +58,7 @@ export default function About() {
       </div>
       <div className="photo">
         <img
-          src={require("../assets/paintings/the-new-york-public-library-R5oumqz_lhY-unsplash.jpg")}
+          src={require("../assets/paintings/the-new-york-public-library-R5oumqz_lhY-unsplash-min.jpg")}
           alt="Yulia Bodrug"
           onContextMenu={(e) => {
             copyrightError();
@@ -78,7 +78,7 @@ export default function About() {
       </div>
       <div className="photo">
         <img
-          src={require("../assets/paintings/europeana-qi9jveT9X6A-unsplash.jpg")}
+          src={require("../assets/paintings/europeana-qi9jveT9X6A-unsplash-min.jpg")}
           alt="Yulia Bodrug"
           onContextMenu={(e) => {
             copyrightError();

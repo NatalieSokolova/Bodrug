@@ -9,7 +9,7 @@ export default function Pricing() {
   return (
     <div>
       <img
-        src={require("../assets/top.jpg")}
+        src={require("../assets/top-min.jpg")}
         alt="by Iuliia Bodrug"
         className="banner"
         onContextMenu={(e) => {

@@ -14,7 +14,7 @@ export default function Contact() {
       </div>
       <div className="contact-photo">
         <img
-          src={require("../assets/about/IMG_1710.jpeg")}
+          src={require("../assets/about/IMG_1710-min.jpg")}
           alt="Yulia Bodrug"
           id="bottom"
           onContextMenu={(e) => {
