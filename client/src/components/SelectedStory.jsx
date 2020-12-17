@@ -21,7 +21,7 @@ export default function SelectedStory(props) {
     margin: "0",
   };
 
-  const getPhotosByStoryId = useEffect(() => {
+  useEffect(() => {
     axios({
       method: "GET",
       url: `/stories/${props.id}/photos`,

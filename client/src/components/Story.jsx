@@ -2,7 +2,7 @@ import React, { useState, useRef, Fragment } from "react";
 import SelectedStory from "./SelectedStory";
 import useStoryData from "../hooks/useStoryData";
 import { toast } from "react-toastify";
-import { Carousel, Button } from "antd";
+import { Carousel } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { copyrightError } from "../partials";
 import "./Story.css";

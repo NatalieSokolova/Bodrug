@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useBlogEntryData from "../hooks/useBlogEntryData";
-import SelectedBlog from "./SelectedBlog";
 
 import { copyrightError } from "../partials";
 import { toast } from "react-toastify";
@@ -40,7 +39,7 @@ export default function Blog({ blog, setBlog }) {
         {state.blogEntries
           .slice(1, state.blogEntries.length)
           .map((blogEntry) => (
-            <Link to={`/blog/${blogEntry.title}`} key={blogEntry.id}>
+            <Link to={`/blog/${blogEntry.title}`} key={id}>
               <div className="old-post">
                 <img
                   src={require(`../assets${blogEntry.coverurl}`)}

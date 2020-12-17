@@ -14,7 +14,7 @@ export default function SelectedCollection(props) {
 
   console.log("PROPS: ", props);
 
-  const getPhotosByCollectionId = useEffect(() => {
+  useEffect(() => {
     axios({
       method: "GET",
       url: `/collections/${props.id}/photos`,
@@ -38,8 +38,6 @@ export default function SelectedCollection(props) {
       <div className="collection">
         {renderedPhotoList.map((renderedPhoto) => (
           <div key={renderedPhoto.id}>
-            {/* <p>DESCRIPTION</p>
-            {renderedPhoto.description} */}
             <div>
               <img
                 src={require(`../assets/photos${renderedPhoto.url}`)}

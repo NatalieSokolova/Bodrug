@@ -1,6 +1,5 @@
 .navbar {
   width: 100%;
-  /* padding: 10px; */
   position: fixed;
   top: 0;
   transition: top 0.6s;
@@ -10,23 +9,3 @@
 .navbar--hidden {
   top: -50px;
 }
-
-/* li.ant-menu-item.ant-menu-item-only-child.nav-item > a:hover {
-  color: black;
-}
-
-.ant-menu-submenu-title:hover {
-  color: black;
-}
-
-.nav-item:hover {
-  border-bottom: 2px solid transparent !important;
-}
-
-.submenu:hover {
-  border-bottom: 2px solid transparent !important;
-}
-
-.submenu > li:hover {
-  border-bottom: 2px solid transparent !important;
-} */
