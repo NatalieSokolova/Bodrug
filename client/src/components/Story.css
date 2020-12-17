@@ -65,7 +65,7 @@
   position: absolute;
   z-index: 3;
   margin-top: 77.5vh;
-  margin-left: 90vw;
+  right: 2.5vw;
 }
 
 @media only screen and (max-width: 900px) {

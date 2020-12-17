@@ -37,6 +37,7 @@ export default function Story() {
         <Carousel
           ref={slider}
           effect="fade"
+          dots={false}
           autoplay={autoplay}
           onClick={() => {
             setAutoplay(!autoplay);
