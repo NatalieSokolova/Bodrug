@@ -30,6 +30,11 @@ export default function SelectedCollection(props) {
   const options = {
     buttons: {
       showDownloadButton: false,
+      showFullscreenButton: false,
+      showThumbnailsButton: false,
+    },
+    caption: {
+      showCaption: false,
     },
   };
 

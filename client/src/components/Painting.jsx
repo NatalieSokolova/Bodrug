@@ -12,6 +12,11 @@ export default function Painting() {
   const options = {
     buttons: {
       showDownloadButton: false,
+      showFullscreenButton: false,
+      showThumbnailsButton: false,
+    },
+    caption: {
+      showCaption: false,
     },
   };
 
