@@ -37,19 +37,22 @@ export default function SelectedBlog({ blog }) {
   return (
     <div>
       {state.blogEntries.map((blogPost) => (
-        <div className="new-post" key={blogPost.id}>
-          {console.log("BLOG: ", blogPost)}
-          <img
-            src={require(`../assets${blogPost.coverurl}`)}
-            alt="Yulia Bodrug"
-            onContextMenu={(e) => {
-              copyrightError();
-              e.preventDefault();
-            }}
-          />
-          <h1 className="new-post-title">{blogPost.title}</h1>
-          <h6 className="post-date">{blogPost.datestring}</h6>
-          <hr />
+        <div key={blogPost.id}>
+          <div className="new-post">
+            {console.log("BLOG: ", blogPost)}
+            <img
+              src={require(`../assets${blogPost.coverurl}`)}
+              alt="Yulia Bodrug"
+              onContextMenu={(e) => {
+                copyrightError();
+                e.preventDefault();
+              }}
+            />
+            <h1 className="new-post-title">{blogPost.title}</h1>
+            <h6 className="post-date">{blogPost.datestring}</h6>
+            <hr />
+          </div>
+
           <div className="blog-article">{blogPost.article}</div>
           <div>
             <Carousel effect="fade" autoplay className="blog-carousel">
