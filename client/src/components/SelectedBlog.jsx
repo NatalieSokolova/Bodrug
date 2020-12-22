@@ -31,8 +31,9 @@ export default function SelectedBlog({ blog }) {
 
   const { state } = useBlogEntryData();
 
-  let match = useRouteMatch("/blog/:id");
-  console.log("MATCH: ", match.params.id);
+  const match = useRouteMatch("/blog/:id");
+  const postId = match.params.id;
+  console.log("postId: ", postId);
 
   return (
     <div>
@@ -57,9 +58,8 @@ export default function SelectedBlog({ blog }) {
           <div>
             <Carousel effect="fade" autoplay className="blog-carousel">
               {blogPost.photourls.map((photourl) => (
-                <SRLWrapper options={options}>
+                <SRLWrapper options={options} key={photourl}>
                   <img
-                    key={photourl}
                     style={contentStyle}
                     src={require(`../assets${photourl}`)}
                     alt="Yulia Bodrug"
