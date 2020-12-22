@@ -32,12 +32,12 @@ export default function SelectedBlog({ blog, setBlog }) {
   const { state } = useBlogEntryData();
 
   const match = useRouteMatch("/blog/:id");
-  const postId = match.params.id;
+  const postId = Number(match.params.id);
   console.log("postId: ", postId);
   console.log("blogEntries: ", state.blogEntries);
 
   const blogPost = state.blogEntries.find(
-    (blogEntry) => blogEntry.id === Number(postId)
+    (blogEntry) => blogEntry.id === postId
   );
 
   return (
