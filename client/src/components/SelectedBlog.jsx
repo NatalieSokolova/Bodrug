@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useBlogEntryData from "../hooks/useBlogEntryData";
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
@@ -15,7 +15,7 @@ const contentStyle = {
   cursor: "pointer",
 };
 
-export default function SelectedBlog({ blog }) {
+export default function SelectedBlog({ blog, setBlog }) {
   toast.configure();
 
   const options = {
@@ -34,10 +34,17 @@ export default function SelectedBlog({ blog }) {
   const match = useRouteMatch("/blog/:id");
   const postId = match.params.id;
   console.log("postId: ", postId);
+  console.log("blogEntries: ", state.blogEntries);
+
+  const blogPost = state.blogEntries.find(
+    (blogEntry) => blogEntry.id === Number(postId)
+  );
 
   return (
     <div>
-      {state.blogEntries.map((blogPost) => (
+      {console.log("blogPost: ", blogPost)}
+
+      {/* {state.blogEntries.map((blogPost) => (
         <div key={blogPost.id}>
           <div className="new-post">
             {console.log("BLOG: ", blogPost)}
@@ -74,7 +81,7 @@ export default function SelectedBlog({ blog }) {
             </Carousel>
           </div>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }
