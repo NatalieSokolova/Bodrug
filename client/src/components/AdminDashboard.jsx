@@ -20,7 +20,7 @@ export default function AdminDashboard() {
       <Card className="admin-panel">
         <Card.Grid
           onClick={() => {
-            showForm(true);
+            setShowForm(true);
             setId("allPhotos");
           }}
           className="admin-card"
@@ -29,7 +29,7 @@ export default function AdminDashboard() {
         </Card.Grid>
         <Card.Grid
           onClick={() => {
-            showForm(true);
+            setShowForm(true);
             setId("collections");
           }}
           className="admin-card"
@@ -38,7 +38,7 @@ export default function AdminDashboard() {
         </Card.Grid>
         <Card.Grid
           onClick={() => {
-            showForm(true);
+            setShowForm(true);
             setId("stories");
           }}
           className="admin-card"
@@ -47,7 +47,7 @@ export default function AdminDashboard() {
         </Card.Grid>
         <Card.Grid
           onClick={() => {
-            showForm(true);
+            setShowForm(true);
             setId("art");
           }}
           className="admin-card"
@@ -56,7 +56,7 @@ export default function AdminDashboard() {
         </Card.Grid>
         <Card.Grid
           onClick={() => {
-            showForm(true);
+            setShowForm(true);
             setId("faq");
           }}
           className="admin-card"
@@ -65,7 +65,7 @@ export default function AdminDashboard() {
         </Card.Grid>
         <Card.Grid
           onClick={() => {
-            showForm(true);
+            setShowForm(true);
             setId("blog");
           }}
           className="admin-card"
@@ -73,9 +73,12 @@ export default function AdminDashboard() {
           Blog
         </Card.Grid>
       </Card>
-      <div className="upload-container">
-        <FaqUpload />
-      </div>
+
+      {showForm && id === "faq" ? (
+        <div className="upload-container">
+          <FaqUpload />
+        </div>
+      ) : null}
     </div>
   );
 }
