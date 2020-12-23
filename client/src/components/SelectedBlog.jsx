@@ -1,5 +1,5 @@
 import React from "react";
-// import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
 import { Carousel } from "antd";
@@ -28,14 +28,9 @@ export default function SelectedBlog({ blog, setBlog }) {
     },
   };
 
-  // const match = useRouteMatch("/blog/:id");
-  // const postId = Number(match.params.id);
-  // console.log("postId: ", postId);
-  // console.log("blogEntries: ", state.blogEntries);
-
-  // const blogPost = state.blogEntries.find(
-  //   (blogEntry) => blogEntry.id === postId
-  // );
+  const match = useRouteMatch("/blog/:id");
+  const postId = Number(match.params.id);
+  console.log("postId: ", postId);
 
   return (
     <div>
