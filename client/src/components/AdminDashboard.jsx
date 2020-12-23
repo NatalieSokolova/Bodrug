@@ -27,11 +27,51 @@ export default function AdminDashboard() {
         >
           All Photos
         </Card.Grid>
-        <Card.Grid className="admin-card">Collections</Card.Grid>
-        <Card.Grid className="admin-card">Stories</Card.Grid>
-        <Card.Grid className="admin-card">Art</Card.Grid>
-        <Card.Grid className="admin-card">FAQs</Card.Grid>
-        <Card.Grid className="admin-card">Blog</Card.Grid>
+        <Card.Grid
+          onClick={() => {
+            showForm(true);
+            setId("collections");
+          }}
+          className="admin-card"
+        >
+          Collections
+        </Card.Grid>
+        <Card.Grid
+          onClick={() => {
+            showForm(true);
+            setId("stories");
+          }}
+          className="admin-card"
+        >
+          Stories
+        </Card.Grid>
+        <Card.Grid
+          onClick={() => {
+            showForm(true);
+            setId("art");
+          }}
+          className="admin-card"
+        >
+          Art
+        </Card.Grid>
+        <Card.Grid
+          onClick={() => {
+            showForm(true);
+            setId("faq");
+          }}
+          className="admin-card"
+        >
+          FAQs
+        </Card.Grid>
+        <Card.Grid
+          onClick={() => {
+            showForm(true);
+            setId("blog");
+          }}
+          className="admin-card"
+        >
+          Blog
+        </Card.Grid>
       </Card>
       <div className="upload-container">
         <FaqUpload />
