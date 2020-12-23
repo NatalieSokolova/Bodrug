@@ -4,9 +4,27 @@ import { Form, Input, Button } from "antd";
 
 export default function FaqUpload() {
   const [faq, setFaq] = useState({
-    question: "",
-    answer: "",
+    question: "Q",
+    answer: "A",
   });
+
+  console.log("STATE: ", faq);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newFaq = {
+      question: faq.question,
+      answer: faq.answer,
+    };
+
+    axios
+      .post("http://localhost:3001/faqs", newFaq)
+      .then((response) => {
+        setFaq({});
+      })
+      .catch((error) => error);
+  };
 
   return (
     <div>
