@@ -84,3 +84,7 @@ hr {
   margin: 7.5vh 15vw;
   text-align: center;
 }
+
+.blog-carousel {
+  cursor: pointer;
+}

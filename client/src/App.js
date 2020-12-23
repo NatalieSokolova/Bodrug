@@ -31,7 +31,7 @@ function App(props) {
         <Nav />
         <div>
           <Switch>
-            <Route path="/blog/:id">
+            <Route path="/blog/:slug">
               <SelectedBlog blog={blog} setBlog={setBlog} />
             </Route>
             <Route path="/blog">
