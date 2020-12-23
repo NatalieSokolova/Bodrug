@@ -33,43 +33,86 @@ export default function SelectedBlog({ blog, setBlog }) {
   const postId = Number(match.params.id);
   console.log("postId: ", postId);
 
-  const [state, setState] = useState({
-    blogPost: {},
-  });
+  // const [state, setState] = useState({
+  //   blogPost: {},
+  // });
 
   useEffect(() => {
     axios({
       method: "GET",
       url: `/blogEntries/${postId}`,
     })
-      .then((result) =>
-        setState((prev) => ({ ...prev, blogPost: result.data[0] }))
-      )
+      .then((result) => {
+        setBlog(result.data[0]);
+      })
       .catch((err) => console.log(err));
   }, [postId]);
 
-  console.log("POST: ", state.blogPost.coverurl);
+  const blogPost = () => {
+    if (blog) {
+      console.log("POST: ", blog.coverurl);
+      return (
+        <div>
+          <div className="new-post">
+            <img
+              src={require(`../assets${blog.coverurl}`)}
+              alt="Yulia Bodrug"
+              onContextMenu={(e) => {
+                copyrightError();
+                e.preventDefault();
+              }}
+            />
+            <h1 className="new-post-title">{blog.title}</h1>
+            <h6 className="post-date">{blog.datestring}</h6>
+            <hr />
+          </div>
+
+          <div className="blog-article">{blog.article}</div>
+          <div>
+            <Carousel effect="fade" autoplay className="blog-carousel">
+              {blog.photourls.map((photourl) => (
+                <SRLWrapper options={options} key={photourl}>
+                  <img
+                    style={contentStyle}
+                    src={require(`../assets${photourl}`)}
+                    alt="Yulia Bodrug"
+                    className="blog-carousel-img"
+                    onContextMenu={(e) => {
+                      copyrightError();
+                      e.preventDefault();
+                    }}
+                  />
+                </SRLWrapper>
+              ))}
+            </Carousel>
+          </div>
+        </div>
+      );
+    }
+  };
+
+  blogPost();
 
   return (
     <div>
       {/* <div className="new-post">
         <img
-          src={require(`../assets${state.blogPost.coverurl}`)}
+          src={require(`../assets${blog.coverurl}`)}
           alt="Yulia Bodrug"
           onContextMenu={(e) => {
             copyrightError();
             e.preventDefault();
           }}
         />
-        <h1 className="new-post-title">{state.blogPost.title}</h1>
-        <h6 className="post-date">{state.blogPost.datestring}</h6>
+        <h1 className="new-post-title">{blog.title}</h1>
+        <h6 className="post-date">{blog.datestring}</h6>
         <hr />
       </div>
 
-      <div className="blog-article">{state.blogPost.article}</div>
+      <div className="blog-article">{blog.article}</div>
       <div>
         <Carousel effect="fade" autoplay className="blog-carousel">
-          {state.blogPost.photourls.map((photourl) => (
+          {blog.photourls.map((photourl) => (
             <SRLWrapper options={options} key={photourl}>
               <img
                 style={contentStyle}
