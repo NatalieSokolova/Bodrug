@@ -23,3 +23,11 @@
   background-color: white;
   color: black;
 }
+
+.upload-container {
+  margin: 10vh 15vw;
+}
+
+.faq-upload-form {
+  width: 100%;
+}
