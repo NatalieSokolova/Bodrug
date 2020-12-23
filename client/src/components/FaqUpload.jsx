@@ -4,8 +4,10 @@ import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
 
-export default function FaqUpload() {
+export default function FaqUpload(props) {
   toast.configure();
+
+  const [form] = Form.useForm();
 
   const [faq, setFaq] = useState({
     question: "Q",
@@ -40,6 +42,7 @@ export default function FaqUpload() {
       .post("http://localhost:3001/faqs", newFaq)
       .then((response) => {
         setFaq({});
+        form.resetFields();
         notifySuccess("Woo-hoo! FAQ posted successfully!");
       })
       .catch((error) => {
@@ -52,6 +55,7 @@ export default function FaqUpload() {
     <div>
       <h1>Add a new FAQ below</h1>
       <Form
+        form={form}
         className="upload-form"
         name="basic"
         initialValues={{ remember: true }}
