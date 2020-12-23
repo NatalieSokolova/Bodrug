@@ -25,5 +25,14 @@
 }
 
 .upload-container {
-  margin: 10vh 15vw;
+  margin: 10vh 10vw;
+}
+
+.upload-form {
+  border: 2.5px solid black;
+  width: 100%;
+  height: auto;
+  min-width: 30vw;
+  margin: 5vh auto;
+  padding: 0.5em;
 }

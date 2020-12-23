@@ -2,30 +2,18 @@ import React from "react";
 import { Form, Input, Button } from "antd";
 
 export default function FaqUpload() {
-  const layout = {
-    labelCol: { span: 8 },
-    wrapperCol: { span: 16 },
-  };
-  const tailLayout = {
-    wrapperCol: { span: 16 },
-  };
-
   return (
     <div>
-      <div>NEW FAQ INCOMING!!!</div>
+      <h1>Add a new FAQ below</h1>
       <Form
-        {...layout}
+        className="upload-form"
         name="basic"
         initialValues={{ remember: true }}
-        style={{
-          width: "auto",
-        }}
       >
         <div
           style={{
-            margin: "5vw",
-            marginLeft: "-5vw",
-            width: "68vw",
+            padding: "5vh 2vw",
+            marginBottom: "-7.5vh",
           }}
         >
           <Form.Item
@@ -46,7 +34,6 @@ export default function FaqUpload() {
         </div>
 
         <Form.Item
-          {...tailLayout}
           style={{
             marginBottom: "0",
           }}
@@ -55,8 +42,6 @@ export default function FaqUpload() {
             type="primary"
             htmlType="submit"
             style={{
-              width: "68vw",
-              margin: ".75vw",
               paddingBottom: "20px",
               height: "50px",
             }}
