@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useRouteMatch } from "react-router-dom";
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
@@ -32,26 +33,43 @@ export default function SelectedBlog({ blog, setBlog }) {
   const postId = Number(match.params.id);
   console.log("postId: ", postId);
 
+  const [state, setState] = useState({
+    blogPost: {},
+  });
+
+  useEffect(() => {
+    axios({
+      method: "GET",
+      url: `/blogEntries/${postId}`,
+    })
+      .then((result) =>
+        setState((prev) => ({ ...prev, blogPost: result.data[0] }))
+      )
+      .catch((err) => console.log(err));
+  }, [postId]);
+
+  console.log("POST: ", state.blogPost.coverurl);
+
   return (
     <div>
       {/* <div className="new-post">
         <img
-          src={require(`../assets${blog.coverurl}`)}
+          src={require(`../assets${state.blogPost.coverurl}`)}
           alt="Yulia Bodrug"
           onContextMenu={(e) => {
             copyrightError();
             e.preventDefault();
           }}
         />
-        <h1 className="new-post-title">{blog.title}</h1>
-        <h6 className="post-date">{blog.datestring}</h6>
+        <h1 className="new-post-title">{state.blogPost.title}</h1>
+        <h6 className="post-date">{state.blogPost.datestring}</h6>
         <hr />
       </div>
 
-      <div className="blog-article">{blog.article}</div>
+      <div className="blog-article">{state.blogPost.article}</div>
       <div>
         <Carousel effect="fade" autoplay className="blog-carousel">
-          {blog.photourls.map((photourl) => (
+          {state.blogPost.photourls.map((photourl) => (
             <SRLWrapper options={options} key={photourl}>
               <img
                 style={contentStyle}
