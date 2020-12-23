@@ -30,14 +30,14 @@ module.exports = (db) => {
   // FOR ADMIN PAGE
   router.post("/", (req, res) => {
     // extract the data from req.body
-    const { title, article, coverUrl, photoUrls, dateString } = req.body;
+    const { title, slug, article, coverUrl, photoUrls, dateString } = req.body;
 
-    console.log({ title, article, coverUrl, photoUrls, dateString });
+    console.log({ title, slug, article, coverUrl, photoUrls, dateString });
 
     // create an insert query in the db
     const query = {
-      text: `INSERT INTO blogEntries (title, article, coverUrl, photoUrls, dateString) VALUES ($1, $2, $3, $4, $5) RETURNING *;`,
-      values: [title, article, coverUrl, photoUrls, dateString],
+      text: `INSERT INTO blogEntries (title, slug, article, coverUrl, photoUrls, dateString) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;`,
+      values: [title, slug, article, coverUrl, photoUrls, dateString],
     };
 
     db.query(query)

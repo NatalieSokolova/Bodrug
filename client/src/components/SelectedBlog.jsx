@@ -1,8 +1,10 @@
 import React from "react";
+import useBlogEntryData from "../hooks/useBlogEntryData";
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
 import { Carousel } from "antd";
 import { SRLWrapper } from "simple-react-lightbox";
+import { useRouteMatch } from "react-router-dom";
 
 const contentStyle = {
   maxHeight: "40vh",
@@ -13,7 +15,7 @@ const contentStyle = {
   cursor: "pointer",
 };
 
-export default function SelectedBlog({ blog }) {
+export default function SelectedBlog({ blog, setBlog }) {
   toast.configure();
 
   const options = {
@@ -27,41 +29,54 @@ export default function SelectedBlog({ blog }) {
     },
   };
 
-  return (
-    <div>
-      <div className="new-post">
-        <img
-          src={require(`../assets${blog.coverurl}`)}
-          alt="Yulia Bodrug"
-          onContextMenu={(e) => {
-            copyrightError();
-            e.preventDefault();
-          }}
-        />
-        <h1 className="new-post-title">{blog.title}</h1>
-        <h6 className="post-date">{blog.datestring}</h6>
-        <hr />
-      </div>
+  const { state } = useBlogEntryData();
 
-      <div className="blog-article">{blog.article}</div>
-      <div>
-        <Carousel effect="fade" autoplay className="blog-carousel">
-          {blog.photourls.map((photourl) => (
-            <SRLWrapper options={options} key={photourl}>
-              <img
-                style={contentStyle}
-                src={require(`../assets${photourl}`)}
-                alt="Yulia Bodrug"
-                className="blog-carousel-img"
-                onContextMenu={(e) => {
-                  copyrightError();
-                  e.preventDefault();
-                }}
-              />
-            </SRLWrapper>
-          ))}
-        </Carousel>
-      </div>
-    </div>
+  const match = useRouteMatch("/blog/:slug");
+  const postSlug = match.params.slug;
+
+  const blogPost = state.blogEntries.find(
+    (blogEntry) => blogEntry.slug === postSlug
   );
+
+  if (blogPost) {
+    return (
+      <div>
+        <div className="new-post">
+          <img
+            src={require(`../assets${blogPost.coverurl}`)}
+            alt="Yulia Bodrug"
+            onContextMenu={(e) => {
+              copyrightError();
+              e.preventDefault();
+            }}
+          />
+          <h1 className="new-post-title">{blogPost.title}</h1>
+          <h6 className="post-date">{blogPost.datestring}</h6>
+          <hr />
+        </div>
+
+        <div className="blog-article">{blogPost.article}</div>
+        <div>
+          <SRLWrapper options={options}>
+            <Carousel effect="fade" autoplay className="blog-carousel">
+              {blogPost.photourls.map((photourl) => (
+                <img
+                  key={photourl}
+                  style={contentStyle}
+                  src={require(`../assets${photourl}`)}
+                  alt="Yulia Bodrug"
+                  className="blog-carousel-img"
+                  onContextMenu={(e) => {
+                    copyrightError();
+                    e.preventDefault();
+                  }}
+                />
+              ))}
+            </Carousel>
+          </SRLWrapper>
+        </div>
+      </div>
+    );
+  }
+  return null;
 }
