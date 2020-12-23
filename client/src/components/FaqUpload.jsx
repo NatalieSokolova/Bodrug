@@ -59,7 +59,11 @@ export default function FaqUpload() {
             name="FaqQuestion"
             rules={[{ required: true, message: "Please input your question!" }]}
           >
-            <Input.TextArea name="question" onChange={handleChange} />
+            <Input.TextArea
+              name="question"
+              value={faq.question}
+              onChange={handleChange}
+            />
           </Form.Item>
 
           <Form.Item
@@ -67,7 +71,11 @@ export default function FaqUpload() {
             name="FaqAnswer"
             rules={[{ required: true, message: "Please input your answer!" }]}
           >
-            <Input.TextArea name="answer" onChange={handleChange} />
+            <Input.TextArea
+              value={faq.answer}
+              name="answer"
+              onChange={handleChange}
+            />
           </Form.Item>
         </div>
 
