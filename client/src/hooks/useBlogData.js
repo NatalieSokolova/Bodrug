@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useBlogEntryData = () => {
+const useBlogData = () => {
   const [state, setState] = useState({ blogEntries: [] });
 
   useEffect(() => {
@@ -21,4 +21,4 @@ const useBlogEntryData = () => {
   };
 };
 
-export default useBlogEntryData;
+export default useBlogData;

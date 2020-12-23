@@ -1,4 +1,5 @@
 import React from "react";
+// import { useRouteMatch } from "react-router-dom";
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
 import { Carousel } from "antd";
@@ -13,7 +14,7 @@ const contentStyle = {
   cursor: "pointer",
 };
 
-export default function SelectedBlog({ blog }) {
+export default function SelectedBlog({ blog, setBlog }) {
   toast.configure();
 
   const options = {
@@ -27,9 +28,18 @@ export default function SelectedBlog({ blog }) {
     },
   };
 
+  // const match = useRouteMatch("/blog/:id");
+  // const postId = Number(match.params.id);
+  // console.log("postId: ", postId);
+  // console.log("blogEntries: ", state.blogEntries);
+
+  // const blogPost = state.blogEntries.find(
+  //   (blogEntry) => blogEntry.id === postId
+  // );
+
   return (
     <div>
-      <div className="new-post">
+      {/* <div className="new-post">
         <img
           src={require(`../assets${blog.coverurl}`)}
           alt="Yulia Bodrug"
@@ -61,7 +71,7 @@ export default function SelectedBlog({ blog }) {
             </SRLWrapper>
           ))}
         </Carousel>
-      </div>
+      </div> */}
     </div>
   );
 }

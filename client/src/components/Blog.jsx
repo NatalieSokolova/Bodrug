@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import useBlogEntryData from "../hooks/useBlogEntryData";
+import useBlogData from "../hooks/useBlogData";
 
 import { copyrightError } from "../partials";
 import { toast } from "react-toastify";
@@ -9,7 +9,7 @@ import "./Blog.css";
 export default function Blog({ blog, setBlog }) {
   toast.configure();
 
-  const { state } = useBlogEntryData();
+  const { state } = useBlogData();
   // const [id, setId] = useState(null);
 
   return (
