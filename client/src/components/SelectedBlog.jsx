@@ -57,10 +57,11 @@ export default function SelectedBlog({ blog, setBlog }) {
 
         <div className="blog-article">{blogPost.article}</div>
         <div>
-          <Carousel effect="fade" autoplay className="blog-carousel">
-            {blogPost.photourls.map((photourl) => (
-              <SRLWrapper options={options} key={photourl}>
+          <SRLWrapper options={options}>
+            <Carousel effect="fade" autoplay className="blog-carousel">
+              {blogPost.photourls.map((photourl) => (
                 <img
+                  key={photourl}
                   style={contentStyle}
                   src={require(`../assets${photourl}`)}
                   alt="Yulia Bodrug"
@@ -70,9 +71,9 @@ export default function SelectedBlog({ blog, setBlog }) {
                     e.preventDefault();
                   }}
                 />
-              </SRLWrapper>
-            ))}
-          </Carousel>
+              ))}
+            </Carousel>
+          </SRLWrapper>
         </div>
       </div>
     );
