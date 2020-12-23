@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "antd";
 import FaqUpload from "./FaqUpload";
 import "./AdminDashboard.css";
 
 export default function AdminDashboard() {
-  // const gridStyle = {
-  //   width: "30%",
-  //   textAlign: "center",
-  // };
+  const [showForm, setShowForm] = useState(false);
+  const [id, setId] = useState(null);
 
   return (
     <div>
@@ -20,7 +18,15 @@ export default function AdminDashboard() {
         <h2>Have a beautiful day!</h2>
       </div>
       <Card className="admin-panel">
-        <Card.Grid className="admin-card">All Photos</Card.Grid>
+        <Card.Grid
+          onClick={() => {
+            showForm(true);
+            setId("allPhotos");
+          }}
+          className="admin-card"
+        >
+          All Photos
+        </Card.Grid>
         <Card.Grid className="admin-card">Collections</Card.Grid>
         <Card.Grid className="admin-card">Stories</Card.Grid>
         <Card.Grid className="admin-card">Art</Card.Grid>
