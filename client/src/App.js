@@ -33,7 +33,6 @@ function App(props) {
           <Switch>
             <Route path="/blog/:slug">
               <SelectedBlog blog={blog} setBlog={setBlog} />
-              {/* <SelectedBlog blog={blogs[match.id]}/> */}
             </Route>
             <Route path="/blog">
               <Blog blog={blog} setBlog={setBlog} />
