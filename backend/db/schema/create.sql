@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS photos CASCADE;
 
 CREATE TABLE photos (
   id SERIAL PRIMARY KEY NOT NULL,
-  description VARCHAR(5000) NOT NULL,
+  description VARCHAR(5000),
   url VARCHAR(255) NOT NULL,
   collection_id INTEGER REFERENCES collections(id) ON DELETE CASCADE,
   story_id INTEGER REFERENCES stories(id) ON DELETE CASCADE
@@ -30,10 +30,10 @@ DROP TABLE IF EXISTS paintings CASCADE;
 
 CREATE TABLE paintings (
   id SERIAL PRIMARY KEY NOT NULL,
-  description VARCHAR(5000) NOT NULL,
+  description VARCHAR(5000),
   url VARCHAR(255) NOT NULL,
   year INTEGER,
-  materials VARCHAR(500) NOT NULL,
+  materials VARCHAR(500),
   price INTEGER
 );
 
@@ -54,5 +54,5 @@ CREATE TABLE blogEntries (
   article VARCHAR(10000) NOT NULL,
   coverUrl VARCHAR(255) NOT NULL,
   photoUrls VARCHAR(1000)[],
-  dateString VARCHAR(255)
+  dateString VARCHAR(255) NOT NULL
 );
