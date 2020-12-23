@@ -47,9 +47,8 @@ export default function SelectedBlog({ blog }) {
       <div>
         <Carousel effect="fade" autoplay className="blog-carousel">
           {blog.photourls.map((photourl) => (
-            <SRLWrapper options={options}>
+            <SRLWrapper options={options} key={photourl}>
               <img
-                key={photourl}
                 style={contentStyle}
                 src={require(`../assets${photourl}`)}
                 alt="Yulia Bodrug"
