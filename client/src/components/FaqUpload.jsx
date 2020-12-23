@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import { Form, Input, Button } from "antd";
 
 export default function FaqUpload() {
+  const [faq, setFaq] = useState({
+    question: "",
+    answer: "",
+  });
+
   return (
     <div>
       <h1>Add a new FAQ below</h1>
