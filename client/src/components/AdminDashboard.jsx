@@ -1,5 +1,22 @@
 import React from "react";
+import { Card } from "antd";
 
 export default function AdminDashboard() {
-  return <div>THIS IS ADMIN PAGE</div>;
+  const gridStyle = {
+    width: "30%",
+    textAlign: "center",
+  };
+
+  return (
+    <div>
+      <Card title="Card Title">
+        <Card.Grid>Content</Card.Grid>
+        <Card.Grid>Content</Card.Grid>
+        <Card.Grid>Content</Card.Grid>
+        <Card.Grid>Content</Card.Grid>
+        <Card.Grid>Content</Card.Grid>
+        <Card.Grid>Content</Card.Grid>
+      </Card>
+    </div>
+  );
 }
