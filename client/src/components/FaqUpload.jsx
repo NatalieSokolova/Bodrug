@@ -10,8 +10,8 @@ export default function FaqUpload(props) {
   const [form] = Form.useForm();
 
   const [faq, setFaq] = useState({
-    question: "Q",
-    answer: "A",
+    question: "",
+    answer: "",
   });
 
   console.log("STATE: ", faq);
@@ -38,17 +38,22 @@ export default function FaqUpload(props) {
       answer: faq.answer,
     };
 
-    axios
-      .post("http://localhost:3001/faqs", newFaq)
-      .then((response) => {
-        setFaq({});
-        form.resetFields();
-        notifySuccess("Woo-hoo! FAQ posted successfully!");
-      })
-      .catch((error) => {
-        notifyError("OOPS! Something went wrong. Please, try again");
-        console.log("TROUBLE! ", error);
-      });
+    console.log("NEW: ", newFaq);
+    if (newFaq.question && newFaq.answer) {
+      axios
+        .post("http://localhost:3001/faqs", newFaq)
+        .then((response) => {
+          setFaq({});
+          form.resetFields();
+          notifySuccess("Woo-hoo! FAQ posted successfully!");
+        })
+        .catch((error) => {
+          notifyError("OOPS! Something went wrong. Please, try again");
+          console.log("TROUBLE! ", error);
+        });
+    } else {
+      notifyError("You can't submit an empty FAQ. Please, try again");
+    }
   };
 
   return (
