@@ -31,11 +31,11 @@ export default function SelectedBlog({ blog, setBlog }) {
 
   const { state } = useBlogEntryData();
 
-  const match = useRouteMatch("/blog/:id");
-  const postId = Number(match.params.id);
+  const match = useRouteMatch("/blog/:title");
+  const postTitle = match.params.title;
 
   const blogPost = state.blogEntries.find(
-    (blogEntry) => blogEntry.id === postId
+    (blogEntry) => blogEntry.title === postTitle
   );
 
   if (blogPost) {
