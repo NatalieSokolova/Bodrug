@@ -15,7 +15,13 @@ export default function Blog({ blog, setBlog }) {
   return (
     <div>
       {state.blogEntries.slice(0, 1).map((blogEntry) => (
-        <Link to={`/blog/${blogEntry.title}`} key={1}>
+        <Link
+          to={`/blog/${blogEntry.id}`}
+          key={1}
+          onClick={() => {
+            setBlog(blogEntry);
+          }}
+        >
           <div className="new-post">
             <img
               src={require(`../assets${blogEntry.coverurl}`)}
@@ -23,10 +29,6 @@ export default function Blog({ blog, setBlog }) {
               onContextMenu={(e) => {
                 copyrightError();
                 e.preventDefault();
-              }}
-              onClick={() => {
-                setId(blogEntry.id);
-                setBlog(blogEntry);
               }}
             />
             <h1 className="new-post-title">{blogEntry.title}</h1>
@@ -39,7 +41,13 @@ export default function Blog({ blog, setBlog }) {
         {state.blogEntries
           .slice(1, state.blogEntries.length)
           .map((blogEntry) => (
-            <Link to={`/blog/${blogEntry.title}`} key={id}>
+            <Link
+              to={`/blog/${blogEntry.title}`}
+              key={blogEntry.id}
+              onClick={() => {
+                setBlog(blogEntry);
+              }}
+            >
               <div className="old-post">
                 <img
                   src={require(`../assets${blogEntry.coverurl}`)}
@@ -47,10 +55,6 @@ export default function Blog({ blog, setBlog }) {
                   onContextMenu={(e) => {
                     copyrightError();
                     e.preventDefault();
-                  }}
-                  onClick={() => {
-                    setId(blogEntry.id);
-                    setBlog(blogEntry);
                   }}
                 />
                 <div className="title-container">
