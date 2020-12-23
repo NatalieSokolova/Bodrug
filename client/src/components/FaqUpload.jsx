@@ -36,6 +36,7 @@ export default function FaqUpload() {
       .post("http://localhost:3001/faqs", newFaq)
       .then((response) => {
         setFaq({});
+        console.log("SUCCESS!");
       })
       .catch((error) => error);
   };
@@ -85,6 +86,7 @@ export default function FaqUpload() {
           }}
         >
           <Button
+            onClick={handleSubmit}
             type="primary"
             htmlType="submit"
             style={{
