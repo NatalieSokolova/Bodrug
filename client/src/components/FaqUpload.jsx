@@ -19,24 +19,31 @@ export default function FaqUpload() {
         initialValues={{ remember: true }}
         style={{
           width: "auto",
-          // padding: "10px",
         }}
       >
-        <Form.Item
-          label="FaqQuestion"
-          name="FaqQuestion"
-          rules={[{ required: true, message: "Please input your question!" }]}
+        <div
+          style={{
+            margin: "5vw",
+            marginLeft: "-5vw",
+            width: "68vw",
+          }}
         >
-          <Input.TextArea />
-        </Form.Item>
+          <Form.Item
+            label="FaqQuestion"
+            name="FaqQuestion"
+            rules={[{ required: true, message: "Please input your question!" }]}
+          >
+            <Input.TextArea />
+          </Form.Item>
 
-        <Form.Item
-          label="FaqAnswer"
-          name="FaqAnswer"
-          rules={[{ required: true, message: "Please input your answer!" }]}
-        >
-          <Input.TextArea />
-        </Form.Item>
+          <Form.Item
+            label="FaqAnswer"
+            name="FaqAnswer"
+            rules={[{ required: true, message: "Please input your answer!" }]}
+          >
+            <Input.TextArea />
+          </Form.Item>
+        </div>
 
         <Form.Item
           {...tailLayout}
