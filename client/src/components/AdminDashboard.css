@@ -18,3 +18,8 @@
   background-color: black;
   color: white;
 }
+
+.admin-card:hover {
+  background-color: white;
+  color: black;
+}
