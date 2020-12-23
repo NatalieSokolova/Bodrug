@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
+import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
 
 export default function FaqUpload() {
+  toast.configure();
+
   const [faq, setFaq] = useState({
     question: "Q",
     answer: "A",
@@ -36,9 +40,12 @@ export default function FaqUpload() {
       .post("http://localhost:3001/faqs", newFaq)
       .then((response) => {
         setFaq({});
-        console.log("SUCCESS!");
+        notifySuccess("Woo-hoo! FAQ posted successfully!");
       })
-      .catch((error) => error);
+      .catch((error) => {
+        notifyError("OOPS! Something went wrong. Please, try again");
+        console.log("TROUBLE! ", error);
+      });
   };
 
   return (
