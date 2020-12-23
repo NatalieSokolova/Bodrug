@@ -10,7 +10,7 @@ export default function Blog({ blog, setBlog }) {
   toast.configure();
 
   const { state } = useBlogEntryData();
-  const [id, setId] = useState(null);
+  // const [id, setId] = useState(null);
 
   return (
     <div>
@@ -18,9 +18,9 @@ export default function Blog({ blog, setBlog }) {
         <Link
           to={`/blog/${blogEntry.id}`}
           key={1}
-          onClick={() => {
-            setBlog(blogEntry);
-          }}
+          // onClick={() => {
+          //   setBlog(blogEntry);
+          // }}
         >
           <div className="new-post">
             <img
@@ -42,11 +42,11 @@ export default function Blog({ blog, setBlog }) {
           .slice(1, state.blogEntries.length)
           .map((blogEntry) => (
             <Link
-              to={`/blog/${blogEntry.title}`}
+              to={`/blog/${blogEntry.id}`}
               key={blogEntry.id}
-              onClick={() => {
-                setBlog(blogEntry);
-              }}
+              // onClick={() => {
+              //   setBlog(blogEntry);
+              // }}
             >
               <div className="old-post">
                 <img
