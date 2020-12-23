@@ -10,8 +10,22 @@ export default function FaqUpload() {
 
   console.log("STATE: ", faq);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleChange = (event) => {
+    const target = event.target;
+    const name = target.name;
+    const value = target.value;
+
+    setFaq({
+      ...faq,
+      [name]: value,
+    });
+
+    console.log("NAME: ", name);
+    console.log(target);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
     const newFaq = {
       question: faq.question,
@@ -45,7 +59,7 @@ export default function FaqUpload() {
             name="FaqQuestion"
             rules={[{ required: true, message: "Please input your question!" }]}
           >
-            <Input.TextArea />
+            <Input.TextArea name="question" onChange={handleChange} />
           </Form.Item>
 
           <Form.Item
@@ -53,7 +67,7 @@ export default function FaqUpload() {
             name="FaqAnswer"
             rules={[{ required: true, message: "Please input your answer!" }]}
           >
-            <Input.TextArea />
+            <Input.TextArea name="answer" onChange={handleChange} />
           </Form.Item>
         </div>
 
