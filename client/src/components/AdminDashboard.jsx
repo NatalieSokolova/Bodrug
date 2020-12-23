@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "antd";
+import FaqUpload from "./FaqUpload";
 import "./AdminDashboard.css";
 
 export default function AdminDashboard() {
@@ -26,6 +27,9 @@ export default function AdminDashboard() {
         <Card.Grid className="admin-card">FAQs</Card.Grid>
         <Card.Grid className="admin-card">Blog</Card.Grid>
       </Card>
+      <div className="upload-container">
+        <FaqUpload />
+      </div>
     </div>
   );
 }
