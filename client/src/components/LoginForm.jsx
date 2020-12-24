@@ -7,6 +7,11 @@ import { Form, Input, Button } from "antd";
 export default function LoginForm() {
   toast.configure();
 
+  const ADMIN_USERNAME = process.env.REACT_APP_ADMIN_USERNAME;
+  const ADMIN_PASSWORD = process.env.REACT_APP_ADMIN_PASSWORD;
+
+  console.log("ENV: ", ADMIN_USERNAME);
+
   const [form] = Form.useForm();
 
   const [auth, setAuth] = useState({

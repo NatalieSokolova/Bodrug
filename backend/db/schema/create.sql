@@ -56,11 +56,3 @@ CREATE TABLE blogEntries (
   photoUrls VARCHAR(1000)[],
   dateString VARCHAR(255) NOT NULL
 );
-
-DROP TABLE IF EXISTS adminCredentials CASCADE;
-
-CREATE TABLE adminCredentials (
-  id SERIAL PRIMARY KEY NOT NULL,
-  username VARCHAR(250) NOT NULL,
-  password VARCHAR(250) NOT NULL
-);
