@@ -17,6 +17,7 @@ const faqsRouter = require("./routes/faqs");
 const collectionsRouter = require("./routes/collections");
 const storiesRouter = require("./routes/stories");
 const blogEntriesRouter = require("./routes/blogEntries");
+const adminCredentialsRouter = require("./routes/adminCredentials");
 
 const app = express();
 
@@ -40,6 +41,7 @@ app.use("/faqs", faqsRouter(db));
 app.use("/collections", collectionsRouter(db));
 app.use("/stories", storiesRouter(db));
 app.use("/blogEntries", blogEntriesRouter(db));
+app.use("/adminCredentials", adminCredentialsRouter(db));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
