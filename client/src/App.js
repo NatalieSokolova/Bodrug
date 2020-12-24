@@ -17,6 +17,7 @@ import Story from "./components/Story";
 import Blog from "./components/Blog";
 import SelectedBlog from "./components/SelectedBlog";
 import AdminDashboard from "./components/AdminDashboard";
+import LoginForm from "./components/LoginForm";
 import { Layout } from "antd";
 import "./components/Footer.css";
 import { InstagramOutlined } from "@ant-design/icons";
@@ -48,6 +49,7 @@ function App(props) {
             <Route path="/contact" component={Contact} />
             <Route exact path="/" component={Home} />
             <Route path="/admin" component={AdminDashboard} />
+            <Route path="/login" component={LoginForm} />
           </Switch>
         </div>
         <Layout>

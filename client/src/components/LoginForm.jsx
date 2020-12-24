@@ -14,8 +14,6 @@ export default function LoginForm() {
     answer: "",
   });
 
-  console.log("STATE: ", faq);
-
   const handleChange = (event) => {
     const target = event.target;
     const name = target.name;
@@ -57,8 +55,8 @@ export default function LoginForm() {
   };
 
   return (
-    <div>
-      <h1>Add a new FAQ below</h1>
+    <div className="upload-container">
+      <h1>Please, login first to acces the admin pannel</h1>
       <Form
         form={form}
         className="upload-form"

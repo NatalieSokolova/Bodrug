@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { Card } from "antd";
 import FaqUpload from "./FaqUpload";
 import LoginForm from "./LoginForm";
@@ -12,9 +13,7 @@ export default function AdminDashboard() {
   return (
     <div>
       {!auth ? (
-        <div className="upload-container">
-          <LoginForm />
-        </div>
+        <Redirect to="/login" />
       ) : (
         <div>
           <div className="admin-title">
