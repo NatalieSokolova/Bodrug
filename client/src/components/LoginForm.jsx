@@ -70,25 +70,25 @@ export default function LoginForm() {
           }}
         >
           <Form.Item
-            label="FaqQuestion"
-            name="FaqQuestion"
-            rules={[{ required: true, message: "Please input your question!" }]}
+            label="username"
+            name="username"
+            rules={[{ required: true, message: "Please input your username!" }]}
           >
             <Input.TextArea
-              name="question"
+              name="username"
               value={faq.question}
               onChange={handleChange}
             />
           </Form.Item>
 
           <Form.Item
-            label="FaqAnswer"
-            name="FaqAnswer"
-            rules={[{ required: true, message: "Please input your answer!" }]}
+            label="password"
+            name="password"
+            rules={[{ required: true, message: "Please input your password!" }]}
           >
             <Input.TextArea
               value={faq.answer}
-              name="answer"
+              name="password"
               onChange={handleChange}
             />
           </Form.Item>
@@ -108,7 +108,7 @@ export default function LoginForm() {
               height: "50px",
             }}
           >
-            Post
+            Log in
           </Button>
         </Form.Item>
       </Form>
