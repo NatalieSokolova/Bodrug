@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { Card } from "antd";
 import FaqUpload from "./FaqUpload";
-import LoginForm from "./LoginForm";
 import "./AdminDashboard.css";
 
 export default function AdminDashboard() {
