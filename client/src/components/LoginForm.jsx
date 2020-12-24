@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
 
-export default function FaqUpload() {
+export default function LoginForm() {
   toast.configure();
 
   const [form] = Form.useForm();
