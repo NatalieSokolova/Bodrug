@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../partials";
@@ -10,7 +11,8 @@ export default function LoginForm() {
   const ADMIN_USERNAME = process.env.REACT_APP_ADMIN_USERNAME;
   const ADMIN_PASSWORD = process.env.REACT_APP_ADMIN_PASSWORD;
 
-  console.log("ENV: ", ADMIN_USERNAME);
+  console.log("username: ", ADMIN_USERNAME);
+  console.log("password: ", ADMIN_PASSWORD);
 
   const [form] = Form.useForm();
 
@@ -33,19 +35,29 @@ export default function LoginForm() {
     console.log(target);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    // get credentials first
-    axios({
-      method: "GET",
-      url: "/adminCredentials",
-    })
-      .then((result) => {
-        return result.data[0], console.log("AUTH: ", result.data[0]);
-      })
-      .catch((err) => console.log(err));
+  const checkCredentials = () => {
+    let authenticated = false;
+    if (auth.username === ADMIN_USERNAME && auth.password === ADMIN_PASSWORD) {
+      authenticated = true;
+    }
+    return authenticated;
   };
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+
+  //   console.log("AUTH U: ", auth.username);
+  //   console.log("AUTH P: ", auth.password);
+
+  //   if (checkCredentials()) {
+  //     return <Redirect to="/admin" />;
+  //   }
+  //   return (
+  //     form.resetFields(),
+  //     notifyError("OOPS! Wrong username or password. Please, try again")
+  //   );
+
+  // };
 
   return (
     <div className="upload-container">
@@ -67,8 +79,9 @@ export default function LoginForm() {
             name="username"
             rules={[{ required: true, message: "Please input your username!" }]}
           >
-            <Input.TextArea
+            <Input
               name="username"
+              type="text"
               value={auth.username}
               onChange={handleChange}
             />
@@ -79,8 +92,9 @@ export default function LoginForm() {
             name="password"
             rules={[{ required: true, message: "Please input your password!" }]}
           >
-            <Input.TextArea
+            <Input
               name="password"
+              type="password"
               value={auth.password}
               onChange={handleChange}
             />
@@ -93,7 +107,7 @@ export default function LoginForm() {
           }}
         >
           <Button
-            onClick={handleSubmit}
+            onClick={checkCredentials}
             type="primary"
             htmlType="submit"
             style={{
