@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import axios from "axios";
 import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
 
-export default function LoginForm() {
+export default function LoginForm({ loggedIn, setLoggedIn }) {
   toast.configure();
 
   const ADMIN_USERNAME = process.env.REACT_APP_ADMIN_USERNAME;
@@ -50,6 +49,7 @@ export default function LoginForm() {
     console.log("AUTH P: ", auth.password);
 
     if (verifyCredentials()) {
+      console.log("TRUE? ", verifyCredentials());
       return <Redirect to="/admin" />;
     }
     return (
@@ -106,7 +106,7 @@ export default function LoginForm() {
           }}
         >
           <Button
-            onClick={() => handleSubmit}
+            onClick={handleSubmit}
             type="primary"
             htmlType="submit"
             style={{
