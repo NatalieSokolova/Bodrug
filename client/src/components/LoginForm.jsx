@@ -36,8 +36,15 @@ export default function LoginForm() {
     console.log(target);
   };
 
-  useEffect(() => {
+  const validate = () => {
     if (auth.username === ADMIN_USERNAME && auth.password === ADMIN_PASSWORD) {
+      return true;
+    }
+    return false;
+  };
+
+  useEffect(() => {
+    if (validate()) {
       setIsLoggedIn(true);
     }
   }, [isLoggedIn]);
