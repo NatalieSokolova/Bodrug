@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
 
-export default function LoginForm({ loggedIn, setLoggedIn }) {
+export default function LoginForm() {
   toast.configure();
 
   const ADMIN_USERNAME = process.env.REACT_APP_ADMIN_USERNAME;

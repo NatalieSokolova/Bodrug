@@ -26,7 +26,6 @@ const { Footer } = Layout;
 
 function App(props) {
   const [blog, setBlog] = useState(null);
-  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
     <SimpleReactLightbox>
@@ -50,12 +49,7 @@ function App(props) {
             <Route path="/contact" component={Contact} />
             <Route exact path="/" component={Home} />
             <Route path="/admin" component={AdminDashboard} />
-            <Route
-              path="/login"
-              component={LoginForm}
-              loggedIn={loggedIn}
-              setLoggedIn={setLoggedIn}
-            />
+            <Route path="/login" component={LoginForm} />
           </Switch>
         </div>
         <Layout>
