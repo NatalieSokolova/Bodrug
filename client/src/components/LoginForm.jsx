@@ -9,9 +9,9 @@ export default function LoginForm() {
 
   const [form] = Form.useForm();
 
-  const [faq, setFaq] = useState({
-    question: "",
-    answer: "",
+  const [auth, setAuth] = useState({
+    username: "",
+    password: "",
   });
 
   const handleChange = (event) => {
@@ -19,8 +19,8 @@ export default function LoginForm() {
     const name = target.name;
     const value = target.value;
 
-    setFaq({
-      ...faq,
+    setAuth({
+      ...auth,
       [name]: value,
     });
 
@@ -31,27 +31,15 @@ export default function LoginForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const newFaq = {
-      question: faq.question,
-      answer: faq.answer,
-    };
-
-    console.log("NEW: ", newFaq);
-    if (newFaq.question && newFaq.answer) {
-      axios
-        .post("http://localhost:3001/faqs", newFaq)
-        .then((response) => {
-          setFaq({});
-          form.resetFields();
-          notifySuccess("Woo-hoo! FAQ posted successfully!");
-        })
-        .catch((error) => {
-          notifyError("OOPS! Something went wrong. Please, try again");
-          console.log("TROUBLE! ", error);
-        });
-    } else {
-      notifyError("You can't submit an empty FAQ. Please, try again");
-    }
+    // get credentials first
+    axios({
+      method: "GET",
+      url: "/adminCredentials",
+    })
+      .then((result) => {
+        return result.data[0], console.log("AUTH: ", result.data[0]);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -76,7 +64,7 @@ export default function LoginForm() {
           >
             <Input.TextArea
               name="username"
-              value={faq.question}
+              value={auth.username}
               onChange={handleChange}
             />
           </Form.Item>
@@ -87,8 +75,8 @@ export default function LoginForm() {
             rules={[{ required: true, message: "Please input your password!" }]}
           >
             <Input.TextArea
-              value={faq.answer}
               name="password"
+              value={auth.password}
               onChange={handleChange}
             />
           </Form.Item>
