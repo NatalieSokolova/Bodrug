@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Redirect, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
@@ -20,6 +20,8 @@ export default function LoginForm() {
     password: "",
   });
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const handleChange = (event) => {
     const target = event.target;
     const name = target.name;
@@ -34,26 +36,26 @@ export default function LoginForm() {
     console.log(target);
   };
 
-  const verifyCredentials = () => {
-    let authenticated = false;
+  useEffect(() => {
     if (auth.username === ADMIN_USERNAME && auth.password === ADMIN_PASSWORD) {
-      authenticated = true;
+      setIsLoggedIn(true);
     }
-    return authenticated;
-  };
+  }, [isLoggedIn]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     console.log("AUTH U: ", auth.username);
     console.log("AUTH P: ", auth.password);
+    console.log("TRUE? ", isLoggedIn);
 
-    if (verifyCredentials()) {
-      console.log("TRUE? ", verifyCredentials());
+    if (isLoggedIn) {
       return <Redirect to="/admin" />;
     }
     return (
       form.resetFields(),
+      setAuth({}),
+      setIsLoggedIn(false),
       notifyError("OOPS! Wrong username or password. Please, try again")
     );
   };
