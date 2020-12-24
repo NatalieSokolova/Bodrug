@@ -35,7 +35,7 @@ export default function LoginForm() {
     console.log(target);
   };
 
-  const checkCredentials = () => {
+  const verifyCredentials = () => {
     let authenticated = false;
     if (auth.username === ADMIN_USERNAME && auth.password === ADMIN_PASSWORD) {
       authenticated = true;
@@ -43,21 +43,20 @@ export default function LoginForm() {
     return authenticated;
   };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  //   console.log("AUTH U: ", auth.username);
-  //   console.log("AUTH P: ", auth.password);
+    console.log("AUTH U: ", auth.username);
+    console.log("AUTH P: ", auth.password);
 
-  //   if (checkCredentials()) {
-  //     return <Redirect to="/admin" />;
-  //   }
-  //   return (
-  //     form.resetFields(),
-  //     notifyError("OOPS! Wrong username or password. Please, try again")
-  //   );
-
-  // };
+    if (verifyCredentials()) {
+      return <Redirect to="/admin" />;
+    }
+    return (
+      form.resetFields(),
+      notifyError("OOPS! Wrong username or password. Please, try again")
+    );
+  };
 
   return (
     <div className="upload-container">
@@ -107,7 +106,7 @@ export default function LoginForm() {
           }}
         >
           <Button
-            onClick={checkCredentials}
+            onClick={() => handleSubmit}
             type="primary"
             htmlType="submit"
             style={{
