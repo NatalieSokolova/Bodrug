@@ -10,8 +10,8 @@ export default function LoginForm() {
   const ADMIN_USERNAME = process.env.REACT_APP_ADMIN_USERNAME;
   const ADMIN_PASSWORD = process.env.REACT_APP_ADMIN_PASSWORD;
 
-  console.log("username: ", ADMIN_USERNAME);
-  console.log("password: ", ADMIN_PASSWORD);
+  // console.log("username: ", ADMIN_USERNAME);
+  // console.log("password: ", ADMIN_PASSWORD);
 
   const [form] = Form.useForm();
 
@@ -32,8 +32,8 @@ export default function LoginForm() {
       [name]: value,
     });
 
-    console.log("NAME: ", name);
-    console.log(target);
+    // console.log("NAME: ", name);
+    // console.log(target);
   };
 
   const validate = () => {
@@ -54,11 +54,20 @@ export default function LoginForm() {
 
     console.log("AUTH U: ", auth.username);
     console.log("AUTH P: ", auth.password);
-    console.log("TRUE? ", isLoggedIn);
+    console.log("ENV N: ", ADMIN_USERNAME);
+    console.log("ENV PW: ", ADMIN_PASSWORD);
 
-    if (isLoggedIn) {
+    // console.log("TRUE? ", isLoggedIn);
+
+    // if (isLoggedIn) {
+    //   return <Redirect to="/admin" />;
+    // }
+
+    if (auth.username === ADMIN_USERNAME && auth.password === ADMIN_PASSWORD) {
+      console.log("SUCCESS??");
       return <Redirect to="/admin" />;
     }
+
     return (
       form.resetFields(),
       setAuth({}),
