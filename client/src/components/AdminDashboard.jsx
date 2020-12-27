@@ -86,6 +86,11 @@ export default function AdminDashboard() {
           <FaqUpload />
         </div>
       ) : null}
+      {showForm && id === "allPhotos" ? (
+        <div className="upload-container">
+          <PhotoUpload />
+        </div>
+      ) : null}
     </div>
     //   )}
     // </div>
