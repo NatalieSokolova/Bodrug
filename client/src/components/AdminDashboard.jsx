@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { Card } from "antd";
 import FaqUpload from "./FaqUpload";
+import PhotoUpload from "./PhotoUpload";
 import "./AdminDashboard.css";
 
 export default function AdminDashboard() {
