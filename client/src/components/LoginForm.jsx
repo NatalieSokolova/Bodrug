@@ -36,18 +36,12 @@ export default function LoginForm() {
     // console.log(target);
   };
 
-  const validate = () => {
-    if (auth.username === ADMIN_USERNAME && auth.password === ADMIN_PASSWORD) {
-      return true;
-    }
-    return false;
-  };
-
-  useEffect(() => {
-    if (validate()) {
-      setIsLoggedIn(true);
-    }
-  }, [isLoggedIn]);
+  // const validate = () => {
+  //   if (auth.username === ADMIN_USERNAME && auth.password === ADMIN_PASSWORD) {
+  //     return true;
+  //   }
+  //   return false;
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
