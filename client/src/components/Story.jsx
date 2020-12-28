@@ -17,8 +17,8 @@ export default function Story() {
   const { state } = useStoryData();
 
   return (
-    <div>
-      <Fragment className="story-container">
+    <div className="story-container">
+      <Fragment>
         <div className="arrow-btn-container">
           <button
             className="arrow-btn prev"
@@ -44,10 +44,9 @@ export default function Story() {
 
         <Carousel ref={slider} effect="fade" dots={false} autoplay={autoplay}>
           {state.stories.map((story) => (
-            <div>
+            <div key={story.id}>
               <div
                 className="story"
-                key={story.id}
                 onClick={() => {
                   setId(story.id);
                   setShowPhotos(true);
