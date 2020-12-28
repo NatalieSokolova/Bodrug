@@ -24,8 +24,12 @@ import { InstagramOutlined } from "@ant-design/icons";
 
 const { Footer } = Layout;
 
-function App(props) {
+function App() {
   const [blog, setBlog] = useState(null);
+  const [auth, setAuth] = useState({
+    username: "",
+    password: "",
+  });
 
   return (
     <SimpleReactLightbox>
@@ -48,8 +52,15 @@ function App(props) {
             <Route path="/faq" component={Faq} />
             <Route path="/contact" component={Contact} />
             <Route exact path="/" component={Home} />
-            <Route path="/admin" component={AdminDashboard} />
-            <Route path="/login" component={LoginForm} />
+            {/* <Route path="/admin" component={AdminDashboard} />
+            <Route path="/login" component={LoginForm} /> */}
+
+            <Route path="/admin">
+              <AdminDashboard auth={auth} setAuth={setAuth} />
+            </Route>
+            <Route path="/login">
+              <LoginForm auth={auth} setAuth={setAuth} />
+            </Route>
           </Switch>
         </div>
         <Layout>
