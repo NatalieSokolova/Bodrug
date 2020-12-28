@@ -4,3 +4,27 @@
   right: 4vw;
   font-size: 5vh;
 }
+
+@keyframes bounce {
+  0%,
+  20%,
+  60%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px);
+  }
+
+  80% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+}
+
+#scroll-btn:hover {
+  animation: bounce 2s;
+}
