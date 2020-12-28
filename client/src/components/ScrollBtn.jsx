@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { DownCircleOutlined } from "@ant-design/icons";
 import "./ScrollBtn.css";
 
 export default function ScrollBtn() {
   const [show, setShow] = useState(false);
-  // const [position, setPosition] = useState("window.innerHeight");
 
   const toggleVisibility = () => {
     if (window.pageYOffset > 150) {
@@ -13,7 +13,7 @@ export default function ScrollBtn() {
 
   const handleScroll = () => {
     window.scrollBy({
-      top: 750,
+      top: 800,
       behavior: "smooth",
     });
   };
@@ -25,9 +25,7 @@ export default function ScrollBtn() {
   return (
     <div>
       {show ? (
-        <button id="scroll-btn" onClick={() => handleScroll()}>
-          scroll
-        </button>
+        <DownCircleOutlined id="scroll-btn" onClick={() => handleScroll()} />
       ) : null}
     </div>
   );
