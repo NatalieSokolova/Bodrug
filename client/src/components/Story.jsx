@@ -1,6 +1,7 @@
 import React, { useState, useRef, Fragment } from "react";
 import SelectedStory from "./SelectedStory";
 import useStoryData from "../hooks/useStoryData";
+import ScrollBtn from "./ScrollBtn";
 import { toast } from "react-toastify";
 import { Carousel } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
@@ -18,6 +19,7 @@ export default function Story() {
 
   return (
     <div>
+      <ScrollBtn />
       <Fragment className="story-container">
         <div className="arrow-btn-container">
           <button

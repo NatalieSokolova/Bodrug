@@ -1,5 +1,6 @@
 import React from "react";
 import usePhotoData from "../hooks/usePhotoData";
+import ScrollBtn from "./ScrollBtn";
 import { SRLWrapper } from "simple-react-lightbox";
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
@@ -23,6 +24,7 @@ export default function Portfolio() {
 
   return (
     <div className="outsideContainer">
+      <ScrollBtn />
       <SRLWrapper options={options}>
         {!state.photos ? (
           <span>Loading...</span>

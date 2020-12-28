@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SelectedCollection from "./SelectedCollection";
 import useCollectionData from "../hooks/useCollectionData";
-
+import ScrollBtn from "./ScrollBtn";
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
 import "./Collection.css";
@@ -16,6 +16,7 @@ export default function Collection() {
 
   return (
     <div className="collection-container">
+      <ScrollBtn />
       {state.collections.map((collection) => (
         <div
           className="collection-tile"
