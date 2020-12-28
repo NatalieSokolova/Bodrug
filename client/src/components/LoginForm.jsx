@@ -4,29 +4,21 @@ import { toast } from "react-toastify";
 import { notifyError } from "../partials";
 import { Form, Input, Button } from "antd";
 
-export default function LoginForm() {
+export default function LoginForm({ auth, setAuth }) {
+  console.log("LOGIN auth: ", auth);
+
   toast.configure();
 
   const ADMIN_USERNAME = process.env.REACT_APP_ADMIN_USERNAME;
   const ADMIN_PASSWORD = process.env.REACT_APP_ADMIN_PASSWORD;
 
-  // console.log("username: ", ADMIN_USERNAME);
-  // console.log("password: ", ADMIN_PASSWORD);
-
   let history = useHistory();
-
-  console.log("HISTORY: ", history);
 
   function handleRedirect() {
     history.push("/admin");
   }
 
   const [form] = Form.useForm();
-
-  const [auth, setAuth] = useState({
-    username: "",
-    password: "",
-  });
 
   const handleChange = (event) => {
     const target = event.target;
