@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { notifyError } from "../partials";
 import { Form, Input, Button } from "antd";
 
 export default function LoginForm({ auth, setAuth }) {
-  console.log("LOGIN auth: ", auth);
-
   toast.configure();
 
   const ADMIN_USERNAME = process.env.REACT_APP_ADMIN_USERNAME;
