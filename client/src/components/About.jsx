@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollBtn from "./ScrollBtn";
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
 import "./About.css";
@@ -8,6 +9,7 @@ export default function About() {
 
   return (
     <div className="about">
+      <ScrollBtn />
       <div className="photo">
         <img
           src={require("../assets/paintings/europeana-YIfFVwDcgu8-unsplash-min.jpg")}
