@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { DownCircleOutlined } from "@ant-design/icons";
+import { DownCircleOutlined, UpCircleOutlined } from "@ant-design/icons";
 import "./ScrollBtn.css";
 
 export default function ScrollBtn() {
   const [show, setShow] = useState(false);
   const [arrow, setArrow] = useState("down");
 
-  const toggleVisibility = () => {
+  const handleScroll = () => {
     const windowScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
 
@@ -16,28 +16,43 @@ export default function ScrollBtn() {
 
     const scrolled = windowScroll / height;
     if (scrolled === 1) {
-      console.log("SCROLLED: ", scrolled);
+      setArrow("up");
+    } else if (scrolled <= 0.3) {
+      // console.log("SCROLLED: ", scrolled);
+      setShow(false);
+      setArrow("down");
     }
     if (window.pageYOffset > 150) {
       setShow(true);
     }
   };
 
-  const handleScroll = () => {
-    window.scrollBy({
-      top: 800,
-      behavior: "smooth",
-    });
+  const handleClick = () => {
+    if (arrow === "down") {
+      window.scrollBy({
+        top: 800,
+        behavior: "smooth",
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
   };
 
   useEffect(() => {
-    document.addEventListener("scroll", () => toggleVisibility());
+    document.addEventListener("scroll", () => handleScroll());
   }, []);
 
   return (
     <div>
       {show ? (
-        <DownCircleOutlined id="scroll-btn" onClick={() => handleScroll()} />
+        arrow === "down" ? (
+          <DownCircleOutlined id="scroll-btn" onClick={() => handleClick()} />
+        ) : (
+          <UpCircleOutlined id="scroll-btn" onClick={() => handleClick()} />
+        )
       ) : null}
     </div>
   );
