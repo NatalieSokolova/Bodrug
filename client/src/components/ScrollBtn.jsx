@@ -1,10 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ScrollBtn.css";
 
 export default function ScrollBtn() {
-  return (
-    <div>
-      <button id="scroll-btn">scroll</button>
-    </div>
-  );
+  const [show, setShow] = useState(false);
+  return <div>{show ? <button id="scroll-btn">scroll</button> : null}</div>;
 }
