@@ -4,13 +4,9 @@ import { Card } from "antd";
 import FaqUpload from "./FaqUpload";
 import "./AdminDashboard.css";
 
-export default function AdminDashboard({ auth, setAuth }) {
-  // const [auth, setAuth] = useState(false);
+export default function AdminDashboard({ auth }) {
   const [showForm, setShowForm] = useState(false);
   const [id, setId] = useState(null);
-
-  console.log("ADMIN auth: ", auth);
-  // console.log("ADMIN setAuth: ", setAuth);
 
   return (
     <div>
