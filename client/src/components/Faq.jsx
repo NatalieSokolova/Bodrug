@@ -1,6 +1,5 @@
 import React from "react";
 import useFaqData from "../hooks/useFaqData";
-import ScrollBtn from "./ScrollBtn";
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
 import "./Faq.css";
@@ -11,7 +10,6 @@ export default function Faq() {
 
   return (
     <div className="container">
-      <ScrollBtn />
       <h1>Don't See Your Question Below?</h1>
       <h2>
         <a href="/contact">please, reach out!</a>
