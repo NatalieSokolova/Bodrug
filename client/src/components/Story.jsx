@@ -22,27 +22,25 @@ export default function Story() {
         <div className="arrow-btn-container">
           <button
             className="arrow-btn prev"
-            onClick={() => slider.current.prev()}
+            onClick={() => {
+              slider.current.prev();
+              setAutoplay(true);
+            }}
           >
             <LeftOutlined style={{ fontSize: "50px" }} />
           </button>
           <button
             className="arrow-btn next"
-            onClick={() => slider.current.next()}
+            onClick={() => {
+              slider.current.next();
+              setAutoplay(true);
+            }}
           >
             <RightOutlined style={{ fontSize: "50px" }} />
           </button>
         </div>
 
-        <Carousel
-          ref={slider}
-          effect="fade"
-          dots={false}
-          autoplay={autoplay}
-          onClick={() => {
-            setAutoplay(!autoplay);
-          }}
-        >
+        <Carousel ref={slider} effect="fade" dots={false} autoplay={autoplay}>
           {state.stories.map((story) => (
             <div>
               <div
@@ -50,8 +48,8 @@ export default function Story() {
                 key={story.id}
                 onClick={() => {
                   setId(story.id);
-                  setShowPhotos(!showPhotos);
-                  setAutoplay(!autoplay);
+                  setShowPhotos(true);
+                  setAutoplay(false);
                 }}
               >
                 <div className="story-description">
