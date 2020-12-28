@@ -25,6 +25,7 @@ export default function Story() {
             onClick={() => {
               slider.current.prev();
               setAutoplay(true);
+              setShowPhotos(false);
             }}
           >
             <LeftOutlined style={{ fontSize: "50px" }} />
@@ -34,6 +35,7 @@ export default function Story() {
             onClick={() => {
               slider.current.next();
               setAutoplay(true);
+              setShowPhotos(false);
             }}
           >
             <RightOutlined style={{ fontSize: "50px" }} />
