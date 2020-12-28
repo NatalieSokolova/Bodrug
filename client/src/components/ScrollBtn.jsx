@@ -4,8 +4,20 @@ import "./ScrollBtn.css";
 
 export default function ScrollBtn() {
   const [show, setShow] = useState(false);
+  const [arrow, setArrow] = useState("down");
 
   const toggleVisibility = () => {
+    const windowScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    const scrolled = windowScroll / height;
+    if (scrolled === 1) {
+      console.log("SCROLLED: ", scrolled);
+    }
     if (window.pageYOffset > 150) {
       setShow(true);
     }
