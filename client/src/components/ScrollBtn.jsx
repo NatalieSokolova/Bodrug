@@ -15,13 +15,13 @@ export default function ScrollBtn() {
       document.documentElement.clientHeight;
 
     const scrolled = windowScroll / height;
-    if (scrolled === 1) {
+    if (scrolled >= 0.9) {
       setArrow("up");
-    } else if (scrolled <= 0.3) {
-      // console.log("SCROLLED: ", scrolled);
-      setShow(false);
+    } else if (scrolled <= 0.15) {
       setArrow("down");
+      // setShow(false);
     }
+
     if (window.pageYOffset > 150) {
       setShow(true);
     }
@@ -33,7 +33,7 @@ export default function ScrollBtn() {
         top: 800,
         behavior: "smooth",
       });
-    } else {
+    } else if (arrow === "up") {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
