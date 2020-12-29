@@ -3,6 +3,8 @@
   bottom: 2.5vh;
   right: 4vw;
   font-size: 4vh;
+  background-color: white;
+  border-radius: 100%;
 }
 
 @keyframes bounce {
