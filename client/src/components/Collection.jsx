@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import SelectedCollection from "./SelectedCollection";
 import useCollectionData from "../hooks/useCollectionData";
-
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
 import "./Collection.css";

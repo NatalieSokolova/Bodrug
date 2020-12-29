@@ -18,6 +18,7 @@ import Blog from "./components/Blog";
 import SelectedBlog from "./components/SelectedBlog";
 import AdminDashboard from "./components/AdminDashboard";
 import LoginForm from "./components/LoginForm";
+import ScrollBtn from "./components/ScrollBtn";
 import { Layout } from "antd";
 import "./components/Footer.css";
 import { InstagramOutlined } from "@ant-design/icons";
@@ -65,6 +66,7 @@ function App() {
         </div>
         <Layout>
           <Footer className="footer">
+            <ScrollBtn />
             <div>
               <span>Iuliia Bodrug ©2020 </span>
               <a
