@@ -14,7 +14,7 @@
     "@testing-library/user-event": "^7.1.2",
     "antd": "^4.7.0",
     "axios": "^0.21.1",
-    "cloudinary": "^1.23.0",
+    "cloudinary-core": "^2.11.3",
     "cloudinary-react": "^1.6.8",
     "emailjs-com": "^2.6.3",
     "jquery": "^3.5.1",
