@@ -92,11 +92,6 @@ export default function AdminDashboard({ auth }) {
           ) : null}
         </div>
       )}
-      {/* <script
-        src="https://widget.cloudinary.com/v2.0/global/all.js"
-        type="text/javascript"
-      ></script> */}
-      ;
     </div>
   );
 }

@@ -8,10 +8,6 @@ export default function PhotoUpload() {
   return (
     <div>
       <div>PHOTO UPLOAD</div>
-      <script
-        src="https://widget.cloudinary.com/v2.0/global/all.js"
-        type="text/javascript"
-      ></script>
     </div>
   );
 }
