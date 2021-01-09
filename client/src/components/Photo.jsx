@@ -28,7 +28,7 @@ export default function Portfolio() {
           <span>Loading...</span>
         ) : (
           <div className="row">
-            {state.photos.map((photo) => (
+            {state.photos.reverse().map((photo) => (
               <div key={photo.id} className="photoContainer">
                 <img
                   src={photo.url}
