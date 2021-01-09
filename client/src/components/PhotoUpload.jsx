@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { CloudinaryContext } from "cloudinary-react";
-import { fetchPhotos, openUploadWidget } from "../CloudinaryService";
+import { openUploadWidget } from "../CloudinaryService";
+import { notifyError, notifySuccess } from "../partials";
 
 export default function PhotoUpload() {
   toast.configure();
@@ -20,10 +21,14 @@ export default function PhotoUpload() {
       if (!error) {
         console.log(photos);
         if (photos.event === "success") {
+          console.log("IMAGE UPLOADED!");
+          notifySuccess("Woo-hoo! Image posted successfully!");
           setImages([...images, photos.info.public_id]);
+          console.log("IMAGES: ", images);
         }
       } else {
-        console.log(error);
+        notifyError("OOPS! Something went wrong. Please, try again");
+        console.log("ERROR: ", error);
       }
     });
   };
@@ -32,7 +37,7 @@ export default function PhotoUpload() {
     <div className="upload-form">
       <CloudinaryContext cloudName="nataliesklv">
         <div>PHOTO UPLOAD</div>
-        <button onClick={() => beginUpload()}>Upload Image</button>
+        <button onClick={() => beginUpload("bodrug")}>Upload Image</button>
       </CloudinaryContext>
     </div>
   );
