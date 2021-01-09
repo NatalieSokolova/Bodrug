@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { Card } from "antd";
 import FaqUpload from "./FaqUpload";
+import PhotoUpload from "./PhotoUpload";
 import "./AdminDashboard.css";
 
 export default function AdminDashboard({ auth }) {
@@ -84,8 +85,18 @@ export default function AdminDashboard({ auth }) {
               <FaqUpload />
             </div>
           ) : null}
+          {showForm && id === "allPhotos" ? (
+            <div className="upload-container">
+              <PhotoUpload />
+            </div>
+          ) : null}
         </div>
       )}
+      {/* <script
+        src="https://widget.cloudinary.com/v2.0/global/all.js"
+        type="text/javascript"
+      ></script> */}
+      ;
     </div>
   );
 }
