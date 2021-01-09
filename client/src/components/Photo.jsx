@@ -31,8 +31,8 @@ export default function Portfolio() {
             {state.photos.map((photo) => (
               <div key={photo.id} className="photoContainer">
                 <img
-                  src={require(`../assets/photos${photo.url}`)}
-                  alt={photo.description}
+                  src={photo.url}
+                  // alt={photo.description}
                   className="photo"
                   onContextMenu={(e) => {
                     copyrightError();
