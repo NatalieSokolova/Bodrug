@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-// import { cloudinary, openUploadWidget } from "cloudinary";
 import { CloudinaryContext } from "cloudinary-react";
 import { fetchPhotos, openUploadWidget } from "../CloudinaryService";
 
@@ -9,18 +8,6 @@ export default function PhotoUpload() {
   toast.configure();
 
   const [images, setImages] = useState([]);
-  // const uploadWidget = () => {
-  //   cloudinary.openUploadWidget(
-  //     {
-  //       cloud_name: "nataliesklv",
-  //       upload_preset: "qtiu4svf",
-  //       tags: ["bodrug"],
-  //     },
-  //     function (error, result) {
-  //       console.log(result);
-  //     }
-  //   );
-  // };
 
   const beginUpload = (tag) => {
     const uploadOptions = {
