@@ -60,18 +60,6 @@ export default function PhotoUpload() {
             ...photo,
             url: photos.info.url,
           });
-
-          // also needs a delete request when img is deselected!!!
-          // axios
-          //   .post("http://localhost:3001/photos", newPhoto)
-          //   .then((response) => {
-          //     console.log("SUCCESS! ", response);
-          //     notifySuccess("Woo-hoo! Image posted successfully!");
-          //   })
-          //   .catch((error) => {
-          //     notifyError("OOPS! Something went wrong. Please, try again");
-          //     console.log("TROUBLE! ", error);
-          //   });
         }
       } else {
         notifyError("OOPS! Something went wrong. Please, try again");
