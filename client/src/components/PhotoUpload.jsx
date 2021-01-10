@@ -22,7 +22,12 @@ export default function PhotoUpload() {
   const handleChange = (event) => {
     const target = event.target;
     const name = target.name;
-    const value = target.value;
+    // const value = target.value;
+    let value;
+
+    target.name === "collection_id" || target.name === "story_id"
+      ? (value = Number(target.value))
+      : (value = target.value);
 
     setPhoto({
       ...photo,

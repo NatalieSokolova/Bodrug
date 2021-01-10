@@ -27,7 +27,7 @@ export default function Collection() {
         >
           <h1 className="collection-name">{collection.name}</h1>
           <img
-            src={require(`../assets/photos${collection.coverurl}`)}
+            src={collection.coverurl}
             alt={collection.description}
             onContextMenu={(e) => {
               copyrightError();
