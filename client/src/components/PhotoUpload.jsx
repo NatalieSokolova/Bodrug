@@ -3,10 +3,35 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { fetchPhotos, openUploadWidget } from "../CloudinaryService";
 import { notifyError, notifySuccess } from "../partials";
-import { Button } from "antd";
+import { Form, Input, Button } from "antd";
 
 export default function PhotoUpload() {
   toast.configure();
+
+  const [form] = Form.useForm();
+
+  const [photo, setPhoto] = useState({
+    url: "",
+    description: "",
+    collection_id: 0,
+    story_id: 0,
+  });
+
+  console.log("STATE: ", photo);
+
+  const handleChange = (event) => {
+    const target = event.target;
+    const name = target.name;
+    const value = target.value;
+
+    setPhoto({
+      ...photo,
+      [name]: value,
+    });
+
+    console.log("NAME: ", name);
+    console.log(target);
+  };
 
   const beginUpload = (tag) => {
     const uploadOptions = {
@@ -51,7 +76,7 @@ export default function PhotoUpload() {
         className="btn btn-primary upload-btn"
         onClick={() => beginUpload("bodrug")}
       >
-        UPLOAD
+        UPLOAD PHOTO
       </Button>
     </div>
   );

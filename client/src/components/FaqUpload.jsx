@@ -14,7 +14,7 @@ export default function FaqUpload() {
     answer: "",
   });
 
-  console.log("STATE: ", faq);
+  // console.log("STATE: ", faq);
 
   const handleChange = (event) => {
     const target = event.target;
@@ -26,8 +26,8 @@ export default function FaqUpload() {
       [name]: value,
     });
 
-    console.log("NAME: ", name);
-    console.log(target);
+    // console.log("NAME: ", name);
+    // console.log(target);
   };
 
   const handleSubmit = (event) => {
