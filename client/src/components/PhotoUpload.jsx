@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { fetchPhotos, openUploadWidget } from "../CloudinaryService";
+import { openUploadWidget } from "../CloudinaryService";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
 
@@ -105,12 +105,72 @@ export default function PhotoUpload() {
 
   return (
     <div className="upload-container">
-      <Button
-        className="btn btn-primary upload-btn"
-        onClick={() => beginUpload("bodrug")}
+      <h1>Add a new photo below</h1>
+      <Form
+        form={form}
+        className="upload-form"
+        name="basic"
+        initialValues={{ remember: true }}
       >
-        UPLOAD PHOTO
-      </Button>
+        <div
+          style={{
+            padding: "5vh 2vw",
+            marginBottom: "-7.5vh",
+          }}
+        >
+          <Form.Item
+            label="PhotoDescription"
+            name="PhotoDescription"
+            rules={[{ required: false }]}
+          >
+            <Input.TextArea
+              name="description"
+              value={photo.description}
+              onChange={handleChange}
+            />
+          </Form.Item>
+
+          <Form.Item
+            label="PhotoCollection_id"
+            name="PhotoCollection_id"
+            rules={[{ required: false }]}
+          >
+            <Input.TextArea
+              name="collection_id"
+              value={photo.collection_id}
+              onChange={handleChange}
+            />
+          </Form.Item>
+
+          <Form.Item
+            label="PhotoStory_id"
+            name="PhotoStory_id"
+            rules={[{ required: false }]}
+          >
+            <Input.TextArea
+              name="story_id"
+              value={photo.story_id}
+              onChange={handleChange}
+            />
+          </Form.Item>
+        </div>
+
+        <Form.Item
+          style={{
+            marginBottom: "0",
+          }}
+        >
+          <Button
+            className="btn btn-primary upload-btn"
+            onClick={() => beginUpload("bodrug")}
+          >
+            UPLOAD PHOTO
+          </Button>
+          <Button className="btn btn-primary post-btn" onClick={handleSubmit}>
+            POST
+          </Button>
+        </Form.Item>
+      </Form>
     </div>
   );
 }
