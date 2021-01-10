@@ -13,8 +13,8 @@ export default function PhotoUpload() {
   const [photo, setPhoto] = useState({
     url: "",
     description: "",
-    collection_id: 0,
-    story_id: 0,
+    collection_id: null,
+    story_id: null,
   });
 
   console.log("STATE: ", photo);
