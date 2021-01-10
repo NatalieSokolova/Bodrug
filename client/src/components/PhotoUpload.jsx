@@ -119,8 +119,8 @@ export default function PhotoUpload() {
           }}
         >
           <Form.Item
-            label="PhotoDescription"
-            name="PhotoDescription"
+            label="description"
+            name="description"
             rules={[{ required: false }]}
           >
             <Input.TextArea
@@ -131,11 +131,11 @@ export default function PhotoUpload() {
           </Form.Item>
 
           <Form.Item
-            label="PhotoCollection_id"
-            name="PhotoCollection_id"
+            label="collection_id"
+            name="collection_id"
             rules={[{ required: false }]}
           >
-            <Input.TextArea
+            <Input
               name="collection_id"
               value={photo.collection_id}
               onChange={handleChange}
@@ -143,11 +143,11 @@ export default function PhotoUpload() {
           </Form.Item>
 
           <Form.Item
-            label="PhotoStory_id"
-            name="PhotoStory_id"
+            label="story_id"
+            name="story_id"
             rules={[{ required: false }]}
           >
-            <Input.TextArea
+            <Input
               name="story_id"
               value={photo.story_id}
               onChange={handleChange}

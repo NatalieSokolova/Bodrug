@@ -72,8 +72,8 @@ export default function FaqUpload() {
           }}
         >
           <Form.Item
-            label="FaqQuestion"
-            name="FaqQuestion"
+            label="question"
+            name="question"
             rules={[{ required: true, message: "Please input your question!" }]}
           >
             <Input.TextArea
@@ -84,8 +84,8 @@ export default function FaqUpload() {
           </Form.Item>
 
           <Form.Item
-            label="FaqAnswer"
-            name="FaqAnswer"
+            label="answer"
+            name="answer"
             rules={[{ required: true, message: "Please input your answer!" }]}
           >
             <Input.TextArea
