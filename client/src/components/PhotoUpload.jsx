@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { fetchPhotos, openUploadWidget } from "../CloudinaryService";
 import { notifyError, notifySuccess } from "../partials";
+import { Button } from "antd";
 
 export default function PhotoUpload() {
   toast.configure();
@@ -45,9 +46,13 @@ export default function PhotoUpload() {
   };
 
   return (
-    <div className="upload-form">
-      <div>PHOTO UPLOAD</div>
-      <button onClick={() => beginUpload("bodrug")}>Upload Image</button>
+    <div className="upload-container">
+      <Button
+        className="btn btn-primary upload-btn"
+        onClick={() => beginUpload("bodrug")}
+      >
+        UPLOAD
+      </Button>
     </div>
   );
 }

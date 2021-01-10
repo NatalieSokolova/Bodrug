@@ -101,16 +101,8 @@ export default function FaqUpload() {
             marginBottom: "0",
           }}
         >
-          <Button
-            onClick={handleSubmit}
-            type="primary"
-            htmlType="submit"
-            style={{
-              paddingBottom: "20px",
-              height: "50px",
-            }}
-          >
-            Post
+          <Button onClick={handleSubmit} className="btn btn-primary upload-btn">
+            POST
           </Button>
         </Form.Item>
       </Form>
