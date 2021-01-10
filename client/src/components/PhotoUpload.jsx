@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { CloudinaryContext } from "cloudinary-react";
 import { fetchPhotos, openUploadWidget } from "../CloudinaryService";
 import { notifyError, notifySuccess } from "../partials";
 
@@ -47,10 +46,8 @@ export default function PhotoUpload() {
 
   return (
     <div className="upload-form">
-      <CloudinaryContext cloudName="nataliesklv">
-        <div>PHOTO UPLOAD</div>
-        <button onClick={() => beginUpload("bodrug")}>Upload Image</button>
-      </CloudinaryContext>
+      <div>PHOTO UPLOAD</div>
+      <button onClick={() => beginUpload("bodrug")}>Upload Image</button>
     </div>
   );
 }

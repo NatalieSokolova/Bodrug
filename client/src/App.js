@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import SimpleReactLightbox from "simple-react-lightbox";
+import { CloudinaryContext } from "cloudinary-react";
 
 import Nav from "./components/Nav";
 import About from "./components/About";
@@ -34,53 +35,55 @@ function App() {
 
   return (
     <SimpleReactLightbox>
-      <Router>
-        <Nav />
-        <div>
-          <Switch>
-            <Route path="/blog/:slug">
-              <SelectedBlog blog={blog} setBlog={setBlog} />
-            </Route>
-            <Route path="/blog">
-              <Blog blog={blog} setBlog={setBlog} />
-            </Route>
-            <Route path="/about" component={About} />
-            <Route path="/photos" component={Photo} />
-            <Route path="/collections" component={Collection} />
-            <Route path="/stories" component={Story} />
-            <Route path="/pricing" component={Pricing} />
-            <Route path="/art" component={Painting} />
-            <Route path="/faq" component={Faq} />
-            <Route path="/contact" component={Contact} />
-            <Route exact path="/" component={Home} />
-            {/* <Route path="/admin" component={AdminDashboard} />
+      <CloudinaryContext cloudName="nataliesklv">
+        <Router>
+          <Nav />
+          <div>
+            <Switch>
+              <Route path="/blog/:slug">
+                <SelectedBlog blog={blog} setBlog={setBlog} />
+              </Route>
+              <Route path="/blog">
+                <Blog blog={blog} setBlog={setBlog} />
+              </Route>
+              <Route path="/about" component={About} />
+              <Route path="/photos" component={Photo} />
+              <Route path="/collections" component={Collection} />
+              <Route path="/stories" component={Story} />
+              <Route path="/pricing" component={Pricing} />
+              <Route path="/art" component={Painting} />
+              <Route path="/faq" component={Faq} />
+              <Route path="/contact" component={Contact} />
+              <Route exact path="/" component={Home} />
+              {/* <Route path="/admin" component={AdminDashboard} />
             <Route path="/login" component={LoginForm} /> */}
 
-            <Route path="/admin">
-              <AdminDashboard auth={auth} setAuth={setAuth} />
-            </Route>
-            <Route path="/login">
-              <LoginForm auth={auth} setAuth={setAuth} />
-            </Route>
-          </Switch>
-        </div>
-        <Layout>
-          <Footer className="footer">
-            <ScrollBtn />
-            <div>
-              <span>Iuliia Bodrug ©2020 </span>
-              <a
-                href="https://www.instagram.com/bodrug_photo/?hl=en"
-                className="insta"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <InstagramOutlined />
-              </a>
-            </div>
-          </Footer>
-        </Layout>
-      </Router>
+              <Route path="/admin">
+                <AdminDashboard auth={auth} setAuth={setAuth} />
+              </Route>
+              <Route path="/login">
+                <LoginForm auth={auth} setAuth={setAuth} />
+              </Route>
+            </Switch>
+          </div>
+          <Layout>
+            <Footer className="footer">
+              <ScrollBtn />
+              <div>
+                <span>Iuliia Bodrug ©2020 </span>
+                <a
+                  href="https://www.instagram.com/bodrug_photo/?hl=en"
+                  className="insta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <InstagramOutlined />
+                </a>
+              </div>
+            </Footer>
+          </Layout>
+        </Router>
+      </CloudinaryContext>
     </SimpleReactLightbox>
   );
 }
