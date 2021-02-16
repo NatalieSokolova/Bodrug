@@ -17,41 +17,40 @@ export default function Story() {
   const { state } = useStoryData();
 
   return (
-    <div>
-      <Fragment className="story-container">
+    <div className="story-container">
+      <Fragment>
         <div className="arrow-btn-container">
           <button
             className="arrow-btn prev"
-            onClick={() => slider.current.prev()}
+            onClick={() => {
+              slider.current.prev();
+              setAutoplay(true);
+              setShowPhotos(false);
+            }}
           >
             <LeftOutlined style={{ fontSize: "50px" }} />
           </button>
           <button
             className="arrow-btn next"
-            onClick={() => slider.current.next()}
+            onClick={() => {
+              slider.current.next();
+              setAutoplay(true);
+              setShowPhotos(false);
+            }}
           >
             <RightOutlined style={{ fontSize: "50px" }} />
           </button>
         </div>
 
-        <Carousel
-          ref={slider}
-          effect="fade"
-          dots={false}
-          autoplay={autoplay}
-          onClick={() => {
-            setAutoplay(!autoplay);
-          }}
-        >
+        <Carousel ref={slider} effect="fade" dots={false} autoplay={autoplay}>
           {state.stories.map((story) => (
-            <div>
+            <div key={story.id}>
               <div
                 className="story"
-                key={story.id}
                 onClick={() => {
                   setId(story.id);
-                  setShowPhotos(!showPhotos);
-                  setAutoplay(!autoplay);
+                  setShowPhotos(true);
+                  setAutoplay(false);
                 }}
               >
                 <div className="story-description">

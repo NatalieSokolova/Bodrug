@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import SelectedCollection from "./SelectedCollection";
 import useCollectionData from "../hooks/useCollectionData";
-
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
 import "./Collection.css";
@@ -16,36 +15,38 @@ export default function Collection() {
 
   return (
     <div className="collection-container">
-      {state.collections.map((collection) => (
-        <div
-          className="collection-tile"
-          key={collection.id}
-          onClick={() => {
-            setShowPhotos(true);
-            setShowDescription(true);
-            setId(collection.id);
-          }}
-        >
-          <h1 className="collection-name">{collection.name}</h1>
-          <img
-            src={require(`../assets/photos${collection.coverurl}`)}
-            alt={collection.description}
-            onContextMenu={(e) => {
-              copyrightError();
-              e.preventDefault();
+      {state.collections.map((collection) =>
+        collection.name && collection.coverurl && collection.description ? (
+          <div
+            className="collection-tile"
+            key={collection.id}
+            onClick={() => {
+              setShowPhotos(true);
+              setShowDescription(true);
+              setId(collection.id);
             }}
-          />
+          >
+            <h1 className="collection-name">{collection.name}</h1>
+            <img
+              src={collection.coverurl}
+              alt={collection.description}
+              onContextMenu={(e) => {
+                copyrightError();
+                e.preventDefault();
+              }}
+            />
 
-          {showDescription && showPhotos && collection.id === id ? (
-            <div>
-              <div className="collection-description">
-                {collection.description}
+            {showDescription && showPhotos && collection.id === id ? (
+              <div>
+                <div className="collection-description">
+                  {collection.description}
+                </div>
+                <SelectedCollection id={id} />
               </div>
-              <SelectedCollection id={id} />
-            </div>
-          ) : null}
-        </div>
-      ))}
+            ) : null}
+          </div>
+        ) : null
+      )}
     </div>
   );
 }

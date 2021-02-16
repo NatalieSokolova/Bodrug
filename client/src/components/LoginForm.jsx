@@ -1,26 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { Redirect, Link } from "react-router-dom";
+import React from "react";
+import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
-import { notifyError, notifySuccess } from "../partials";
+import { notifyError } from "../partials";
 import { Form, Input, Button } from "antd";
 
-export default function LoginForm() {
+export default function LoginForm({ auth, setAuth }) {
   toast.configure();
 
   const ADMIN_USERNAME = process.env.REACT_APP_ADMIN_USERNAME;
   const ADMIN_PASSWORD = process.env.REACT_APP_ADMIN_PASSWORD;
 
-  console.log("username: ", ADMIN_USERNAME);
-  console.log("password: ", ADMIN_PASSWORD);
+  let history = useHistory();
+
+  function handleRedirect() {
+    history.push("/admin");
+  }
 
   const [form] = Form.useForm();
-
-  const [auth, setAuth] = useState({
-    username: "",
-    password: "",
-  });
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleChange = (event) => {
     const target = event.target;
@@ -31,38 +27,24 @@ export default function LoginForm() {
       ...auth,
       [name]: value,
     });
-
-    console.log("NAME: ", name);
-    console.log(target);
   };
-
-  const validate = () => {
-    if (auth.username === ADMIN_USERNAME && auth.password === ADMIN_PASSWORD) {
-      return true;
-    }
-    return false;
-  };
-
-  useEffect(() => {
-    if (validate()) {
-      setIsLoggedIn(true);
-    }
-  }, [isLoggedIn]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     console.log("AUTH U: ", auth.username);
     console.log("AUTH P: ", auth.password);
-    console.log("TRUE? ", isLoggedIn);
+    console.log("ENV N: ", ADMIN_USERNAME);
+    console.log("ENV PW: ", ADMIN_PASSWORD);
 
-    if (isLoggedIn) {
-      return <Redirect to="/admin" />;
+    if (auth.username === ADMIN_USERNAME && auth.password === ADMIN_PASSWORD) {
+      console.log("SUCCESS??");
+      return handleRedirect();
     }
+
     return (
       form.resetFields(),
       setAuth({}),
-      setIsLoggedIn(false),
       notifyError("OOPS! Wrong username or password. Please, try again")
     );
   };

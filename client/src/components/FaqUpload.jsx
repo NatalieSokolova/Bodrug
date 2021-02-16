@@ -14,7 +14,7 @@ export default function FaqUpload() {
     answer: "",
   });
 
-  console.log("STATE: ", faq);
+  // console.log("STATE: ", faq);
 
   const handleChange = (event) => {
     const target = event.target;
@@ -26,8 +26,8 @@ export default function FaqUpload() {
       [name]: value,
     });
 
-    console.log("NAME: ", name);
-    console.log(target);
+    // console.log("NAME: ", name);
+    // console.log(target);
   };
 
   const handleSubmit = (event) => {
@@ -72,8 +72,8 @@ export default function FaqUpload() {
           }}
         >
           <Form.Item
-            label="FaqQuestion"
-            name="FaqQuestion"
+            label="question"
+            name="question"
             rules={[{ required: true, message: "Please input your question!" }]}
           >
             <Input.TextArea
@@ -84,8 +84,8 @@ export default function FaqUpload() {
           </Form.Item>
 
           <Form.Item
-            label="FaqAnswer"
-            name="FaqAnswer"
+            label="answer"
+            name="answer"
             rules={[{ required: true, message: "Please input your answer!" }]}
           >
             <Input.TextArea
@@ -101,16 +101,8 @@ export default function FaqUpload() {
             marginBottom: "0",
           }}
         >
-          <Button
-            onClick={handleSubmit}
-            type="primary"
-            htmlType="submit"
-            style={{
-              paddingBottom: "20px",
-              height: "50px",
-            }}
-          >
-            Post
+          <Button onClick={handleSubmit} className="btn btn-primary post-btn">
+            POST
           </Button>
         </Form.Item>
       </Form>
