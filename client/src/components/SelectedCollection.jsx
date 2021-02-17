@@ -41,7 +41,7 @@ export default function SelectedCollection(props) {
   return (
     <SRLWrapper options={options}>
       <div className="collection">
-        {renderedPhotoList.map((renderedPhoto) => (
+        {renderedPhotoList.reverse().map((renderedPhoto) => (
           <div key={renderedPhoto.id}>
             <div>
               <img

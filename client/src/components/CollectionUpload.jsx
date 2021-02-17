@@ -16,7 +16,6 @@ export default function CollectionUpload() {
     coverurl: null,
   });
 
-  // setPhotos ???
   const [photos, setPhotos] = useState([]);
 
   const handleChange = (event) => {
@@ -59,8 +58,6 @@ export default function CollectionUpload() {
       newCollection.description &&
       newCollection.coverurl
     ) {
-      // console.log("newCollection: ", newCollection);
-
       axios
         .post("http://localhost:3001/collections", newCollection)
         .then((response) => {

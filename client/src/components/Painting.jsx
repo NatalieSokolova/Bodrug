@@ -27,7 +27,7 @@ export default function Painting() {
           <span>Loading...</span>
         ) : (
           <div className="row">
-            {state.paintings.map((painting) => (
+            {state.paintings.reverse().map((painting) => (
               <div key={painting.id} className="paintingContainer">
                 <img
                   src={require(`../assets/paintings${painting.url}`)}

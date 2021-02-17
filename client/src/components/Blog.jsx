@@ -32,6 +32,7 @@ export default function Blog({ blog, setBlog }) {
       <div className="old-post-list">
         {state.blogEntries
           .slice(1, state.blogEntries.length)
+          .reverse()
           .map((blogEntry) => (
             <Link to={`/blog/${blogEntry.slug}`} key={blogEntry.id}>
               <div className="old-post">

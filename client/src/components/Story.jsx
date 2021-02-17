@@ -43,7 +43,7 @@ export default function Story() {
         </div>
 
         <Carousel ref={slider} effect="fade" dots={false} autoplay={autoplay}>
-          {state.stories.map((story) => (
+          {state.stories.reverse().map((story) => (
             <div key={story.id}>
               <div
                 className="story"

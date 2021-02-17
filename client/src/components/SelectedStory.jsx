@@ -48,7 +48,7 @@ export default function SelectedStory(props) {
   return (
     <div className="selected">
       <SRLWrapper options={options}>
-        {renderedPhotoList.map((renderedPhoto) => (
+        {renderedPhotoList.reverse().map((renderedPhoto) => (
           <div style={contentStyle} key={renderedPhoto.id}>
             <p className="photo-description">{renderedPhoto.description}</p>
 
