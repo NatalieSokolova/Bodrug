@@ -32,7 +32,7 @@ export default function Portfolio() {
               <div key={photo.id} className="photoContainer">
                 <img
                   src={photo.url}
-                  // alt={photo.description}
+                  alt={photo.description}
                   className="photo"
                   onContextMenu={(e) => {
                     copyrightError();

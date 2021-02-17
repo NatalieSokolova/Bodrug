@@ -10,6 +10,34 @@ export default function CollectionUpload() {
   const { state } = usePhotoData();
   const [form] = Form.useForm();
 
+  const [collection, setCollection] = useState({
+    name: "",
+    description: "",
+    coverurl: null,
+  });
+
+  // setPhotos ???
+
+  const handleChange = (event) => {
+    const target = event.target;
+    const name = target.name;
+    const value = target.value;
+
+    setCollection({
+      ...collection,
+      [name]: value,
+    });
+  };
+
+  const setCover = (url) => {
+    return setCollection({
+      ...collection,
+      coverurl: url,
+    });
+  };
+
+  console.log("collection: ", collection);
+
   return (
     <div className="upload-container">
       <h1>Add a new collection below</h1>
@@ -28,8 +56,8 @@ export default function CollectionUpload() {
           <Form.Item label="name" name="name" rules={[{ required: false }]}>
             <Input
               name="name"
-              // value={photo.description}
-              // onChange={handleChange}
+              value={collection.name}
+              onChange={handleChange}
             />
           </Form.Item>
           <Form.Item
@@ -39,8 +67,8 @@ export default function CollectionUpload() {
           >
             <Input.TextArea
               name="description"
-              // value={photo.description}
-              // onChange={handleChange}
+              value={collection.description}
+              onChange={handleChange}
             />
           </Form.Item>
           <Form.Item label="cover photo">
@@ -50,6 +78,7 @@ export default function CollectionUpload() {
                   <img
                     src={photo.url}
                     alt={photo.description}
+                    onClick={() => setCover(photo.url)}
                     className="photo"
                   />
                 </div>

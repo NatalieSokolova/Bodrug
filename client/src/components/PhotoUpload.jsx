@@ -34,8 +34,8 @@ export default function PhotoUpload() {
       [name]: value,
     });
 
-    console.log("NAME: ", name);
-    console.log(target);
+    // console.log("NAME: ", name);
+    // console.log(target);
   };
 
   const beginUpload = (tag) => {
@@ -49,9 +49,9 @@ export default function PhotoUpload() {
       if (!error) {
         console.log(photos);
 
-        const newPhoto = {
-          url: photos.info.url,
-        };
+        // const newPhoto = {
+        //   url: photos.info.url,
+        // };
 
         if (photos.event === "success") {
           console.log("IMAGE URL: ", photos.info.url);
