@@ -39,12 +39,13 @@ export default function CollectionUpload() {
 
   const setPhotoIds = (id) => {
     const photoIds = photos.concat(id);
+    console.log("collection: ", collection.name);
     return setPhotos(photoIds);
   };
 
   console.log("PHOTO IDs: ", photos);
 
-  const handleSubmit = (event) => {
+  const createCollection = (event) => {
     event.preventDefault();
 
     const newCollection = {
@@ -53,14 +54,12 @@ export default function CollectionUpload() {
       coverurl: collection.coverurl,
     };
 
-    // console.log("NEW: ", newCollection);
-
     if (
       newCollection.name &&
       newCollection.description &&
       newCollection.coverurl
     ) {
-      console.log("newCollection: ", newCollection);
+      // console.log("newCollection: ", newCollection);
 
       axios
         .post("http://localhost:3001/collections", newCollection)
@@ -79,7 +78,31 @@ export default function CollectionUpload() {
     }
   };
 
-  // console.log("collection: ", collection);
+  const addPhotos = (event) => {
+    event.preventDefault();
+    console.log("COLLECTION: ", collection);
+
+    if (photos.length > 0) {
+      photos.forEach((photoId) => {
+        console.log("photoId: ", photoId);
+        axios
+          .put(`http://localhost:3001/photos/${photoId}`, {
+            collection,
+            photoId,
+          })
+          .then((response) => {
+            console.log("SUCCESS! ", response);
+            notifySuccess("Woo-hoo! Photos added to collection successfully!");
+          })
+          .catch((error) => {
+            notifyError("OOPS! Something went wrong. Please, try again");
+            console.log("TROUBLE! ", error);
+          });
+      });
+    } else {
+      notifyError("Please, select at least 1 photo");
+    }
+  };
 
   return (
     <div className="upload-container">
@@ -128,6 +151,20 @@ export default function CollectionUpload() {
               ))}
             </div>
           </Form.Item>
+
+          <Form.Item
+            style={{
+              marginBottom: "0",
+            }}
+          >
+            <Button
+              className="btn btn-primary post-btn"
+              onClick={createCollection}
+            >
+              CREATE COLLECTION
+            </Button>
+          </Form.Item>
+
           <Form.Item label="photos">
             <div>
               {state.photos.reverse().map((photo) => (
@@ -149,8 +186,8 @@ export default function CollectionUpload() {
             marginBottom: "0",
           }}
         >
-          <Button className="btn btn-primary post-btn" onClick={handleSubmit}>
-            POST
+          <Button className="btn btn-primary post-btn" onClick={addPhotos}>
+            ADD PHOTOS
           </Button>
         </Form.Item>
       </Form>
