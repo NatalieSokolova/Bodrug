@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import { Card } from "antd";
 import FaqUpload from "./FaqUpload";
 import PhotoUpload from "./PhotoUpload";
+import CollectionUpload from "./CollectionUpload";
 import "./AdminDashboard.css";
 
 export default function AdminDashboard({ auth }) {
@@ -88,6 +89,11 @@ export default function AdminDashboard({ auth }) {
         {showForm && id === "allPhotos" ? (
           <div className="upload-container">
             <PhotoUpload />
+          </div>
+        ) : null}
+        {showForm && id === "collections" ? (
+          <div className="upload-container">
+            <CollectionUpload />
           </div>
         ) : null}
       </div>
