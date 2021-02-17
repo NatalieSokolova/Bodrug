@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
+import usePhotoData from "../hooks/usePhotoData";
 import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
 
 export default function CollectionUpload() {
   toast.configure();
-
+  const { state } = usePhotoData();
   const [form] = Form.useForm();
 
   return (
@@ -43,10 +44,30 @@ export default function CollectionUpload() {
             />
           </Form.Item>
           <Form.Item label="cover photo">
-            <div>COVER PHOTO</div>
+            <div>
+              {state.photos.reverse().map((photo) => (
+                <div key={photo.id} className="photoContainer">
+                  <img
+                    src={photo.url}
+                    alt={photo.description}
+                    className="photo"
+                  />
+                </div>
+              ))}
+            </div>
           </Form.Item>
           <Form.Item label="photos">
-            <div>PHOTOS</div>
+            <div>
+              {state.photos.reverse().map((photo) => (
+                <div key={photo.id} className="photoContainer">
+                  <img
+                    src={photo.url}
+                    alt={photo.description}
+                    className="photo"
+                  />
+                </div>
+              ))}
+            </div>
           </Form.Item>
         </div>
 

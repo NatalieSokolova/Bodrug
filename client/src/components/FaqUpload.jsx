@@ -57,7 +57,7 @@ export default function FaqUpload() {
   };
 
   return (
-    <div>
+    <div className="upload-container">
       <h1>Add a new FAQ below</h1>
       <Form
         form={form}
