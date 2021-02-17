@@ -68,7 +68,7 @@ function App() {
           </div>
           <Layout>
             <Footer className="footer">
-              <ScrollBtn />
+              {/* <ScrollBtn /> */}
               <div>
                 <span>Iuliia Bodrug ©2020 </span>
                 <a
