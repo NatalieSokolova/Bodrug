@@ -59,7 +59,7 @@ export default function SelectedBlog({ blog, setBlog }) {
         <div>
           <SRLWrapper options={options}>
             <Carousel effect="fade" autoplay className="blog-carousel">
-              {blogPost.photourls.reverse().map((photourl) => (
+              {blogPost.photourls.map((photourl) => (
                 <img
                   key={photourl}
                   style={contentStyle}

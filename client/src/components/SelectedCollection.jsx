@@ -41,11 +41,11 @@ export default function SelectedCollection(props) {
   return (
     <SRLWrapper options={options}>
       <div className="collection">
-        {renderedPhotoList.reverse().map((renderedPhoto) => (
+        {renderedPhotoList.map((renderedPhoto) => (
           <div key={renderedPhoto.id}>
             <div>
               <img
-                src={require(`../assets/photos${renderedPhoto.url}`)}
+                src={renderedPhoto.url}
                 alt={renderedPhoto.description}
                 onContextMenu={(e) => {
                   copyrightError();

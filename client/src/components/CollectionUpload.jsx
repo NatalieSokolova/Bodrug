@@ -136,7 +136,7 @@ export default function CollectionUpload() {
           </Form.Item>
           <Form.Item label="cover photo">
             <div>
-              {state.photos.reverse().map((photo) => (
+              {state.photos.map((photo) => (
                 <div key={photo.id} className="photoContainer">
                   <img
                     src={photo.url}
@@ -164,7 +164,7 @@ export default function CollectionUpload() {
 
           <Form.Item label="photos">
             <div>
-              {state.photos.reverse().map((photo) => (
+              {state.photos.map((photo) => (
                 <div key={photo.id} className="photoContainer">
                   <img
                     src={photo.url}

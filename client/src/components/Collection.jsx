@@ -15,7 +15,7 @@ export default function Collection() {
 
   return (
     <div className="collection-container">
-      {state.collections.reverse().map((collection) =>
+      {state.collections.map((collection) =>
         collection.name && collection.coverurl && collection.description ? (
           <div
             className="collection-tile"

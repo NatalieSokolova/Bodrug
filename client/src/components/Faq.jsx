@@ -25,15 +25,12 @@ export default function Faq() {
           }}
         />
         <div className="faqContainer">
-          {state.faqs
-            .slice(0)
-            .reverse()
-            .map((faq) => (
-              <div key={faq.id} className="qa">
-                <h1 className="question">{faq.question}</h1>
-                <p className="answer">{faq.answer}</p>
-              </div>
-            ))}
+          {state.faqs.slice(0).map((faq) => (
+            <div key={faq.id} className="qa">
+              <h1 className="question">{faq.question}</h1>
+              <p className="answer">{faq.answer}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
