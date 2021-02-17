@@ -36,7 +36,42 @@ export default function CollectionUpload() {
     });
   };
 
-  console.log("collection: ", collection);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const newCollection = {
+      name: collection.name,
+      description: collection.description,
+      coverurl: collection.coverurl,
+    };
+
+    // console.log("NEW: ", newCollection);
+
+    if (
+      newCollection.name &&
+      newCollection.description &&
+      newCollection.coverurl
+    ) {
+      console.log("newCollection: ", newCollection);
+
+      axios
+        .post("http://localhost:3001/collections", newCollection)
+        .then((response) => {
+          console.log("SUCCESS! ", response);
+          notifySuccess("Woo-hoo! Collection created successfully!");
+        })
+        .catch((error) => {
+          notifyError("OOPS! Something went wrong. Please, try again");
+          console.log("TROUBLE! ", error);
+        });
+    } else {
+      notifyError(
+        "Please, make sure to fill out name, description and select a cover photo"
+      );
+    }
+  };
+
+  // console.log("collection: ", collection);
 
   return (
     <div className="upload-container">
@@ -105,7 +140,9 @@ export default function CollectionUpload() {
             marginBottom: "0",
           }}
         >
-          <Button className="btn btn-primary post-btn">POST</Button>
+          <Button className="btn btn-primary post-btn" onClick={handleSubmit}>
+            POST
+          </Button>
         </Form.Item>
       </Form>
     </div>
