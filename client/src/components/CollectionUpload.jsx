@@ -17,6 +17,7 @@ export default function CollectionUpload() {
   });
 
   // setPhotos ???
+  const [photos, setPhotos] = useState([]);
 
   const handleChange = (event) => {
     const target = event.target;
@@ -35,6 +36,13 @@ export default function CollectionUpload() {
       coverurl: url,
     });
   };
+
+  const setPhotoIds = (id) => {
+    const photoIds = photos.concat(id);
+    return setPhotos(photoIds);
+  };
+
+  console.log("PHOTO IDs: ", photos);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -127,6 +135,7 @@ export default function CollectionUpload() {
                   <img
                     src={photo.url}
                     alt={photo.description}
+                    onClick={() => setPhotoIds(photo.id)}
                     className="photo"
                   />
                 </div>
