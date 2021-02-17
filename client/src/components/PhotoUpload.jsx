@@ -123,7 +123,7 @@ export default function PhotoUpload() {
             />
           </Form.Item>
 
-          <Form.Item
+          {/* <Form.Item
             label="collection_id"
             name="collection_id"
             rules={[{ required: false }]}
@@ -145,7 +145,7 @@ export default function PhotoUpload() {
               value={photo.story_id}
               onChange={handleChange}
             />
-          </Form.Item>
+          </Form.Item> */}
         </div>
 
         <Form.Item
