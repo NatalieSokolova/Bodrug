@@ -117,40 +117,41 @@ export default function CollectionUpload() {
             paddingTop: "5vh",
           }}
         >
-          <Form.Item
-            label="name"
-            name="name"
-            rules={[
-              {
-                required: true,
-                message: "Please input the collection name!",
-              },
-            ]}
-          >
-            <Input
-              name="name"
-              value={collection.name}
-              onChange={handleChange}
-            />
-          </Form.Item>
-          <Form.Item
-            label="description"
-            name="description"
-            rules={[
-              {
-                required: true,
-                message: "Please input the collection description!",
-              },
-            ]}
-          >
-            <Input.TextArea
-              name="description"
-              value={collection.description}
-              onChange={handleChange}
-            />
-          </Form.Item>
           {image === "cover" ? (
             <div>
+              <Form.Item
+                label="name"
+                name="name"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input the collection name!",
+                  },
+                ]}
+              >
+                <Input
+                  name="name"
+                  value={collection.name}
+                  onChange={handleChange}
+                />
+              </Form.Item>
+              <Form.Item
+                label="description"
+                name="description"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input the collection description!",
+                  },
+                ]}
+              >
+                <Input.TextArea
+                  name="description"
+                  value={collection.description}
+                  onChange={handleChange}
+                />
+              </Form.Item>
+
               <Form.Item label="cover photo">
                 <div>
                   {state.photos.map((photo) => (
