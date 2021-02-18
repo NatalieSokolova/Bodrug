@@ -54,7 +54,7 @@ export default function SelectedStory(props) {
 
             <img
               className="story-img"
-              src={require(`../assets/photos${renderedPhoto.url}`)}
+              src={renderedPhoto.url}
               alt={renderedPhoto.description}
               onContextMenu={(e) => {
                 copyrightError();

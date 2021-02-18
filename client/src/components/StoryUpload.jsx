@@ -39,11 +39,11 @@ export default function StoryUpload() {
 
   const setPhotoIds = (id) => {
     const photoIds = photos.concat(id);
-    console.log("story: ", story.name);
+    // console.log("story: ", story.name);
     return setPhotos(photoIds);
   };
 
-  console.log("PHOTO IDs: ", photos);
+  // console.log("PHOTO IDs: ", photos);
 
   const createstory = (event) => {
     event.preventDefault();
@@ -81,7 +81,7 @@ export default function StoryUpload() {
       photos.forEach((photoId) => {
         console.log("photoId: ", photoId);
         axios
-          .put(`http://localhost:3001/photos/${photoId}`, {
+          .put(`http://localhost:3001/photos/upd_story_id`, {
             story,
             photoId,
           })

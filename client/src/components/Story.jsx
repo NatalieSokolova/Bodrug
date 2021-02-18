@@ -59,7 +59,7 @@ export default function Story() {
                 </div>
 
                 <img
-                  src={require(`../assets/photos${story.coverurl}`)}
+                  src={story.coverurl}
                   alt={story.description}
                   onContextMenu={(e) => {
                     copyrightError();
