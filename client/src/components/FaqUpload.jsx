@@ -52,7 +52,7 @@ export default function FaqUpload() {
   };
 
   return (
-    <div className="upload-container">
+    <div>
       <h1>Add a new FAQ below</h1>
       <Form
         form={form}
@@ -60,12 +60,7 @@ export default function FaqUpload() {
         name="basic"
         initialValues={{ remember: true }}
       >
-        <div
-          style={{
-            padding: "5vh 2vw",
-            marginBottom: "-7.5vh",
-          }}
-        >
+        <div className="formInput">
           <Form.Item
             label="question"
             name="question"

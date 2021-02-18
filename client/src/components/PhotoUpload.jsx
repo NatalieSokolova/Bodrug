@@ -97,7 +97,7 @@ export default function PhotoUpload() {
   };
 
   return (
-    <div className="upload-container">
+    <div>
       <h1>Add a new photo below</h1>
       <Form
         form={form}
@@ -105,12 +105,7 @@ export default function PhotoUpload() {
         name="basic"
         initialValues={{ remember: true }}
       >
-        <div
-          style={{
-            padding: "5vh 2vw",
-            marginBottom: "-7.5vh",
-          }}
-        >
+        <div className="formInput">
           <Form.Item
             label="description"
             name="description"
@@ -122,30 +117,6 @@ export default function PhotoUpload() {
               onChange={handleChange}
             />
           </Form.Item>
-
-          {/* <Form.Item
-            label="collection_id"
-            name="collection_id"
-            rules={[{ required: false }]}
-          >
-            <Input
-              name="collection_id"
-              value={photo.collection_id}
-              onChange={handleChange}
-            />
-          </Form.Item>
-
-          <Form.Item
-            label="story_id"
-            name="story_id"
-            rules={[{ required: false }]}
-          >
-            <Input
-              name="story_id"
-              value={photo.story_id}
-              onChange={handleChange}
-            />
-          </Form.Item> */}
         </div>
 
         <Form.Item

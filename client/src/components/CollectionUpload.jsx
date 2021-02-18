@@ -104,7 +104,7 @@ export default function CollectionUpload() {
   };
 
   return (
-    <div className="upload-container">
+    <div>
       <h1>Add a new collection below</h1>
       <Form
         form={form}
@@ -112,13 +112,9 @@ export default function CollectionUpload() {
         name="basic"
         initialValues={{ remember: true }}
       >
-        <div
-          style={{
-            paddingTop: "5vh",
-          }}
-        >
-          {image === "cover" ? (
-            <div>
+        {image === "cover" ? (
+          <div>
+            <div className="formInput">
               <Form.Item
                 label="name"
                 name="name"
@@ -166,22 +162,23 @@ export default function CollectionUpload() {
                   ))}
                 </div>
               </Form.Item>
-
-              <Form.Item
-                style={{
-                  marginBottom: "0",
-                }}
-              >
-                <Button
-                  className="btn btn-primary post-btn"
-                  onClick={createCollection}
-                >
-                  CREATE COLLECTION
-                </Button>
-              </Form.Item>
             </div>
-          ) : (
-            <div>
+            <Form.Item
+              style={{
+                marginBottom: "0",
+              }}
+            >
+              <Button
+                className="btn btn-primary post-btn"
+                onClick={createCollection}
+              >
+                CREATE COLLECTION
+              </Button>
+            </Form.Item>
+          </div>
+        ) : (
+          <div>
+            <div className="formInput">
               <Form.Item label="photos">
                 <div>
                   {state.photos.map((photo) => (
@@ -196,22 +193,19 @@ export default function CollectionUpload() {
                   ))}
                 </div>
               </Form.Item>
-
-              <Form.Item
-                style={{
-                  marginBottom: "0",
-                }}
-              >
-                <Button
-                  className="btn btn-primary post-btn"
-                  onClick={addPhotos}
-                >
-                  ADD PHOTOS
-                </Button>
-              </Form.Item>
             </div>
-          )}
-        </div>
+
+            <Form.Item
+              style={{
+                marginBottom: "0",
+              }}
+            >
+              <Button className="btn btn-primary post-btn" onClick={addPhotos}>
+                ADD PHOTOS
+              </Button>
+            </Form.Item>
+          </div>
+        )}
       </Form>
     </div>
   );
