@@ -152,16 +152,16 @@ export default function CollectionUpload() {
               </Form.Item>
 
               <Form.Item label="cover photo">
-                <div>
+                <div className="uploadImageContainer">
                   {state.photos.map((photo) => (
-                    <div key={photo.id} className="outsideContainer">
+                    <div key={photo.id}>
                       <img
                         src={photo.url}
                         alt={photo.description}
                         onClick={() => {
                           selectCover(photo.url);
                         }}
-                        className="image"
+                        className="uploadImage"
                       />
                     </div>
                   ))}
@@ -185,14 +185,14 @@ export default function CollectionUpload() {
           <div>
             <div className="formInput">
               <Form.Item label="photos">
-                <div>
+                <div className="uploadImageContainer">
                   {state.photos.map((photo) => (
-                    <div key={photo.id} className="photoContainer">
+                    <div key={photo.id}>
                       <img
                         src={photo.url}
                         alt={photo.description}
                         onClick={() => setPhotoIds(photo.id)}
-                        className="photo"
+                        className="uploadImage"
                       />
                     </div>
                   ))}

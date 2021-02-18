@@ -16,3 +16,7 @@ img.image {
 .outsideContainer {
   margin: 6vh 1vw 10vh;
 }
+
+.SRLImage {
+  object-fit: contain;
+}

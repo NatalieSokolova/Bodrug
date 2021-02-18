@@ -39,11 +39,8 @@ export default function StoryUpload() {
 
   const setPhotoIds = (id) => {
     const photoIds = photos.concat(id);
-    // console.log("story: ", story.name);
     return setPhotos(photoIds);
   };
-
-  // console.log("PHOTO IDs: ", photos);
 
   const createstory = (event) => {
     event.preventDefault();
@@ -141,16 +138,16 @@ export default function StoryUpload() {
               </Form.Item>
 
               <Form.Item label="cover photo">
-                <div>
+                <div className="uploadImageContainer">
                   {state.photos.map((photo) => (
-                    <div key={photo.id} className="photoContainer">
+                    <div key={photo.id}>
                       <img
                         src={photo.url}
                         alt={photo.description}
                         onClick={() => {
                           selectCover(photo.url);
                         }}
-                        className="photo"
+                        className="uploadImage"
                       />
                     </div>
                   ))}
@@ -174,14 +171,14 @@ export default function StoryUpload() {
           <div>
             <div className="formInput">
               <Form.Item label="photos">
-                <div>
+                <div className="uploadImageContainer">
                   {state.photos.map((photo) => (
-                    <div key={photo.id} className="photoContainer">
+                    <div key={photo.id}>
                       <img
                         src={photo.url}
                         alt={photo.description}
                         onClick={() => setPhotoIds(photo.id)}
-                        className="photo"
+                        className="uploadImage"
                       />
                     </div>
                   ))}
