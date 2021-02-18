@@ -27,13 +27,13 @@ export default function Portfolio() {
         {!state.photos ? (
           <span>Loading...</span>
         ) : (
-          <div className="row">
+          <div className="imageContainer">
             {state.photos.map((photo) => (
-              <div key={photo.id} className="photoContainer">
+              <div key={photo.id}>
                 <img
                   src={photo.url}
                   alt={photo.description}
-                  className="photo"
+                  className="image"
                   onContextMenu={(e) => {
                     copyrightError();
                     e.preventDefault();

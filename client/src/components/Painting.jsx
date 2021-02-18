@@ -3,7 +3,7 @@ import usePaintingData from "../hooks/usePaintingData";
 import { SRLWrapper } from "simple-react-lightbox";
 import { toast } from "react-toastify";
 import { copyrightError } from "../partials";
-import "./Painting.css";
+import "./Photo.css";
 
 export default function Painting() {
   toast.configure();
@@ -26,9 +26,9 @@ export default function Painting() {
         {!state.paintings ? (
           <span>Loading...</span>
         ) : (
-          <div className="row">
+          <div className="imageContainer">
             {state.paintings.map((painting) => (
-              <div key={painting.id} className="paintingContainer">
+              <div key={painting.id}>
                 <img
                   src={painting.url}
                   alt={[
@@ -37,7 +37,7 @@ export default function Painting() {
                     `MATERIALS: ${painting.materials}`,
                     `CAD${painting.price}`,
                   ]}
-                  className="painting"
+                  className="image"
                   onContextMenu={(e) => {
                     copyrightError();
                     e.preventDefault();
