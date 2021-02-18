@@ -4,6 +4,7 @@ import { Card } from "antd";
 import FaqUpload from "./FaqUpload";
 import PhotoUpload from "./PhotoUpload";
 import CollectionUpload from "./CollectionUpload";
+import StoryUpload from "./StoryUpload";
 import "./AdminDashboard.css";
 
 export default function AdminDashboard({ auth }) {
@@ -94,6 +95,11 @@ export default function AdminDashboard({ auth }) {
         {showForm && id === "collections" ? (
           <div className="upload-container">
             <CollectionUpload />
+          </div>
+        ) : null}
+        {showForm && id === "stories" ? (
+          <div className="upload-container">
+            <StoryUpload />
           </div>
         ) : null}
       </div>
