@@ -9,6 +9,9 @@ export default function CollectionUpload() {
   toast.configure();
   const { state } = usePhotoData();
   const [form] = Form.useForm();
+  const imgStyle = {
+    opacity: "0.5",
+  };
 
   const [collection, setCollection] = useState({
     name: "",
@@ -30,7 +33,7 @@ export default function CollectionUpload() {
     });
   };
 
-  const setCover = (url) => {
+  const selectCover = (url) => {
     return setCollection({
       ...collection,
       coverurl: url,
@@ -155,7 +158,9 @@ export default function CollectionUpload() {
                       <img
                         src={photo.url}
                         alt={photo.description}
-                        onClick={() => setCover(photo.url)}
+                        onClick={() => {
+                          selectCover(photo.url);
+                        }}
                         className="photo"
                       />
                     </div>
