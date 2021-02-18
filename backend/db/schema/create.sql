@@ -32,9 +32,9 @@ CREATE TABLE paintings (
   id SERIAL PRIMARY KEY NOT NULL,
   description VARCHAR(5000),
   url VARCHAR(255) NOT NULL,
-  year INTEGER,
+  year VARCHAR(255),
   materials VARCHAR(500),
-  price INTEGER
+  price VARCHAR(255)
 );
 
 DROP TABLE IF EXISTS faqs CASCADE;

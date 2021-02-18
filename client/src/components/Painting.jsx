@@ -30,7 +30,7 @@ export default function Painting() {
             {state.paintings.map((painting) => (
               <div key={painting.id} className="paintingContainer">
                 <img
-                  src={require(`../assets/paintings${painting.url}`)}
+                  src={painting.url}
                   alt={[
                     painting.description,
                     `YEAR: ${painting.year}`,

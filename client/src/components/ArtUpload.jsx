@@ -5,25 +5,28 @@ import { openUploadWidget } from "../CloudinaryService";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
 
-export default function PhotoUpload() {
+export default function ArtUpload() {
   toast.configure();
 
   const [form] = Form.useForm();
 
-  const [photo, setPhoto] = useState({
+  const [art, setArt] = useState({
     url: "",
     description: "",
+    year: "",
+    materials: "",
+    price: "",
   });
 
-  console.log("STATE: ", photo);
+  console.log("STATE: ", art);
 
   const handleChange = (event) => {
     const target = event.target;
     const name = target.name;
     const value = target.value;
 
-    setPhoto({
-      ...photo,
+    setArt({
+      ...art,
       [name]: value,
     });
   };
@@ -35,20 +38,16 @@ export default function PhotoUpload() {
       uploadPreset: "qtiu4svf",
     };
 
-    openUploadWidget(uploadOptions, (error, photos) => {
+    openUploadWidget(uploadOptions, (error, artImgs) => {
       if (!error) {
-        console.log(photos);
+        console.log(artImgs);
 
-        // const newPhoto = {
-        //   url: photos.info.url,
-        // };
+        if (artImgs.event === "success") {
+          console.log("IMAGE URL: ", artImgs.info.url);
 
-        if (photos.event === "success") {
-          console.log("IMAGE URL: ", photos.info.url);
-
-          setPhoto({
-            ...photo,
-            url: photos.info.url,
+          setArt({
+            ...art,
+            url: artImgs.info.url,
           });
         }
       } else {
@@ -61,16 +60,19 @@ export default function PhotoUpload() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const newPhoto = {
-      url: photo.url,
-      description: photo.description,
+    const newArt = {
+      url: art.url,
+      description: art.description,
+      year: art.year,
+      materials: art.materials,
+      price: art.price,
     };
 
-    console.log("NEW: ", newPhoto);
+    console.log("NEW: ", newArt);
 
-    if (newPhoto.url) {
+    if (newArt.url) {
       axios
-        .post("http://localhost:3001/photos", newPhoto)
+        .post("http://localhost:3001/paintings", newArt)
         .then((response) => {
           console.log("SUCCESS! ", response);
           notifySuccess("Woo-hoo! Image posted successfully!");
@@ -86,7 +88,7 @@ export default function PhotoUpload() {
 
   return (
     <div>
-      <h1>Add a new photo below</h1>
+      <h1>Add a new image below</h1>
       <Form
         form={form}
         className="upload-form"
@@ -101,7 +103,32 @@ export default function PhotoUpload() {
           >
             <Input.TextArea
               name="description"
-              value={photo.description}
+              value={art.description}
+              onChange={handleChange}
+            />
+          </Form.Item>
+          <Form.Item label="year" name="year" rules={[{ required: false }]}>
+            <Input.TextArea
+              name="year"
+              value={art.year}
+              onChange={handleChange}
+            />
+          </Form.Item>
+          <Form.Item
+            label="materials"
+            name="materials"
+            rules={[{ required: false }]}
+          >
+            <Input.TextArea
+              name="materials"
+              value={art.materials}
+              onChange={handleChange}
+            />
+          </Form.Item>
+          <Form.Item label="price" name="price" rules={[{ required: false }]}>
+            <Input.TextArea
+              name="price"
+              value={art.price}
               onChange={handleChange}
             />
           </Form.Item>
@@ -116,7 +143,7 @@ export default function PhotoUpload() {
             className="btn btn-primary upload-btn"
             onClick={() => beginUpload("bodrug")}
           >
-            UPLOAD PHOTO
+            UPLOAD IMAGE
           </Button>
           <Button className="btn btn-primary post-btn" onClick={handleSubmit}>
             POST

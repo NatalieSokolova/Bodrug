@@ -5,6 +5,7 @@ import FaqUpload from "./FaqUpload";
 import PhotoUpload from "./PhotoUpload";
 import CollectionUpload from "./CollectionUpload";
 import StoryUpload from "./StoryUpload";
+import ArtUpload from "./ArtUpload";
 import "./AdminDashboard.css";
 
 export default function AdminDashboard({ auth }) {
@@ -100,6 +101,11 @@ export default function AdminDashboard({ auth }) {
         {showForm && id === "stories" ? (
           <div className="upload-container">
             <StoryUpload />
+          </div>
+        ) : null}
+        {showForm && id === "art" ? (
+          <div className="upload-container">
+            <ArtUpload />
           </div>
         ) : null}
       </div>
