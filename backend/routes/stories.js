@@ -44,9 +44,9 @@ module.exports = (db) => {
   // FOR ADMIN PAGE
   router.post("/", (req, res) => {
     // extract the data from req.body
-    const { description } = req.body;
+    const { name, description, coverurl } = req.body;
 
-    console.log({ description });
+    console.log({ name, description, coverurl });
 
     // create an insert query in the db
     const query = {
