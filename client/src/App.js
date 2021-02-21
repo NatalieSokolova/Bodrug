@@ -15,7 +15,7 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 import Collection from "./components/Collection";
 import Story from "./components/Story";
-import Blog from "./components/Blog";
+import BlogPost from "./components/BlogPost";
 import SelectedBlog from "./components/SelectedBlog";
 import AdminDashboard from "./components/AdminDashboard";
 import LoginForm from "./components/LoginForm";
@@ -44,7 +44,7 @@ function App() {
                 <SelectedBlog blog={blog} setBlog={setBlog} />
               </Route>
               <Route path="/blog">
-                <Blog blog={blog} setBlog={setBlog} />
+                <BlogPost blog={blog} setBlog={setBlog} />
               </Route>
               <Route path="/about" component={About} />
               <Route path="/photos" component={Photo} />

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import useBlogEntryData from "../hooks/useBlogEntryData";
 import { copyrightError } from "../partials";
 import { toast } from "react-toastify";
-import "./Blog.css";
+import "./BlogPost.css";
 
-export default function Blog({ blog, setBlog }) {
+export default function BlogPost({ blog, setBlog }) {
   toast.configure();
 
   const { state } = useBlogEntryData();
