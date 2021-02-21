@@ -9,7 +9,7 @@ import { Form, Input, Button } from "antd";
 export default function BlogPostUpload() {
   toast.configure();
   const photosState = usePhotoData().state.photos;
-  const photosArt = usePhotoData().state.paintings;
+  const artState = usePaintingData().state.paintings;
   const [form] = Form.useForm();
   const imgStyle = {
     opacity: "0.5",
@@ -115,7 +115,7 @@ export default function BlogPostUpload() {
 
   return (
     <div>
-      <h1>Add a new collection below</h1>
+      <h1>Add a new blog post below</h1>
       <Form
         form={form}
         className="upload-form"
@@ -126,47 +126,76 @@ export default function BlogPostUpload() {
           <div>
             <div className="formInput">
               <Form.Item
-                label="name"
-                name="name"
+                label="title"
+                name="title"
                 rules={[
                   {
                     required: true,
-                    message: "Please input the collection name!",
+                    message: "Please input the blog post title!",
                   },
                 ]}
               >
                 <Input
-                  name="name"
-                  value={collection.name}
+                  name="title"
+                  value={blogPost.title}
                   onChange={handleChange}
                 />
               </Form.Item>
               <Form.Item
-                label="description"
-                name="description"
+                label="slug"
+                name="slug"
                 rules={[
                   {
                     required: true,
-                    message: "Please input the collection description!",
+                    message: "Please input the blog post slug!",
                   },
                 ]}
               >
-                <Input.TextArea
-                  name="description"
-                  value={collection.description}
+                <Input
+                  name="slug"
+                  value={blogPost.slug}
                   onChange={handleChange}
                 />
               </Form.Item>
 
-              <Form.Item label="cover photo">
+              <Form.Item
+                label="article"
+                name="article"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input the blog post article!",
+                  },
+                ]}
+              >
+                <Input.TextArea
+                  name="article"
+                  value={blogPost.article}
+                  onChange={handleChange}
+                />
+              </Form.Item>
+
+              <Form.Item label="cover image">
                 <div className="uploadImageContainer">
-                  {state.photos.map((photo) => (
+                  {photosState.map((photo) => (
                     <div key={photo.id}>
                       <img
                         src={photo.url}
                         alt={photo.description}
                         onClick={() => {
                           selectCover(photo.url);
+                        }}
+                        className="uploadImage"
+                      />
+                    </div>
+                  ))}
+                  {artState.map((art) => (
+                    <div key={art.id}>
+                      <img
+                        src={art.url}
+                        alt={art.description}
+                        onClick={() => {
+                          selectCover(art.url);
                         }}
                         className="uploadImage"
                       />
@@ -182,9 +211,9 @@ export default function BlogPostUpload() {
             >
               <Button
                 className="btn btn-primary post-btn"
-                onClick={createCollection}
+                onClick={createBlogPost}
               >
-                CREATE COLLECTION
+                CREATE BLOG POST
               </Button>
             </Form.Item>
           </div>
@@ -193,7 +222,31 @@ export default function BlogPostUpload() {
             <div className="formInput">
               <Form.Item label="photos">
                 <div className="uploadImageContainer">
-                  {state.photos.map((photo) => (
+                  {photosState.map((photo) => (
+                    <div key={photo.id}>
+                      <img
+                        src={photo.url}
+                        alt={photo.description}
+                        onClick={() => {
+                          selectCover(photo.url);
+                        }}
+                        className="uploadImage"
+                      />
+                    </div>
+                  ))}
+                  {artState.map((art) => (
+                    <div key={art.id}>
+                      <img
+                        src={art.url}
+                        alt={art.description}
+                        onClick={() => {
+                          selectCover(art.url);
+                        }}
+                        className="uploadImage"
+                      />
+                    </div>
+                  ))}
+                  {/* {state.photos.map((photo) => (
                     <div key={photo.id}>
                       <img
                         src={photo.url}
@@ -202,7 +255,7 @@ export default function BlogPostUpload() {
                         className="uploadImage"
                       />
                     </div>
-                  ))}
+                  ))} */}
                 </div>
               </Form.Item>
             </div>
@@ -212,7 +265,10 @@ export default function BlogPostUpload() {
                 marginBottom: "0",
               }}
             >
-              <Button className="btn btn-primary post-btn" onClick={addPhotos}>
+              <Button
+                className="btn btn-primary post-btn"
+                //onClick={addPhotos}
+              >
                 ADD PHOTOS
               </Button>
             </Form.Item>
