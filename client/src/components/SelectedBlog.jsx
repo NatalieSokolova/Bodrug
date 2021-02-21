@@ -34,7 +34,7 @@ export default function SelectedBlog({ blog, setBlog }) {
   const match = useRouteMatch("/blog/:slug");
   const postSlug = match.params.slug;
 
-  const blogPost = state.blogEntries.find(
+  const blogPost = state.blogPosts.find(
     (blogEntry) => blogEntry.slug === postSlug
   );
 

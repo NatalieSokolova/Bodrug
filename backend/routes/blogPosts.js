@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 module.exports = (db) => {
-  /* GET blogEntries listing. */
+  /* GET blogPosts listing. */
   router.get("/", (req, res) => {
     const query = {
-      text: "SELECT * FROM blogEntries;",
+      text: "SELECT * FROM blogPosts;",
     };
 
     db.query(query)
@@ -19,7 +19,7 @@ module.exports = (db) => {
     const id = req.params.id;
 
     const query = {
-      text: `SELECT * FROM blogEntries WHERE id=${id};`,
+      text: `SELECT * FROM blogPosts WHERE id=${id};`,
     };
 
     db.query(query)
@@ -36,7 +36,7 @@ module.exports = (db) => {
 
     // create an insert query in the db
     const query = {
-      text: `INSERT INTO blogEntries (title, slug, article, coverUrl, photoUrls, dateString) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;`,
+      text: `INSERT INTO blogPosts (title, slug, article, coverUrl, photoUrls, dateString) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;`,
       values: [title, slug, article, coverUrl, photoUrls, dateString],
     };
 

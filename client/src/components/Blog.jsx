@@ -12,7 +12,7 @@ export default function Blog({ blog, setBlog }) {
 
   return (
     <div>
-      {state.blogEntries.slice(0, 1).map((blogEntry) => (
+      {state.blogPosts.slice(0, 1).map((blogEntry) => (
         <Link to={`/blog/${blogEntry.slug}`} key={1}>
           <div className="new-post">
             <img
@@ -30,27 +30,25 @@ export default function Blog({ blog, setBlog }) {
         </Link>
       ))}
       <div className="old-post-list">
-        {state.blogEntries
-          .slice(1, state.blogEntries.length)
-          .map((blogEntry) => (
-            <Link to={`/blog/${blogEntry.slug}`} key={blogEntry.id}>
-              <div className="old-post">
-                <img
-                  src={blogEntry.coverurl}
-                  alt="Yulia Bodrug"
-                  onContextMenu={(e) => {
-                    copyrightError();
-                    e.preventDefault();
-                  }}
-                />
-                <div className="title-container">
-                  <h1 className="old-post-title">{blogEntry.title}</h1>
-                  <div className="vl"></div>
-                  <h6 className="post-date">{blogEntry.datestring}</h6>
-                </div>
+        {state.blogPosts.slice(1, state.blogPosts.length).map((blogEntry) => (
+          <Link to={`/blog/${blogEntry.slug}`} key={blogEntry.id}>
+            <div className="old-post">
+              <img
+                src={blogEntry.coverurl}
+                alt="Yulia Bodrug"
+                onContextMenu={(e) => {
+                  copyrightError();
+                  e.preventDefault();
+                }}
+              />
+              <div className="title-container">
+                <h1 className="old-post-title">{blogEntry.title}</h1>
+                <div className="vl"></div>
+                <h6 className="post-date">{blogEntry.datestring}</h6>
               </div>
-            </Link>
-          ))}
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   );
