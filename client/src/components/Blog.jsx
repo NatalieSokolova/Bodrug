@@ -16,7 +16,7 @@ export default function Blog({ blog, setBlog }) {
         <Link to={`/blog/${blogEntry.slug}`} key={1}>
           <div className="new-post">
             <img
-              src={require(`../assets${blogEntry.coverurl}`)}
+              src={blogEntry.coverurl}
               alt="Yulia Bodrug"
               onContextMenu={(e) => {
                 copyrightError();
@@ -36,7 +36,7 @@ export default function Blog({ blog, setBlog }) {
             <Link to={`/blog/${blogEntry.slug}`} key={blogEntry.id}>
               <div className="old-post">
                 <img
-                  src={require(`../assets${blogEntry.coverurl}`)}
+                  src={blogEntry.coverurl}
                   alt="Yulia Bodrug"
                   onContextMenu={(e) => {
                     copyrightError();
