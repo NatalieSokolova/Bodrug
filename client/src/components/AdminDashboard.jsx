@@ -80,7 +80,7 @@ export default function AdminDashboard({ auth }) {
             }}
             className="admin-card"
           >
-            Blog
+            Blog Posts
           </Card.Grid>
         </Card>
 

@@ -24,7 +24,7 @@ export default function BlogPostUpload() {
     dateString: null,
   });
 
-  // const [photos, setPhotos] = useState([]);
+  const [pictures, setPictures] = useState([]);
   const [image, setImage] = useState("cover");
 
   const handleChange = (event) => {
@@ -45,11 +45,10 @@ export default function BlogPostUpload() {
     });
   };
 
-  // const setPhotoIds = (id) => {
-  //   const photoIds = photos.concat(id);
-  //   console.log("collection: ", collection.name);
-  //   return setPhotos(photoIds);
-  // };
+  const setPictureUrls = (url) => {
+    const pictureUrls = pictures.concat(url);
+    return setPictures(pictureUrls);
+  };
 
   const getCurrentDate = () => {
     let currentMonth = new Array();
@@ -111,30 +110,29 @@ export default function BlogPostUpload() {
     console.log("newBlogPost: ", newBlogPost);
   };
 
-  // const addPhotos = (event) => {
-  //   event.preventDefault();
-  //   console.log("COLLECTION: ", collection);
+  const addPictures = (event) => {
+    event.preventDefault();
+    console.log("blogPost: ", blogPost);
 
-  //   if (photos.length > 0) {
-  //     photos.forEach((photoId) => {
-  //       axios
-  //         .put(
-  //           `http://localhost:3001/photos/${photoId}/upd_collection_id`,
-  //           collection
-  //         )
-  //         .then((response) => {
-  //           console.log("SUCCESS! ", response);
-  //           notifySuccess("Woo-hoo! Photos added to collection successfully!");
-  //         })
-  //         .catch((error) => {
-  //           notifyError("OOPS! Something went wrong. Please, try again");
-  //           console.log("TROUBLE! ", error);
-  //         });
-  //     });
-  //   } else {
-  //     notifyError("Please, select at least 1 photo");
-  //   }
-  // };
+    if (pictures.length > 0) {
+      // pictures.forEach((pictureId) => {
+      axios
+        .put(`http://localhost:3001/blog/${blogPost.id}`, pictures)
+        .then((response) => {
+          console.log("SUCCESS! ", response);
+          notifySuccess(
+            `Woo-hoo! Photos added to blog post: ${blogPost.title} successfully!`
+          );
+        })
+        .catch((error) => {
+          notifyError("OOPS! Something went wrong. Please, try again");
+          console.log("TROUBLE! ", error);
+        });
+      // });
+    } else {
+      notifyError("Please, select at least 1 photo");
+    }
+  };
 
   console.log("blogPost: ", blogPost);
 
@@ -253,7 +251,7 @@ export default function BlogPostUpload() {
                         src={photo.url}
                         alt={photo.description}
                         onClick={() => {
-                          selectCover(photo.url);
+                          setPictureUrls(photo.url);
                         }}
                         className="uploadImage"
                       />
@@ -265,22 +263,12 @@ export default function BlogPostUpload() {
                         src={art.url}
                         alt={art.description}
                         onClick={() => {
-                          selectCover(art.url);
+                          setPictureUrls(art.url);
                         }}
                         className="uploadImage"
                       />
                     </div>
                   ))}
-                  {/* {state.photos.map((photo) => (
-                    <div key={photo.id}>
-                      <img
-                        src={photo.url}
-                        alt={photo.description}
-                        onClick={() => setPhotoIds(photo.id)}
-                        className="uploadImage"
-                      />
-                    </div>
-                  ))} */}
                 </div>
               </Form.Item>
             </div>
@@ -292,7 +280,7 @@ export default function BlogPostUpload() {
             >
               <Button
                 className="btn btn-primary post-btn"
-                //onClick={addPhotos}
+                onClick={addPictures}
               >
                 ADD PHOTOS
               </Button>
