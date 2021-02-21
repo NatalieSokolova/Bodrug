@@ -76,12 +76,8 @@ export default function StoryUpload() {
 
     if (photos.length > 0) {
       photos.forEach((photoId) => {
-        console.log("photoId: ", photoId);
         axios
-          .put(`http://localhost:3001/photos/upd_story_id`, {
-            story,
-            photoId,
-          })
+          .put(`http://localhost:3001/photos/${photoId}/upd_story_id`, story)
           .then((response) => {
             console.log("SUCCESS! ", response);
             notifySuccess("Woo-hoo! Photos added to story successfully!");

@@ -86,7 +86,6 @@ export default function CollectionUpload() {
 
     if (photos.length > 0) {
       photos.forEach((photoId) => {
-        console.log("photoId: ", photoId);
         axios
           .put(
             `http://localhost:3001/photos/${photoId}/upd_collection_id`,

@@ -37,10 +37,6 @@ module.exports = (db) => {
     const collectionName = req.body.name;
     const photoId = req.params.id;
 
-    console.log("PARAMS: ", req.params);
-    console.log("req.body: ", req.body);
-    console.log("photoId: ", photoId);
-
     const collectionQuery = {
       text: `UPDATE photos SET collection_id = (SELECT id FROM collections WHERE name =$1) WHERE photos.id=$2`,
       values: [collectionName, photoId],
@@ -52,7 +48,7 @@ module.exports = (db) => {
   });
 
   router.put("/:id/upd_story_id", (req, res) => {
-    const storyName = req.body.story.name;
+    const storyName = req.body.name;
     const photoId = req.params.id;
 
     const storyQuery = {
