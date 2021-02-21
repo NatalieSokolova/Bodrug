@@ -43,7 +43,7 @@ export default function SelectedBlog({ blog, setBlog }) {
       <div>
         <div className="new-post">
           <img
-            src={require(`../assets${blogPost.coverurl}`)}
+            src={blogPost.coverurl}
             alt="Yulia Bodrug"
             onContextMenu={(e) => {
               copyrightError();
@@ -63,7 +63,7 @@ export default function SelectedBlog({ blog, setBlog }) {
                 <img
                   key={photourl}
                   style={contentStyle}
-                  src={require(`../assets${photourl}`)}
+                  src={photourl}
                   alt="Yulia Bodrug"
                   className="blog-carousel-img"
                   onContextMenu={(e) => {
