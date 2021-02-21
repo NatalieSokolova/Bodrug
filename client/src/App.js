@@ -16,7 +16,7 @@ import Home from "./components/Home";
 import Collection from "./components/Collection";
 import Story from "./components/Story";
 import BlogPost from "./components/BlogPost";
-import SelectedBlog from "./components/SelectedBlog";
+import SelectedBlogPost from "./components/SelectedBlogPost";
 import AdminDashboard from "./components/AdminDashboard";
 import LoginForm from "./components/LoginForm";
 import ScrollBtn from "./components/ScrollBtn";
@@ -41,7 +41,7 @@ function App() {
           <div>
             <Switch>
               <Route path="/blog/:slug">
-                <SelectedBlog blog={blog} setBlog={setBlog} />
+                <SelectedBlogPost blog={blog} setBlog={setBlog} />
               </Route>
               <Route path="/blog">
                 <BlogPost blog={blog} setBlog={setBlog} />

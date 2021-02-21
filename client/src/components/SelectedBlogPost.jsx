@@ -15,7 +15,7 @@ const contentStyle = {
   cursor: "pointer",
 };
 
-export default function SelectedBlog({ blog, setBlog }) {
+export default function SelectedBlogPost({ blog, setBlog }) {
   toast.configure();
 
   const options = {
@@ -56,25 +56,27 @@ export default function SelectedBlog({ blog, setBlog }) {
         </div>
 
         <div className="blog-article">{blogPost.article}</div>
-        <div>
-          <SRLWrapper options={options}>
-            <Carousel effect="fade" autoplay className="blog-carousel">
-              {blogPost.photourls.map((photourl) => (
-                <img
-                  key={photourl}
-                  style={contentStyle}
-                  src={photourl}
-                  alt="Yulia Bodrug"
-                  className="blog-carousel-img"
-                  onContextMenu={(e) => {
-                    copyrightError();
-                    e.preventDefault();
-                  }}
-                />
-              ))}
-            </Carousel>
-          </SRLWrapper>
-        </div>
+        {blogPost.photourls && blogPost.photourls.length > 0 ? (
+          <div>
+            <SRLWrapper options={options}>
+              <Carousel effect="fade" autoplay className="blog-carousel">
+                {blogPost.photourls.map((photourl) => (
+                  <img
+                    key={photourl}
+                    style={contentStyle}
+                    src={photourl}
+                    alt="Yulia Bodrug"
+                    className="blog-carousel-img"
+                    onContextMenu={(e) => {
+                      copyrightError();
+                      e.preventDefault();
+                    }}
+                  />
+                ))}
+              </Carousel>
+            </SRLWrapper>
+          </div>
+        ) : null}
       </div>
     );
   }

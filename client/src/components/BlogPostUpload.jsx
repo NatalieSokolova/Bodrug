@@ -51,6 +51,28 @@ export default function BlogPostUpload() {
   //   return setPhotos(photoIds);
   // };
 
+  const getCurrentDate = () => {
+    let currentMonth = new Array();
+    currentMonth[0] = "January";
+    currentMonth[1] = "February";
+    currentMonth[2] = "March";
+    currentMonth[3] = "April";
+    currentMonth[4] = "May";
+    currentMonth[5] = "June";
+    currentMonth[6] = "July";
+    currentMonth[7] = "August";
+    currentMonth[8] = "September";
+    currentMonth[9] = "October";
+    currentMonth[10] = "November";
+    currentMonth[11] = "December";
+    let newDate = new Date();
+    let date = newDate.getDate();
+    let month = currentMonth[newDate.getMonth()];
+    let year = newDate.getFullYear();
+
+    return `${month} ${date}, ${year}`;
+  };
+
   const createBlogPost = (event) => {
     event.preventDefault();
 
@@ -60,14 +82,13 @@ export default function BlogPostUpload() {
       article: blogPost.article,
       coverurl: blogPost.coverurl,
       // photoUrls: [],
-      dateString: blogPost.dateString,
+      dateString: getCurrentDate(),
     };
 
     if (
       newBlogPost.title &&
       newBlogPost.slug &&
       newBlogPost.article &&
-      newBlogPost.dateString &&
       newBlogPost.coverurl
     ) {
       axios
@@ -86,6 +107,8 @@ export default function BlogPostUpload() {
         "Please, make sure to fill out title, slug, article and select a cover image"
       );
     }
+
+    console.log("newBlogPost: ", newBlogPost);
   };
 
   // const addPhotos = (event) => {
@@ -112,6 +135,8 @@ export default function BlogPostUpload() {
   //     notifyError("Please, select at least 1 photo");
   //   }
   // };
+
+  console.log("blogPost: ", blogPost);
 
   return (
     <div>
