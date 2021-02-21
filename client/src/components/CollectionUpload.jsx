@@ -88,10 +88,10 @@ export default function CollectionUpload() {
       photos.forEach((photoId) => {
         console.log("photoId: ", photoId);
         axios
-          .put(`http://localhost:3001/photos/upd_collection_id`, {
-            collection,
-            photoId,
-          })
+          .put(
+            `http://localhost:3001/photos/${photoId}/upd_collection_id`,
+            collection
+          )
           .then((response) => {
             console.log("SUCCESS! ", response);
             notifySuccess("Woo-hoo! Photos added to collection successfully!");

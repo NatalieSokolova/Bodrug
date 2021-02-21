@@ -33,10 +33,13 @@ module.exports = (db) => {
     // return the newly created photo back
   });
 
-  router.put("/upd_collection_id", (req, res) => {
-    const collectionName = req.body.collection.name;
-    // const storyName = req.body.story.name;
-    const photoId = req.body.photoId;
+  router.put("/:id/upd_collection_id", (req, res) => {
+    const collectionName = req.body.name;
+    const photoId = req.params.id;
+
+    console.log("PARAMS: ", req.params);
+    console.log("req.body: ", req.body);
+    console.log("photoId: ", photoId);
 
     const collectionQuery = {
       text: `UPDATE photos SET collection_id = (SELECT id FROM collections WHERE name =$1) WHERE photos.id=$2`,
@@ -48,9 +51,9 @@ module.exports = (db) => {
       .catch((err) => console.log("ERROR: ", err));
   });
 
-  router.put("/upd_story_id", (req, res) => {
+  router.put("/:id/upd_story_id", (req, res) => {
     const storyName = req.body.story.name;
-    const photoId = req.body.photoId;
+    const photoId = req.params.id;
 
     const storyQuery = {
       text: `UPDATE photos SET story_id = (SELECT id FROM stories WHERE name =$1) WHERE photos.id=$2`,
