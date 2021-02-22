@@ -117,7 +117,7 @@ export default function BlogPostUpload() {
     if (pictures.length > 0) {
       // pictures.forEach((pictureId) => {
       axios
-        .put(`http://localhost:3001/blog/${blogPost.id}`, pictures)
+        .put(`http://localhost:3001/blogPosts/${blogPost.title}`, pictures)
         .then((response) => {
           console.log("SUCCESS! ", response);
           notifySuccess(
@@ -134,7 +134,7 @@ export default function BlogPostUpload() {
     }
   };
 
-  console.log("blogPost: ", blogPost);
+  console.log("pictures: ", pictures);
 
   return (
     <div>

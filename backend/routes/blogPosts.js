@@ -47,5 +47,22 @@ module.exports = (db) => {
     // return the newly created blogEntry back
   });
 
+  router.put("/:title", (req, res) => {
+    const photourls = req.body;
+    const blogPostTitle = req.params.title;
+
+    // create an update query in the db
+    const query = {
+      text: `UPDATE blogposts SET photourls=$1 WHERE blogposts.title=$2 RETURNING *;`,
+      values: [photourls, blogPostTitle],
+    };
+
+    db.query(query)
+      .then((result) => res.json(result[0]))
+      .catch((err) => console.log(err));
+
+    // return the updated blogPost back
+  });
+
   return router;
 };
