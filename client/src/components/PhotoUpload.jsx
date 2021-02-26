@@ -42,12 +42,6 @@ export default function PhotoUpload({
 
     openUploadWidget(uploadOptions, (error, photos) => {
       if (!error) {
-        console.log(photos);
-
-        // const newPhoto = {
-        //   url: photos.info.url,
-        // };
-
         if (photos.event === "success") {
           console.log("IMAGE URL: ", photos.info.url);
 

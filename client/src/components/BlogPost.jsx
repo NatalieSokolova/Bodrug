@@ -5,7 +5,7 @@ import { copyrightError } from "../helpers";
 import { toast } from "react-toastify";
 import "./BlogPost.css";
 
-export default function BlogPost({ blog, setBlog }) {
+export default function BlogPost() {
   toast.configure();
 
   const { state } = useBlogEntryData();
