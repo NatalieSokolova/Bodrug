@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { notifyError, notifySuccess } from "../helpers";
 import PhotosAdmin from "./PhotosAdmin";
@@ -46,8 +46,26 @@ export default function DeleteContainer({ id }) {
     }
   };
 
-  const handleDelete = (id, arr) => {
+  useEffect(deleteComponent, []);
+
+  const handleDelete = (id) => {
     console.log(`DELETE: ${id}`);
+
+    let dataArr = [];
+
+    id === "photos" ? (dataArr = photos) : (dataArr = recordsArr);
+    console.log("dataArr: ", dataArr);
+
+    dataArr.forEach((recId) => {
+      axios
+        .delete(`http://localhost:3001/${id}/${recId}`)
+        .then((response) => {
+          console.log("SUCCESS! ", response);
+        })
+        .catch((error) => {
+          console.log("TROUBLE! ", error);
+        });
+    });
   };
 
   return (
@@ -56,7 +74,7 @@ export default function DeleteContainer({ id }) {
         {deleteComponent(id)}
         <Button
           className="btn btn-primary post-btn"
-          onClick={() => handleDelete(id, recordsArr)}
+          onClick={() => handleDelete(id)}
         >
           DELETE
         </Button>

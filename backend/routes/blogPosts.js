@@ -65,7 +65,17 @@ module.exports = (db) => {
   });
 
   router.delete("/:id", (req, res) => {
-    res.send(`Got a DELETE request at /blog/:id with id: ${req.params.id}`);
+    const postId = req.params.id;
+
+    const query = {
+      // text: `UPDATE blogposts SET photourls=$1 WHERE blogposts.title=$2 RETURNING *;`,
+      text: `DELETE FROM blogposts WHERE blogposts.id=$1 RETURNING *;`,
+      values: [postId],
+    };
+
+    db.query(query)
+      .then((result) => res.json(result[0]))
+      .catch((err) => console.log(err));
   });
 
   return router;
