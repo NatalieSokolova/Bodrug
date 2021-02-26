@@ -115,7 +115,7 @@ export default function CollectionUpload({
   return (
     <div>
       {showDeleteContainer ? (
-        <DeleteContainer />
+        <DeleteContainer id={id} setId={setId} />
       ) : (
         <div>
           <h1>Add a new collection below</h1>

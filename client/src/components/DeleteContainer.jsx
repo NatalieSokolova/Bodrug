@@ -1,7 +1,8 @@
 import React from "react";
 import { Button } from "antd";
 
-export default function DeleteContainer() {
+export default function DeleteContainer({ id, setId }) {
+  console.log("ID: ", id);
   return (
     <div>
       <div className="upload-form">

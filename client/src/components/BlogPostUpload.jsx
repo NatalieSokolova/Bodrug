@@ -146,7 +146,7 @@ export default function BlogPostUpload({
   return (
     <div>
       {showDeleteContainer ? (
-        <DeleteContainer />
+        <DeleteContainer id={id} setId={setId} />
       ) : (
         <div>
           <h1>Add a new blog post below</h1>

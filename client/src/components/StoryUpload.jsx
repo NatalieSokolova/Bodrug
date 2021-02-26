@@ -102,7 +102,7 @@ export default function StoryUpload({
   return (
     <div>
       {showDeleteContainer ? (
-        <DeleteContainer />
+        <DeleteContainer id={id} setId={setId} />
       ) : (
         <div>
           <h1>Add a new story below</h1>

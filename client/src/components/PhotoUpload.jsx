@@ -94,7 +94,7 @@ export default function PhotoUpload({
   return (
     <div>
       {showDeleteContainer ? (
-        <DeleteContainer />
+        <DeleteContainer id={id} setId={setId} />
       ) : (
         <div>
           <h1>Add a new photo below</h1>

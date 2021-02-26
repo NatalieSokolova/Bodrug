@@ -61,7 +61,7 @@ export default function FaqUpload({
   return (
     <div>
       {showDeleteContainer ? (
-        <DeleteContainer />
+        <DeleteContainer id={id} setId={setId} />
       ) : (
         <div>
           <h1>Add a new FAQ below</h1>
