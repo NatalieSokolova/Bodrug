@@ -20,10 +20,10 @@ const copyrightError = () => {
   notifyError("Sorry, all the images are copyright");
 };
 
-const setPhotoIds = (id, array, method) => {
-  const photoIds = array.concat(id);
-  console.log("photoIds: ", photoIds);
-  return method(photoIds);
+const setRecordIds = (id, array, method) => {
+  const recordIds = array.concat(id);
+  console.log("recordIds: ", recordIds);
+  return method(recordIds);
 };
 
-export { notifyError, notifySuccess, copyrightError, setPhotoIds };
+export { notifyError, notifySuccess, copyrightError, setRecordIds };

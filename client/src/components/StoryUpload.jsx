@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import usePhotoData from "../hooks/usePhotoData";
 import { toast } from "react-toastify";
-import { notifyError, notifySuccess, setPhotoIds } from "../helpers";
+import { notifyError, notifySuccess, setRecordIds } from "../helpers";
 import { Form, Input, Button } from "antd";
 import DeleteBtn from "./DeleteBtn";
 import DeleteContainer from "./DeleteContainer";
+import PhotosAdmin from "./PhotosAdmin";
 
 export default function StoryUpload({
   showDeleteContainer,
@@ -177,20 +178,7 @@ export default function StoryUpload({
               <div>
                 <div className="formInput">
                   <Form.Item label="photos">
-                    <div className="uploadImageContainer">
-                      {state.photos.map((photo) => (
-                        <div key={photo.id}>
-                          <img
-                            src={photo.url}
-                            alt={photo.description}
-                            onClick={() =>
-                              setPhotoIds(photo.id, photos, setPhotos)
-                            }
-                            className="uploadImage"
-                          />
-                        </div>
-                      ))}
-                    </div>
+                    <PhotosAdmin photos={photos} setPhotos={setPhotos} />
                   </Form.Item>
                 </div>
 
