@@ -46,8 +46,6 @@ export default function DeleteContainer({ id }) {
     }
   };
 
-  useEffect(deleteComponent, []);
-
   const handleDelete = (id) => {
     console.log(`DELETE: ${id}`);
 
@@ -61,9 +59,12 @@ export default function DeleteContainer({ id }) {
         .delete(`http://localhost:3001/${id}/${recId}`)
         .then((response) => {
           console.log("SUCCESS! ", response);
+          notifySuccess("Woo-hoo! Record deleted successfully!");
+          window.location.reload(false);
         })
         .catch((error) => {
           console.log("TROUBLE! ", error);
+          notifyError("OOPS! Something went wrong. Please, try again");
         });
     });
   };
