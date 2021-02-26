@@ -14,7 +14,7 @@ export default function AdminDashboard({ auth }) {
   const [id, setId] = useState("");
   const [showDeleteContainer, setShowDeleteContainer] = useState(false);
 
-  const adminComponent = (componentId, form) => {
+  const adminComponent = (componentId) => {
     switch (componentId) {
       case "photos":
         return (
@@ -152,7 +152,9 @@ export default function AdminDashboard({ auth }) {
             Blog Posts
           </Card.Grid>
         </Card>
-        <div className="upload-container">{adminComponent(id, showForm)}</div>
+        <div className="upload-container">
+          {showForm ? adminComponent(id) : null}
+        </div>
       </div>
       {/* )} */}
     </div>
