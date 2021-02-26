@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { openUploadWidget } from "../CloudinaryService";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
+import DeleteBtn from "./DeleteBtn";
 
 export default function ArtUpload() {
   toast.configure();
@@ -150,6 +151,7 @@ export default function ArtUpload() {
           </Button>
         </Form.Item>
       </Form>
+      <DeleteBtn />
     </div>
   );
 }

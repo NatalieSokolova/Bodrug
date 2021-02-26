@@ -4,6 +4,7 @@ import usePhotoData from "../hooks/usePhotoData";
 import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
+import DeleteBtn from "./DeleteBtn";
 
 export default function StoryUpload() {
   toast.configure();
@@ -194,6 +195,7 @@ export default function StoryUpload() {
           </div>
         )}
       </Form>
+      <DeleteBtn />
     </div>
   );
 }

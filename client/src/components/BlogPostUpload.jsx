@@ -5,6 +5,7 @@ import usePaintingData from "../hooks/usePaintingData";
 import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
+import DeleteBtn from "./DeleteBtn";
 
 export default function BlogPostUpload() {
   toast.configure();
@@ -288,6 +289,7 @@ export default function BlogPostUpload() {
           </div>
         )}
       </Form>
+      <DeleteBtn />
     </div>
   );
 }

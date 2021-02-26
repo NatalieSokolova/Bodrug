@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
+import DeleteBtn from "./DeleteBtn";
 
 export default function FaqUpload() {
   toast.configure();
@@ -96,6 +97,7 @@ export default function FaqUpload() {
           </Button>
         </Form.Item>
       </Form>
+      <DeleteBtn />
     </div>
   );
 }
