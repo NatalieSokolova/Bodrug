@@ -10,6 +10,8 @@ import DeleteContainer from "./DeleteContainer";
 export default function PhotoUpload({
   showDeleteContainer,
   setShowDeleteContainer,
+  id,
+  setId,
 }) {
   toast.configure();
 

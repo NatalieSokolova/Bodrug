@@ -11,7 +11,7 @@ import "./AdminDashboard.css";
 
 export default function AdminDashboard({ auth }) {
   const [showForm, setShowForm] = useState(false);
-  const [id, setId] = useState(null);
+  const [id, setId] = useState("");
   const [showDeleteContainer, setShowDeleteContainer] = useState(false);
 
   return (
@@ -96,6 +96,8 @@ export default function AdminDashboard({ auth }) {
             <FaqUpload
               showDeleteContainer={showDeleteContainer}
               setShowDeleteContainer={setShowDeleteContainer}
+              id={id}
+              setId={setId}
             />
           </div>
         ) : null}
@@ -104,6 +106,8 @@ export default function AdminDashboard({ auth }) {
             <PhotoUpload
               showDeleteContainer={showDeleteContainer}
               setShowDeleteContainer={setShowDeleteContainer}
+              id={id}
+              setId={setId}
             />
           </div>
         ) : null}
@@ -112,6 +116,8 @@ export default function AdminDashboard({ auth }) {
             <CollectionUpload
               showDeleteContainer={showDeleteContainer}
               setShowDeleteContainer={setShowDeleteContainer}
+              id={id}
+              setId={setId}
             />
           </div>
         ) : null}
@@ -120,6 +126,8 @@ export default function AdminDashboard({ auth }) {
             <StoryUpload
               showDeleteContainer={showDeleteContainer}
               setShowDeleteContainer={setShowDeleteContainer}
+              id={id}
+              setId={setId}
             />
           </div>
         ) : null}
@@ -128,6 +136,8 @@ export default function AdminDashboard({ auth }) {
             <ArtUpload
               showDeleteContainer={showDeleteContainer}
               setShowDeleteContainer={setShowDeleteContainer}
+              id={id}
+              setId={setId}
             />
           </div>
         ) : null}
@@ -136,6 +146,8 @@ export default function AdminDashboard({ auth }) {
             <BlogPostUpload
               showDeleteContainer={showDeleteContainer}
               setShowDeleteContainer={setShowDeleteContainer}
+              id={id}
+              setId={setId}
             />
           </div>
         ) : null}

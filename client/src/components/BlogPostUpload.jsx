@@ -11,6 +11,8 @@ import DeleteContainer from "./DeleteContainer";
 export default function BlogPostUpload({
   showDeleteContainer,
   setShowDeleteContainer,
+  id,
+  setId,
 }) {
   toast.configure();
   const photosState = usePhotoData().state.photos;

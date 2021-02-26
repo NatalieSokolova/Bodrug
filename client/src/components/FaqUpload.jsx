@@ -9,6 +9,8 @@ import DeleteContainer from "./DeleteContainer";
 export default function FaqUpload({
   showDeleteContainer,
   setShowDeleteContainer,
+  id,
+  setId,
 }) {
   toast.configure();
 

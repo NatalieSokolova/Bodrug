@@ -10,6 +10,8 @@ import DeleteContainer from "./DeleteContainer";
 export default function CollectionUpload({
   showDeleteContainer,
   setShowDeleteContainer,
+  id,
+  setId,
 }) {
   toast.configure();
   const { state } = usePhotoData();
