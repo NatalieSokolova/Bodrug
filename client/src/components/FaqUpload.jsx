@@ -5,7 +5,10 @@ import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
 import DeleteBtn from "./DeleteBtn";
 
-export default function FaqUpload() {
+export default function FaqUpload({
+  showDeleteContainer,
+  setShowDeleteContainer,
+}) {
   toast.configure();
 
   const [form] = Form.useForm();
@@ -97,7 +100,10 @@ export default function FaqUpload() {
           </Button>
         </Form.Item>
       </Form>
-      <DeleteBtn />
+      <DeleteBtn
+        showDeleteContainer={showDeleteContainer}
+        setShowDeleteContainer={setShowDeleteContainer}
+      />
     </div>
   );
 }

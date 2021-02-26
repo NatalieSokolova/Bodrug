@@ -12,6 +12,7 @@ import "./AdminDashboard.css";
 export default function AdminDashboard({ auth }) {
   const [showForm, setShowForm] = useState(false);
   const [id, setId] = useState(null);
+  const [showDeleteContainer, setShowDeleteContainer] = useState(false);
 
   return (
     <div>
@@ -86,32 +87,50 @@ export default function AdminDashboard({ auth }) {
 
         {showForm && id === "faq" ? (
           <div className="upload-container">
-            <FaqUpload />
+            <FaqUpload
+              showDeleteContainer={showDeleteContainer}
+              setShowDeleteContainer={setShowDeleteContainer}
+            />
           </div>
         ) : null}
         {showForm && id === "allPhotos" ? (
           <div className="upload-container">
-            <PhotoUpload />
+            <PhotoUpload
+              showDeleteContainer={showDeleteContainer}
+              setShowDeleteContainer={setShowDeleteContainer}
+            />
           </div>
         ) : null}
         {showForm && id === "collections" ? (
           <div className="upload-container">
-            <CollectionUpload />
+            <CollectionUpload
+              showDeleteContainer={showDeleteContainer}
+              setShowDeleteContainer={setShowDeleteContainer}
+            />
           </div>
         ) : null}
         {showForm && id === "stories" ? (
           <div className="upload-container">
-            <StoryUpload />
+            <StoryUpload
+              showDeleteContainer={showDeleteContainer}
+              setShowDeleteContainer={setShowDeleteContainer}
+            />
           </div>
         ) : null}
         {showForm && id === "art" ? (
           <div className="upload-container">
-            <ArtUpload />
+            <ArtUpload
+              showDeleteContainer={showDeleteContainer}
+              setShowDeleteContainer={setShowDeleteContainer}
+            />
           </div>
         ) : null}
         {showForm && id === "blog" ? (
           <div className="upload-container">
-            <BlogPostUpload />
+            <BlogPostUpload
+              showDeleteContainer={showDeleteContainer}
+              setShowDeleteContainer={setShowDeleteContainer}
+            />
           </div>
         ) : null}
       </div>
