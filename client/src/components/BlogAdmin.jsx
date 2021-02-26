@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import useBlogEntryData from "../hooks/useBlogEntryData";
 import { setRecordIds } from "../helpers";
 import { Button } from "antd";
 
-export default function BlogAdmin() {
+export default function BlogAdmin({ recordsArr, setRecordsArr }) {
   const { state } = useBlogEntryData();
-  const [blogPostsArr, setBlogPostsArr] = useState([]);
 
   return (
     <table>
@@ -49,9 +48,7 @@ export default function BlogAdmin() {
                   backgroundColor: "black",
                   color: "white",
                 }}
-                onClick={() =>
-                  setRecordIds(post.id, blogPostsArr, setBlogPostsArr)
-                }
+                onClick={() => setRecordIds(post.id, recordsArr, setRecordsArr)}
               >
                 select
               </Button>

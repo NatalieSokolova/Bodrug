@@ -1,11 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "antd";
-// import DeleteContainer from "./DeleteContainer";
 
-export default function DeleteBtn({
-  showDeleteContainer,
-  setShowDeleteContainer,
-}) {
+export default function DeleteBtn({ setShowDeleteContainer }) {
   return (
     <div>
       <Button className="post-btn" onClick={() => setShowDeleteContainer(true)}>

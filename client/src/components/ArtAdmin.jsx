@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import usePaintingData from "../hooks/usePaintingData";
 import { setRecordIds } from "../helpers";
 
-export default function ArtAdmin() {
+export default function ArtAdmin({ recordsArr, setRecordsArr }) {
   const { state } = usePaintingData();
-  const [artArr, setArtArr] = useState([]);
 
   return (
     <div className="uploadImageContainer">
@@ -13,7 +12,7 @@ export default function ArtAdmin() {
           <img
             src={painting.url}
             alt={painting.description}
-            onClick={() => setRecordIds(painting.id, artArr, setArtArr)}
+            onClick={() => setRecordIds(painting.id, recordsArr, setRecordsArr)}
             className="uploadImage"
           />
         </div>

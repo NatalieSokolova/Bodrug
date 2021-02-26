@@ -3,9 +3,8 @@ import useFaqData from "../hooks/useFaqData";
 import { setRecordIds } from "../helpers";
 import { Button } from "antd";
 
-export default function FaqsAdmin() {
+export default function FaqsAdmin({ recordsArr, setRecordsArr }) {
   const { state } = useFaqData();
-  const [faqsArr, setFaqsArr] = useState([]);
 
   return (
     <table>
@@ -32,7 +31,7 @@ export default function FaqsAdmin() {
                   backgroundColor: "black",
                   color: "white",
                 }}
-                onClick={() => setRecordIds(faq.id, faqsArr, setFaqsArr)}
+                onClick={() => setRecordIds(faq.id, recordsArr, setRecordsArr)}
               >
                 select
               </Button>

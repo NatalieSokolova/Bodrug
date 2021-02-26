@@ -10,21 +10,35 @@ import { Button } from "antd";
 
 export default function DeleteContainer({ id }) {
   const [photos, setPhotos] = useState([]);
+  const [recordsArr, setRecordsArr] = useState([]);
 
   const deleteComponent = (componentId) => {
     switch (componentId) {
       case "photos":
         return <PhotosAdmin photos={photos} setPhotos={setPhotos} />;
       case "collections":
-        return <CollectionsAdmin />;
+        return (
+          <CollectionsAdmin
+            recordsArr={recordsArr}
+            setRecordsArr={setRecordsArr}
+          />
+        );
       case "stories":
-        return <StoriesAdmin />;
+        return (
+          <StoriesAdmin recordsArr={recordsArr} setRecordsArr={setRecordsArr} />
+        );
       case "paintings":
-        return <ArtAdmin />;
+        return (
+          <ArtAdmin recordsArr={recordsArr} setRecordsArr={setRecordsArr} />
+        );
       case "faqs":
-        return <FaqAdmin />;
+        return (
+          <FaqAdmin recordsArr={recordsArr} setRecordsArr={setRecordsArr} />
+        );
       case "blogPosts":
-        return <BlogAdmin />;
+        return (
+          <BlogAdmin recordsArr={recordsArr} setRecordsArr={setRecordsArr} />
+        );
 
       default:
         console.log("OOPS!");
@@ -33,6 +47,7 @@ export default function DeleteContainer({ id }) {
 
   const handleDelete = (id) => {
     console.log(`DELETE: ${id}`);
+    console.log("RECORDS: ", recordsArr);
   };
 
   return (

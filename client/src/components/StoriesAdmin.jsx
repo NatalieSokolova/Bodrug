@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import useStoryData from "../hooks/useStoryData";
 import { setRecordIds } from "../helpers";
 import { Button } from "antd";
 
-export default function StoriesAdmin() {
+export default function StoriesAdmin({ recordsArr, setRecordsArr }) {
   const { state } = useStoryData();
-  const [storiesArr, setStoriesArr] = useState([]);
 
   return (
     <table>
@@ -50,7 +49,7 @@ export default function StoriesAdmin() {
                   color: "white",
                 }}
                 onClick={() =>
-                  setRecordIds(story.id, storiesArr, setStoriesArr)
+                  setRecordIds(story.id, recordsArr, setRecordsArr)
                 }
               >
                 select

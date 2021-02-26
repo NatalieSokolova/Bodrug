@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import useCollectionData from "../hooks/useCollectionData";
 import { setRecordIds } from "../helpers";
 import { Button } from "antd";
 
-export default function CollectionsAdmin() {
+export default function CollectionsAdmin({ recordsArr, setRecordsArr }) {
   const { state } = useCollectionData();
-  const [collectionsArr, setCollectionsArr] = useState([]);
 
   return (
     <table>
@@ -50,7 +49,7 @@ export default function CollectionsAdmin() {
                   color: "white",
                 }}
                 onClick={() =>
-                  setRecordIds(collection.id, collectionsArr, setCollectionsArr)
+                  setRecordIds(collection.id, recordsArr, setRecordsArr)
                 }
               >
                 select
