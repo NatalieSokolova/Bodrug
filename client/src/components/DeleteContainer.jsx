@@ -13,28 +13,38 @@ export default function DeleteContainer({ id }) {
 
   const deleteComponent = (componentId) => {
     switch (componentId) {
-      case "allPhotos":
+      case "photos":
         return <PhotosAdmin photos={photos} setPhotos={setPhotos} />;
       case "collections":
         return <CollectionsAdmin />;
       case "stories":
         return <StoriesAdmin />;
-      case "art":
+      case "paintings":
         return <ArtAdmin />;
-      case "faq":
+      case "faqs":
         return <FaqAdmin />;
-      case "blog":
+      case "blogPosts":
         return <BlogAdmin />;
 
       default:
         console.log("OOPS!");
     }
   };
+
+  const handleDelete = (id) => {
+    console.log(`DELETE: ${id}`);
+  };
+
   return (
     <div>
       <div className="upload-form">
         {deleteComponent(id)}
-        <Button className="btn btn-primary post-btn">DELETE</Button>
+        <Button
+          className="btn btn-primary post-btn"
+          onClick={() => handleDelete(id)}
+        >
+          DELETE
+        </Button>
       </div>
     </div>
   );

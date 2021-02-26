@@ -32,7 +32,7 @@ export default function AdminDashboard({ auth }) {
           <Card.Grid
             onClick={() => {
               setShowForm(true);
-              setId("allPhotos");
+              setId("photos");
               setShowDeleteContainer(false);
             }}
             className="admin-card"
@@ -62,7 +62,7 @@ export default function AdminDashboard({ auth }) {
           <Card.Grid
             onClick={() => {
               setShowForm(true);
-              setId("art");
+              setId("paintings");
               setShowDeleteContainer(false);
             }}
             className="admin-card"
@@ -72,7 +72,7 @@ export default function AdminDashboard({ auth }) {
           <Card.Grid
             onClick={() => {
               setShowForm(true);
-              setId("faq");
+              setId("faqs");
               setShowDeleteContainer(false);
             }}
             className="admin-card"
@@ -82,7 +82,7 @@ export default function AdminDashboard({ auth }) {
           <Card.Grid
             onClick={() => {
               setShowForm(true);
-              setId("blog");
+              setId("blogPosts");
               setShowDeleteContainer(false);
             }}
             className="admin-card"
@@ -91,7 +91,7 @@ export default function AdminDashboard({ auth }) {
           </Card.Grid>
         </Card>
 
-        {showForm && id === "faq" ? (
+        {showForm && id === "faqs" ? (
           <div className="upload-container">
             <FaqUpload
               showDeleteContainer={showDeleteContainer}
@@ -101,7 +101,7 @@ export default function AdminDashboard({ auth }) {
             />
           </div>
         ) : null}
-        {showForm && id === "allPhotos" ? (
+        {showForm && id === "photos" ? (
           <div className="upload-container">
             <PhotoUpload
               showDeleteContainer={showDeleteContainer}
@@ -131,7 +131,7 @@ export default function AdminDashboard({ auth }) {
             />
           </div>
         ) : null}
-        {showForm && id === "art" ? (
+        {showForm && id === "paintings" ? (
           <div className="upload-container">
             <ArtUpload
               showDeleteContainer={showDeleteContainer}
@@ -141,7 +141,7 @@ export default function AdminDashboard({ auth }) {
             />
           </div>
         ) : null}
-        {showForm && id === "blog" ? (
+        {showForm && id === "blogPosts" ? (
           <div className="upload-container">
             <BlogPostUpload
               showDeleteContainer={showDeleteContainer}
