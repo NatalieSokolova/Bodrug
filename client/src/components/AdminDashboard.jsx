@@ -33,6 +33,7 @@ export default function AdminDashboard({ auth }) {
             onClick={() => {
               setShowForm(true);
               setId("allPhotos");
+              setShowDeleteContainer(false);
             }}
             className="admin-card"
           >
@@ -42,6 +43,7 @@ export default function AdminDashboard({ auth }) {
             onClick={() => {
               setShowForm(true);
               setId("collections");
+              setShowDeleteContainer(false);
             }}
             className="admin-card"
           >
@@ -51,6 +53,7 @@ export default function AdminDashboard({ auth }) {
             onClick={() => {
               setShowForm(true);
               setId("stories");
+              setShowDeleteContainer(false);
             }}
             className="admin-card"
           >
@@ -60,6 +63,7 @@ export default function AdminDashboard({ auth }) {
             onClick={() => {
               setShowForm(true);
               setId("art");
+              setShowDeleteContainer(false);
             }}
             className="admin-card"
           >
@@ -69,6 +73,7 @@ export default function AdminDashboard({ auth }) {
             onClick={() => {
               setShowForm(true);
               setId("faq");
+              setShowDeleteContainer(false);
             }}
             className="admin-card"
           >
@@ -78,6 +83,7 @@ export default function AdminDashboard({ auth }) {
             onClick={() => {
               setShowForm(true);
               setId("blog");
+              setShowDeleteContainer(false);
             }}
             className="admin-card"
           >

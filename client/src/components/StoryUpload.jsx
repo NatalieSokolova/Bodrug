@@ -5,8 +5,12 @@ import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
 import DeleteBtn from "./DeleteBtn";
+import DeleteContainer from "./DeleteContainer";
 
-export default function StoryUpload() {
+export default function StoryUpload({
+  showDeleteContainer,
+  setShowDeleteContainer,
+}) {
   toast.configure();
   const { state } = usePhotoData();
   const [form] = Form.useForm();
@@ -95,107 +99,123 @@ export default function StoryUpload() {
 
   return (
     <div>
-      <h1>Add a new story below</h1>
-      <Form
-        form={form}
-        className="upload-form"
-        name="basic"
-        initialValues={{ remember: true }}
-      >
-        {image === "cover" ? (
-          <div>
-            <div className="formInput">
-              <Form.Item
-                label="name"
-                name="name"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input the story name!",
-                  },
-                ]}
-              >
-                <Input name="name" value={story.name} onChange={handleChange} />
-              </Form.Item>
-              <Form.Item
-                label="description"
-                name="description"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input the story description!",
-                  },
-                ]}
-              >
-                <Input.TextArea
-                  name="description"
-                  value={story.description}
-                  onChange={handleChange}
-                />
-              </Form.Item>
+      {showDeleteContainer ? (
+        <DeleteContainer />
+      ) : (
+        <div>
+          <h1>Add a new story below</h1>
+          <Form
+            form={form}
+            className="upload-form"
+            name="basic"
+            initialValues={{ remember: true }}
+          >
+            {image === "cover" ? (
+              <div>
+                <div className="formInput">
+                  <Form.Item
+                    label="name"
+                    name="name"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please input the story name!",
+                      },
+                    ]}
+                  >
+                    <Input
+                      name="name"
+                      value={story.name}
+                      onChange={handleChange}
+                    />
+                  </Form.Item>
+                  <Form.Item
+                    label="description"
+                    name="description"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please input the story description!",
+                      },
+                    ]}
+                  >
+                    <Input.TextArea
+                      name="description"
+                      value={story.description}
+                      onChange={handleChange}
+                    />
+                  </Form.Item>
 
-              <Form.Item label="cover photo">
-                <div className="uploadImageContainer">
-                  {state.photos.map((photo) => (
-                    <div key={photo.id}>
-                      <img
-                        src={photo.url}
-                        alt={photo.description}
-                        onClick={() => {
-                          selectCover(photo.url);
-                        }}
-                        className="uploadImage"
-                      />
+                  <Form.Item label="cover photo">
+                    <div className="uploadImageContainer">
+                      {state.photos.map((photo) => (
+                        <div key={photo.id}>
+                          <img
+                            src={photo.url}
+                            alt={photo.description}
+                            onClick={() => {
+                              selectCover(photo.url);
+                            }}
+                            className="uploadImage"
+                          />
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </Form.Item>
                 </div>
-              </Form.Item>
-            </div>
-            <Form.Item
-              style={{
-                marginBottom: "0",
-              }}
-            >
-              <Button
-                className="btn btn-primary post-btn"
-                onClick={createstory}
-              >
-                CREATE STORY
-              </Button>
-            </Form.Item>
-          </div>
-        ) : (
-          <div>
-            <div className="formInput">
-              <Form.Item label="photos">
-                <div className="uploadImageContainer">
-                  {state.photos.map((photo) => (
-                    <div key={photo.id}>
-                      <img
-                        src={photo.url}
-                        alt={photo.description}
-                        onClick={() => setPhotoIds(photo.id)}
-                        className="uploadImage"
-                      />
+                <Form.Item
+                  style={{
+                    marginBottom: "0",
+                  }}
+                >
+                  <Button
+                    className="btn btn-primary post-btn"
+                    onClick={createstory}
+                  >
+                    CREATE STORY
+                  </Button>
+                </Form.Item>
+              </div>
+            ) : (
+              <div>
+                <div className="formInput">
+                  <Form.Item label="photos">
+                    <div className="uploadImageContainer">
+                      {state.photos.map((photo) => (
+                        <div key={photo.id}>
+                          <img
+                            src={photo.url}
+                            alt={photo.description}
+                            onClick={() => setPhotoIds(photo.id)}
+                            className="uploadImage"
+                          />
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </Form.Item>
                 </div>
-              </Form.Item>
-            </div>
 
-            <Form.Item
-              style={{
-                marginBottom: "0",
-              }}
-            >
-              <Button className="btn btn-primary post-btn" onClick={addPhotos}>
-                ADD PHOTOS
-              </Button>
-            </Form.Item>
-          </div>
-        )}
-      </Form>
-      <DeleteBtn />
+                <Form.Item
+                  style={{
+                    marginBottom: "0",
+                  }}
+                >
+                  <Button
+                    className="btn btn-primary post-btn"
+                    onClick={addPhotos}
+                  >
+                    ADD PHOTOS
+                  </Button>
+                </Form.Item>
+              </div>
+            )}
+          </Form>
+          <DeleteBtn
+            showDeleteContainer={showDeleteContainer}
+            setShowDeleteContainer={setShowDeleteContainer}
+          />
+        </div>
+      )}
     </div>
   );
 }

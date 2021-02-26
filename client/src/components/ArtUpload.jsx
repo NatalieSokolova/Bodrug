@@ -5,8 +5,12 @@ import { openUploadWidget } from "../CloudinaryService";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
 import DeleteBtn from "./DeleteBtn";
+import DeleteContainer from "./DeleteContainer";
 
-export default function ArtUpload() {
+export default function ArtUpload({
+  showDeleteContainer,
+  setShowDeleteContainer,
+}) {
   toast.configure();
 
   const [form] = Form.useForm();
@@ -89,69 +93,85 @@ export default function ArtUpload() {
 
   return (
     <div>
-      <h1>Add a new image below</h1>
-      <Form
-        form={form}
-        className="upload-form"
-        name="basic"
-        initialValues={{ remember: true }}
-      >
-        <div className="formInput">
-          <Form.Item
-            label="description"
-            name="description"
-            rules={[{ required: false }]}
+      {showDeleteContainer ? (
+        <DeleteContainer />
+      ) : (
+        <div>
+          <h1>Add a new image below</h1>
+          <Form
+            form={form}
+            className="upload-form"
+            name="basic"
+            initialValues={{ remember: true }}
           >
-            <Input.TextArea
-              name="description"
-              value={art.description}
-              onChange={handleChange}
-            />
-          </Form.Item>
-          <Form.Item label="year" name="year" rules={[{ required: false }]}>
-            <Input.TextArea
-              name="year"
-              value={art.year}
-              onChange={handleChange}
-            />
-          </Form.Item>
-          <Form.Item
-            label="materials"
-            name="materials"
-            rules={[{ required: false }]}
-          >
-            <Input.TextArea
-              name="materials"
-              value={art.materials}
-              onChange={handleChange}
-            />
-          </Form.Item>
-          <Form.Item label="price" name="price" rules={[{ required: false }]}>
-            <Input.TextArea
-              name="price"
-              value={art.price}
-              onChange={handleChange}
-            />
-          </Form.Item>
-        </div>
+            <div className="formInput">
+              <Form.Item
+                label="description"
+                name="description"
+                rules={[{ required: false }]}
+              >
+                <Input.TextArea
+                  name="description"
+                  value={art.description}
+                  onChange={handleChange}
+                />
+              </Form.Item>
+              <Form.Item label="year" name="year" rules={[{ required: false }]}>
+                <Input.TextArea
+                  name="year"
+                  value={art.year}
+                  onChange={handleChange}
+                />
+              </Form.Item>
+              <Form.Item
+                label="materials"
+                name="materials"
+                rules={[{ required: false }]}
+              >
+                <Input.TextArea
+                  name="materials"
+                  value={art.materials}
+                  onChange={handleChange}
+                />
+              </Form.Item>
+              <Form.Item
+                label="price"
+                name="price"
+                rules={[{ required: false }]}
+              >
+                <Input.TextArea
+                  name="price"
+                  value={art.price}
+                  onChange={handleChange}
+                />
+              </Form.Item>
+            </div>
 
-        <Form.Item
-          style={{
-            marginBottom: "0",
-          }}
-        >
-          <Button
-            className="btn btn-primary upload-btn"
-            onClick={() => beginUpload("bodrug")}
-          >
-            UPLOAD IMAGE
-          </Button>
-          <Button className="btn btn-primary post-btn" onClick={handleSubmit}>
-            POST
-          </Button>
-        </Form.Item>
-      </Form>
-      <DeleteBtn />
+            <Form.Item
+              style={{
+                marginBottom: "0",
+              }}
+            >
+              <Button
+                className="btn btn-primary upload-btn"
+                onClick={() => beginUpload("bodrug")}
+              >
+                UPLOAD IMAGE
+              </Button>
+              <Button
+                className="btn btn-primary post-btn"
+                onClick={handleSubmit}
+              >
+                POST
+              </Button>
+            </Form.Item>
+          </Form>
+          <DeleteBtn
+            showDeleteContainer={showDeleteContainer}
+            setShowDeleteContainer={setShowDeleteContainer}
+          />
+        </div>
+      )}
     </div>
   );
 }

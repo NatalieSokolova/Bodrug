@@ -5,8 +5,12 @@ import { openUploadWidget } from "../CloudinaryService";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
 import DeleteBtn from "./DeleteBtn";
+import DeleteContainer from "./DeleteContainer";
 
-export default function PhotoUpload() {
+export default function PhotoUpload({
+  showDeleteContainer,
+  setShowDeleteContainer,
+}) {
   toast.configure();
 
   const [form] = Form.useForm();
@@ -87,44 +91,56 @@ export default function PhotoUpload() {
 
   return (
     <div>
-      <h1>Add a new photo below</h1>
-      <Form
-        form={form}
-        className="upload-form"
-        name="basic"
-        initialValues={{ remember: true }}
-      >
-        <div className="formInput">
-          <Form.Item
-            label="description"
-            name="description"
-            rules={[{ required: false }]}
+      {showDeleteContainer ? (
+        <DeleteContainer />
+      ) : (
+        <div>
+          <h1>Add a new photo below</h1>
+          <Form
+            form={form}
+            className="upload-form"
+            name="basic"
+            initialValues={{ remember: true }}
           >
-            <Input.TextArea
-              name="description"
-              value={photo.description}
-              onChange={handleChange}
-            />
-          </Form.Item>
-        </div>
+            <div className="formInput">
+              <Form.Item
+                label="description"
+                name="description"
+                rules={[{ required: false }]}
+              >
+                <Input.TextArea
+                  name="description"
+                  value={photo.description}
+                  onChange={handleChange}
+                />
+              </Form.Item>
+            </div>
 
-        <Form.Item
-          style={{
-            marginBottom: "0",
-          }}
-        >
-          <Button
-            className="btn btn-primary upload-btn"
-            onClick={() => beginUpload("bodrug")}
-          >
-            UPLOAD PHOTO
-          </Button>
-          <Button className="btn btn-primary post-btn" onClick={handleSubmit}>
-            POST
-          </Button>
-        </Form.Item>
-      </Form>
-      <DeleteBtn />
+            <Form.Item
+              style={{
+                marginBottom: "0",
+              }}
+            >
+              <Button
+                className="btn btn-primary upload-btn"
+                onClick={() => beginUpload("bodrug")}
+              >
+                UPLOAD PHOTO
+              </Button>
+              <Button
+                className="btn btn-primary post-btn"
+                onClick={handleSubmit}
+              >
+                POST
+              </Button>
+            </Form.Item>
+          </Form>
+          <DeleteBtn
+            showDeleteContainer={showDeleteContainer}
+            setShowDeleteContainer={setShowDeleteContainer}
+          />
+        </div>
+      )}
     </div>
   );
 }

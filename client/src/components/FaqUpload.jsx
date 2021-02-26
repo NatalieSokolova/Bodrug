@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
 import DeleteBtn from "./DeleteBtn";
+import DeleteContainer from "./DeleteContainer";
 
 export default function FaqUpload({
   showDeleteContainer,
@@ -57,7 +58,9 @@ export default function FaqUpload({
 
   return (
     <div>
-      {showDeleteContainer ? null : (
+      {showDeleteContainer ? (
+        <DeleteContainer />
+      ) : (
         <div>
           <h1>Add a new FAQ below</h1>
           <Form
@@ -109,13 +112,12 @@ export default function FaqUpload({
               </Button>
             </Form.Item>
           </Form>
+          <DeleteBtn
+            showDeleteContainer={showDeleteContainer}
+            setShowDeleteContainer={setShowDeleteContainer}
+          />
         </div>
       )}
-
-      <DeleteBtn
-        showDeleteContainer={showDeleteContainer}
-        setShowDeleteContainer={setShowDeleteContainer}
-      />
     </div>
   );
 }

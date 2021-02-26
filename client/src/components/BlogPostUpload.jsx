@@ -6,8 +6,12 @@ import { toast } from "react-toastify";
 import { notifyError, notifySuccess } from "../partials";
 import { Form, Input, Button } from "antd";
 import DeleteBtn from "./DeleteBtn";
+import DeleteContainer from "./DeleteContainer";
 
-export default function BlogPostUpload() {
+export default function BlogPostUpload({
+  showDeleteContainer,
+  setShowDeleteContainer,
+}) {
   toast.configure();
   const photosState = usePhotoData().state.photos;
   const artState = usePaintingData().state.paintings;
@@ -139,157 +143,166 @@ export default function BlogPostUpload() {
 
   return (
     <div>
-      <h1>Add a new blog post below</h1>
-      <Form
-        form={form}
-        className="upload-form"
-        name="basic"
-        initialValues={{ remember: true }}
-      >
-        {image === "cover" ? (
-          <div>
-            <div className="formInput">
-              <Form.Item
-                label="title"
-                name="title"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input the blog post title!",
-                  },
-                ]}
-              >
-                <Input
-                  name="title"
-                  value={blogPost.title}
-                  onChange={handleChange}
-                />
-              </Form.Item>
-              <Form.Item
-                label="slug"
-                name="slug"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input the blog post slug!",
-                  },
-                ]}
-              >
-                <Input
-                  name="slug"
-                  value={blogPost.slug}
-                  onChange={handleChange}
-                />
-              </Form.Item>
+      {showDeleteContainer ? (
+        <DeleteContainer />
+      ) : (
+        <div>
+          <h1>Add a new blog post below</h1>
+          <Form
+            form={form}
+            className="upload-form"
+            name="basic"
+            initialValues={{ remember: true }}
+          >
+            {image === "cover" ? (
+              <div>
+                <div className="formInput">
+                  <Form.Item
+                    label="title"
+                    name="title"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please input the blog post title!",
+                      },
+                    ]}
+                  >
+                    <Input
+                      name="title"
+                      value={blogPost.title}
+                      onChange={handleChange}
+                    />
+                  </Form.Item>
+                  <Form.Item
+                    label="slug"
+                    name="slug"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please input the blog post slug!",
+                      },
+                    ]}
+                  >
+                    <Input
+                      name="slug"
+                      value={blogPost.slug}
+                      onChange={handleChange}
+                    />
+                  </Form.Item>
 
-              <Form.Item
-                label="article"
-                name="article"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input the blog post article!",
-                  },
-                ]}
-              >
-                <Input.TextArea
-                  name="article"
-                  value={blogPost.article}
-                  onChange={handleChange}
-                />
-              </Form.Item>
+                  <Form.Item
+                    label="article"
+                    name="article"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please input the blog post article!",
+                      },
+                    ]}
+                  >
+                    <Input.TextArea
+                      name="article"
+                      value={blogPost.article}
+                      onChange={handleChange}
+                    />
+                  </Form.Item>
 
-              <Form.Item label="cover image">
-                <div className="uploadImageContainer">
-                  {photosState.map((photo) => (
-                    <div key={photo.id}>
-                      <img
-                        src={photo.url}
-                        alt={photo.description}
-                        onClick={() => {
-                          selectCover(photo.url);
-                        }}
-                        className="uploadImage"
-                      />
+                  <Form.Item label="cover image">
+                    <div className="uploadImageContainer">
+                      {photosState.map((photo) => (
+                        <div key={photo.id}>
+                          <img
+                            src={photo.url}
+                            alt={photo.description}
+                            onClick={() => {
+                              selectCover(photo.url);
+                            }}
+                            className="uploadImage"
+                          />
+                        </div>
+                      ))}
+                      {artState.map((art) => (
+                        <div key={art.id}>
+                          <img
+                            src={art.url}
+                            alt={art.description}
+                            onClick={() => {
+                              selectCover(art.url);
+                            }}
+                            className="uploadImage"
+                          />
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                  {artState.map((art) => (
-                    <div key={art.id}>
-                      <img
-                        src={art.url}
-                        alt={art.description}
-                        onClick={() => {
-                          selectCover(art.url);
-                        }}
-                        className="uploadImage"
-                      />
-                    </div>
-                  ))}
+                  </Form.Item>
                 </div>
-              </Form.Item>
-            </div>
-            <Form.Item
-              style={{
-                marginBottom: "0",
-              }}
-            >
-              <Button
-                className="btn btn-primary post-btn"
-                onClick={createBlogPost}
-              >
-                CREATE BLOG POST
-              </Button>
-            </Form.Item>
-          </div>
-        ) : (
-          <div>
-            <div className="formInput">
-              <Form.Item label="photos">
-                <div className="uploadImageContainer">
-                  {photosState.map((photo) => (
-                    <div key={photo.id}>
-                      <img
-                        src={photo.url}
-                        alt={photo.description}
-                        onClick={() => {
-                          setPictureUrls(photo.url);
-                        }}
-                        className="uploadImage"
-                      />
+                <Form.Item
+                  style={{
+                    marginBottom: "0",
+                  }}
+                >
+                  <Button
+                    className="btn btn-primary post-btn"
+                    onClick={createBlogPost}
+                  >
+                    CREATE BLOG POST
+                  </Button>
+                </Form.Item>
+              </div>
+            ) : (
+              <div>
+                <div className="formInput">
+                  <Form.Item label="photos">
+                    <div className="uploadImageContainer">
+                      {photosState.map((photo) => (
+                        <div key={photo.id}>
+                          <img
+                            src={photo.url}
+                            alt={photo.description}
+                            onClick={() => {
+                              setPictureUrls(photo.url);
+                            }}
+                            className="uploadImage"
+                          />
+                        </div>
+                      ))}
+                      {artState.map((art) => (
+                        <div key={art.id}>
+                          <img
+                            src={art.url}
+                            alt={art.description}
+                            onClick={() => {
+                              setPictureUrls(art.url);
+                            }}
+                            className="uploadImage"
+                          />
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                  {artState.map((art) => (
-                    <div key={art.id}>
-                      <img
-                        src={art.url}
-                        alt={art.description}
-                        onClick={() => {
-                          setPictureUrls(art.url);
-                        }}
-                        className="uploadImage"
-                      />
-                    </div>
-                  ))}
+                  </Form.Item>
                 </div>
-              </Form.Item>
-            </div>
 
-            <Form.Item
-              style={{
-                marginBottom: "0",
-              }}
-            >
-              <Button
-                className="btn btn-primary post-btn"
-                onClick={addPictures}
-              >
-                ADD PHOTOS
-              </Button>
-            </Form.Item>
-          </div>
-        )}
-      </Form>
-      <DeleteBtn />
+                <Form.Item
+                  style={{
+                    marginBottom: "0",
+                  }}
+                >
+                  <Button
+                    className="btn btn-primary post-btn"
+                    onClick={addPictures}
+                  >
+                    ADD PHOTOS
+                  </Button>
+                </Form.Item>
+              </div>
+            )}
+          </Form>
+          <DeleteBtn
+            showDeleteContainer={showDeleteContainer}
+            setShowDeleteContainer={setShowDeleteContainer}
+          />
+        </div>
+      )}
     </div>
   );
 }
