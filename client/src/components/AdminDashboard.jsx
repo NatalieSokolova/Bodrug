@@ -14,6 +14,68 @@ export default function AdminDashboard({ auth }) {
   const [id, setId] = useState("");
   const [showDeleteContainer, setShowDeleteContainer] = useState(false);
 
+  const adminComponent = (componentId, form) => {
+    switch (componentId) {
+      case "photos":
+        return (
+          <PhotoUpload
+            showDeleteContainer={showDeleteContainer}
+            setShowDeleteContainer={setShowDeleteContainer}
+            id={id}
+            setId={setId}
+          />
+        );
+      case "collections":
+        return (
+          <CollectionUpload
+            showDeleteContainer={showDeleteContainer}
+            setShowDeleteContainer={setShowDeleteContainer}
+            id={id}
+            setId={setId}
+          />
+        );
+      case "stories":
+        return (
+          <StoryUpload
+            showDeleteContainer={showDeleteContainer}
+            setShowDeleteContainer={setShowDeleteContainer}
+            id={id}
+            setId={setId}
+          />
+        );
+      case "paintings":
+        return (
+          <ArtUpload
+            showDeleteContainer={showDeleteContainer}
+            setShowDeleteContainer={setShowDeleteContainer}
+            id={id}
+            setId={setId}
+          />
+        );
+      case "faqs":
+        return (
+          <FaqUpload
+            showDeleteContainer={showDeleteContainer}
+            setShowDeleteContainer={setShowDeleteContainer}
+            id={id}
+            setId={setId}
+          />
+        );
+      case "blogPosts":
+        return (
+          <BlogPostUpload
+            showDeleteContainer={showDeleteContainer}
+            setShowDeleteContainer={setShowDeleteContainer}
+            id={id}
+            setId={setId}
+          />
+        );
+
+      default:
+        console.log("OOPS!");
+    }
+  };
+
   return (
     <div>
       {/* {!auth.username || !auth.password ? (
@@ -90,67 +152,7 @@ export default function AdminDashboard({ auth }) {
             Blog Posts
           </Card.Grid>
         </Card>
-
-        {showForm && id === "faqs" ? (
-          <div className="upload-container">
-            <FaqUpload
-              showDeleteContainer={showDeleteContainer}
-              setShowDeleteContainer={setShowDeleteContainer}
-              id={id}
-              setId={setId}
-            />
-          </div>
-        ) : null}
-        {showForm && id === "photos" ? (
-          <div className="upload-container">
-            <PhotoUpload
-              showDeleteContainer={showDeleteContainer}
-              setShowDeleteContainer={setShowDeleteContainer}
-              id={id}
-              setId={setId}
-            />
-          </div>
-        ) : null}
-        {showForm && id === "collections" ? (
-          <div className="upload-container">
-            <CollectionUpload
-              showDeleteContainer={showDeleteContainer}
-              setShowDeleteContainer={setShowDeleteContainer}
-              id={id}
-              setId={setId}
-            />
-          </div>
-        ) : null}
-        {showForm && id === "stories" ? (
-          <div className="upload-container">
-            <StoryUpload
-              showDeleteContainer={showDeleteContainer}
-              setShowDeleteContainer={setShowDeleteContainer}
-              id={id}
-              setId={setId}
-            />
-          </div>
-        ) : null}
-        {showForm && id === "paintings" ? (
-          <div className="upload-container">
-            <ArtUpload
-              showDeleteContainer={showDeleteContainer}
-              setShowDeleteContainer={setShowDeleteContainer}
-              id={id}
-              setId={setId}
-            />
-          </div>
-        ) : null}
-        {showForm && id === "blogPosts" ? (
-          <div className="upload-container">
-            <BlogPostUpload
-              showDeleteContainer={showDeleteContainer}
-              setShowDeleteContainer={setShowDeleteContainer}
-              id={id}
-              setId={setId}
-            />
-          </div>
-        ) : null}
+        <div className="upload-container">{adminComponent(id, showForm)}</div>
       </div>
       {/* )} */}
     </div>
