@@ -7,6 +7,7 @@ import CollectionsAdmin from "./CollectionsAdmin";
 import StoriesAdmin from "./StoriesAdmin";
 import ArtAdmin from "./ArtAdmin";
 import FaqAdmin from "./FaqAdmin";
+import BlogAdmin from "./BlogAdmin";
 import { Button } from "antd";
 
 export default function DeleteContainer({ id }) {
@@ -33,7 +34,7 @@ export default function DeleteContainer({ id }) {
         return <FaqAdmin />;
       case "blog":
         console.log("blog!");
-        return <div>supsupsup</div>;
+        return <BlogAdmin />;
 
       default:
         console.log("OOPS!");
