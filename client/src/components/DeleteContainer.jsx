@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { notifyError, notifySuccess } from "../helpers";
 import PhotosAdmin from "./PhotosAdmin";
 import CollectionsAdmin from "./CollectionsAdmin";
@@ -45,9 +46,8 @@ export default function DeleteContainer({ id }) {
     }
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = (id, arr) => {
     console.log(`DELETE: ${id}`);
-    console.log("RECORDS: ", recordsArr);
   };
 
   return (
@@ -56,7 +56,7 @@ export default function DeleteContainer({ id }) {
         {deleteComponent(id)}
         <Button
           className="btn btn-primary post-btn"
-          onClick={() => handleDelete(id)}
+          onClick={() => handleDelete(id, recordsArr)}
         >
           DELETE
         </Button>

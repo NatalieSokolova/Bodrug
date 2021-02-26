@@ -64,5 +64,9 @@ module.exports = (db) => {
     // return the updated blogPost back
   });
 
+  router.delete("/:id", (req, res) => {
+    res.send(`Got a DELETE request at /blog/:id with id: ${req.params.id}`);
+  });
+
   return router;
 };
