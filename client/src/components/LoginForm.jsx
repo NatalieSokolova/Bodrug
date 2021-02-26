@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
-import { notifyError } from "../partials";
+import { notifyError } from "../helpers";
 import { Form, Input, Button } from "antd";
 
 export default function LoginForm({ auth, setAuth }) {

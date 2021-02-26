@@ -2,7 +2,7 @@ import React from "react";
 import usePhotoData from "../hooks/usePhotoData";
 import { SRLWrapper } from "simple-react-lightbox";
 import { toast } from "react-toastify";
-import { copyrightError } from "../partials";
+import { copyrightError } from "../helpers";
 import "./Photo.css";
 
 export default function Portfolio() {

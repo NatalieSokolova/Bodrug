@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import usePhotoData from "../hooks/usePhotoData";
 import { toast } from "react-toastify";
-import { notifyError, notifySuccess } from "../partials";
+import { notifyError, notifySuccess, setPhotoIds } from "../helpers";
 import { Form, Input, Button } from "antd";
 import DeleteBtn from "./DeleteBtn";
 import DeleteContainer from "./DeleteContainer";
@@ -42,11 +42,6 @@ export default function StoryUpload({
       ...story,
       coverurl: url,
     });
-  };
-
-  const setPhotoIds = (id) => {
-    const photoIds = photos.concat(id);
-    return setPhotos(photoIds);
   };
 
   const createstory = (event) => {
@@ -188,7 +183,9 @@ export default function StoryUpload({
                           <img
                             src={photo.url}
                             alt={photo.description}
-                            onClick={() => setPhotoIds(photo.id)}
+                            onClick={() =>
+                              setPhotoIds(photo.id, photos, setPhotos)
+                            }
                             className="uploadImage"
                           />
                         </div>

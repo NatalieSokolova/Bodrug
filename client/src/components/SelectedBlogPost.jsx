@@ -1,7 +1,7 @@
 import React from "react";
 import useBlogEntryData from "../hooks/useBlogEntryData";
 import { toast } from "react-toastify";
-import { copyrightError } from "../partials";
+import { copyrightError } from "../helpers";
 import { Carousel } from "antd";
 import { SRLWrapper } from "simple-react-lightbox";
 import { useRouteMatch } from "react-router-dom";

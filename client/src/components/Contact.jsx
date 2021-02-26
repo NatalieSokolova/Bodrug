@@ -1,7 +1,7 @@
 import React from "react";
 import Message from "./Message";
 import { toast } from "react-toastify";
-import { copyrightError } from "../partials";
+import { copyrightError } from "../helpers";
 import "./Contact.css";
 
 export default function Contact() {

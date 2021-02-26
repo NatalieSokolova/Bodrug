@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as emailjs from "emailjs-com";
 import { toast } from "react-toastify";
-import { notifyError, notifySuccess } from "../partials";
+import { notifyError, notifySuccess } from "../helpers";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./Message.css";

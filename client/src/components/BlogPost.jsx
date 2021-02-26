@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useBlogEntryData from "../hooks/useBlogEntryData";
-import { copyrightError } from "../partials";
+import { copyrightError } from "../helpers";
 import { toast } from "react-toastify";
 import "./BlogPost.css";
 

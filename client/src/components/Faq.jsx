@@ -1,7 +1,7 @@
 import React from "react";
 import useFaqData from "../hooks/useFaqData";
 import { toast } from "react-toastify";
-import { copyrightError } from "../partials";
+import { copyrightError } from "../helpers";
 import "./Faq.css";
 
 export default function Faq() {

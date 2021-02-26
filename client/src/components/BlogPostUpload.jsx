@@ -3,7 +3,7 @@ import axios from "axios";
 import usePhotoData from "../hooks/usePhotoData";
 import usePaintingData from "../hooks/usePaintingData";
 import { toast } from "react-toastify";
-import { notifyError, notifySuccess } from "../partials";
+import { notifyError, notifySuccess } from "../helpers";
 import { Form, Input, Button } from "antd";
 import DeleteBtn from "./DeleteBtn";
 import DeleteContainer from "./DeleteContainer";

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import usePhotoData from "../hooks/usePhotoData";
 import { toast } from "react-toastify";
-import { notifyError, notifySuccess } from "../partials";
+import { notifyError, notifySuccess, setPhotoIds } from "../helpers";
 import { Form, Input, Button } from "antd";
 import DeleteBtn from "./DeleteBtn";
 import DeleteContainer from "./DeleteContainer";
@@ -20,13 +20,14 @@ export default function CollectionUpload({
     opacity: "0.5",
   };
 
+  const [photos, setPhotos] = useState([]);
+
   const [collection, setCollection] = useState({
     name: "",
     description: "",
     coverurl: null,
   });
 
-  const [photos, setPhotos] = useState([]);
   const [image, setImage] = useState("cover");
 
   const handleChange = (event) => {
@@ -46,14 +47,6 @@ export default function CollectionUpload({
       coverurl: url,
     });
   };
-
-  const setPhotoIds = (id) => {
-    const photoIds = photos.concat(id);
-    console.log("collection: ", collection.name);
-    return setPhotos(photoIds);
-  };
-
-  console.log("PHOTO IDs: ", photos);
 
   const createCollection = (event) => {
     event.preventDefault();
@@ -201,7 +194,9 @@ export default function CollectionUpload({
                           <img
                             src={photo.url}
                             alt={photo.description}
-                            onClick={() => setPhotoIds(photo.id)}
+                            onClick={() =>
+                              setPhotoIds(photo.id, photos, setPhotos)
+                            }
                             className="uploadImage"
                           />
                         </div>

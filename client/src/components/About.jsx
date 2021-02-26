@@ -1,6 +1,6 @@
 import React from "react";
 import { toast } from "react-toastify";
-import { copyrightError } from "../partials";
+import { copyrightError } from "../helpers";
 import "./About.css";
 
 export default function About() {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { SRLWrapper } from "simple-react-lightbox";
 import { toast } from "react-toastify";
-import { copyrightError } from "../partials";
+import { copyrightError } from "../helpers";
 import "./SelectedCollection.css";
 
 export default function SelectedCollection(props) {

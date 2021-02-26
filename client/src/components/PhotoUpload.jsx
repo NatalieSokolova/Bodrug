@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { openUploadWidget } from "../CloudinaryService";
-import { notifyError, notifySuccess } from "../partials";
+import { notifyError, notifySuccess } from "../helpers";
 import { Form, Input, Button } from "antd";
 import DeleteBtn from "./DeleteBtn";
 import DeleteContainer from "./DeleteContainer";
@@ -21,8 +21,6 @@ export default function PhotoUpload({
     url: "",
     description: "",
   });
-
-  console.log("STATE: ", photo);
 
   const handleChange = (event) => {
     const target = event.target;

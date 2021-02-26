@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-export const notifyError = (message) =>
+const notifyError = (message) =>
   toast.dark(message, {
     position: "top-right",
     autoClose: 5000,
@@ -11,11 +11,19 @@ export const notifyError = (message) =>
     progress: undefined,
   });
 
-export const notifySuccess = (message) =>
+const notifySuccess = (message) =>
   toast.success(message, {
     hideProgressBar: true,
   });
 
-export const copyrightError = () => {
+const copyrightError = () => {
   notifyError("Sorry, all the images are copyright");
 };
+
+const setPhotoIds = (id, array, method) => {
+  const photoIds = array.concat(id);
+  console.log("photoIds: ", photoIds);
+  return method(photoIds);
+};
+
+export { notifyError, notifySuccess, copyrightError, setPhotoIds };
