@@ -60,7 +60,7 @@ export default function DeleteContainer({ id }) {
         .then((response) => {
           console.log("SUCCESS! ", response);
           notifySuccess("Woo-hoo! Record deleted successfully!");
-          window.location.reload(false);
+          setTimeout(() => window.location.reload(false), 1000);
         })
         .catch((error) => {
           console.log("TROUBLE! ", error);
