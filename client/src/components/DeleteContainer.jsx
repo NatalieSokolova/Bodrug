@@ -3,7 +3,9 @@ import usePhotoData from "../hooks/usePhotoData";
 import useCollectionData from "../hooks/useCollectionData";
 import { notifyError, notifySuccess, setRecordIds } from "../helpers";
 import PhotosAdmin from "./PhotosAdmin";
+import ArtAdmin from "./ArtAdmin";
 import CollectionsAdmin from "./CollectionsAdmin";
+import StoriesAdmin from "./StoriesAdmin";
 import { Button } from "antd";
 
 export default function DeleteContainer({ id }) {
@@ -21,10 +23,10 @@ export default function DeleteContainer({ id }) {
         return <CollectionsAdmin />;
       case "stories":
         console.log("stories!");
-        return <div>supsupsup</div>;
+        return <StoriesAdmin />;
       case "art":
         console.log("art!");
-        return <div>supsupsup</div>;
+        return <ArtAdmin />;
       case "faq":
         console.log("faq!");
         return <div>supsupsup</div>;
