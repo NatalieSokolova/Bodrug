@@ -61,5 +61,18 @@ module.exports = (db) => {
     // return the newly created collection back
   });
 
+  router.delete("/:id", (req, res) => {
+    const recordId = req.params.id;
+
+    const query = {
+      text: `DELETE FROM collections WHERE collections.id=$1 RETURNING *;`,
+      values: [recordId],
+    };
+
+    db.query(query)
+      .then((result) => res.json(result[0]))
+      .catch((err) => console.log(err));
+  });
+
   return router;
 };

@@ -65,12 +65,11 @@ module.exports = (db) => {
   });
 
   router.delete("/:id", (req, res) => {
-    const postId = req.params.id;
+    const recordId = req.params.id;
 
     const query = {
-      // text: `UPDATE blogposts SET photourls=$1 WHERE blogposts.title=$2 RETURNING *;`,
       text: `DELETE FROM blogposts WHERE blogposts.id=$1 RETURNING *;`,
-      values: [postId],
+      values: [recordId],
     };
 
     db.query(query)
